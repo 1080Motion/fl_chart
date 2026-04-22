@@ -100,8 +100,7 @@ class _TestGradient extends Gradient {
   const _TestGradient({required super.colors, super.stops});
 
   @override
-  Shader createShader(Rect rect, {TextDirection? textDirection}) =>
-      throw UnimplementedError();
+  Shader createShader(Rect rect, {TextDirection? textDirection}) => throw UnimplementedError();
 
   @override
   Gradient scale(double t) => throw UnimplementedError();

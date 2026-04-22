@@ -37,8 +37,7 @@ void main() {
 
     test('SideTitleFitInsideData equality test', () {
       expect(
-        MockData.sideTitleFitInsideData1 ==
-            MockData.sideTitleFitInsideData1Clone,
+        MockData.sideTitleFitInsideData1 == MockData.sideTitleFitInsideData1Clone,
         true,
       );
       expect(
@@ -111,8 +110,7 @@ void main() {
       );
 
       expect(
-        flLine1 ==
-            const FlLine(color: Colors.green, strokeWidth: 1, dashArray: []),
+        flLine1 == const FlLine(color: Colors.green, strokeWidth: 1, dashArray: []),
         false,
       );
 
@@ -264,14 +262,12 @@ void main() {
       );
 
       expect(
-        verticalRangeAnnotation1 ==
-            VerticalRangeAnnotation(color: Colors.green, x2: 12, x1: 12.1),
+        verticalRangeAnnotation1 == VerticalRangeAnnotation(color: Colors.green, x2: 12, x1: 12.1),
         true,
       );
 
       expect(
-        verticalRangeAnnotation1 ==
-            VerticalRangeAnnotation(color: Colors.green, x2: 12.1, x1: 12),
+        verticalRangeAnnotation1 == VerticalRangeAnnotation(color: Colors.green, x2: 12.1, x1: 12),
         false,
       );
 

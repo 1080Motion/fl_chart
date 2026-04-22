@@ -36,8 +36,7 @@ void main() {
       );
     });
 
-    testWidgets('passes interaction parameters to AxisChartScaffoldWidget',
-        (tester) async {
+    testWidgets('passes interaction parameters to AxisChartScaffoldWidget', (tester) async {
       await tester.pumpWidget(
         createTestWidget(
           chart: ScatterChart(
@@ -103,8 +102,7 @@ void main() {
       });
     }
 
-    testWidgets('passes canBeScaled false for FlScaleAxis.none',
-        (tester) async {
+    testWidgets('passes canBeScaled false for FlScaleAxis.none', (tester) async {
       await tester.pumpWidget(
         createTestWidget(
           chart: ScatterChart(
@@ -136,8 +134,7 @@ void main() {
           ),
         );
 
-        final scatterChartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final scatterChartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         final scaleStart1 = scatterChartCenterOffset;
         final scaleStart2 = scatterChartCenterOffset;
         final scaleEnd1 = scatterChartCenterOffset + const Offset(100, 100);
@@ -172,8 +169,7 @@ void main() {
           ),
         );
 
-        final scatterChartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final scatterChartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         final scaleStart1 = scatterChartCenterOffset;
         final scaleStart2 = scatterChartCenterOffset;
         final scaleEnd1 = scatterChartCenterOffset + const Offset(100, 100);
@@ -202,8 +198,7 @@ void main() {
         expect(chartVirtualRect.top, isNegative);
       });
 
-      testWidgets('scales horizontally with FlScaleAxis.horizontal',
-          (tester) async {
+      testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: ScatterChart(
@@ -215,8 +210,7 @@ void main() {
           ),
         );
 
-        final chartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         final scaleStart1 = chartCenterOffset;
         final scaleStart2 = chartCenterOffset;
         final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -246,8 +240,7 @@ void main() {
         expect(chartVirtualRect.top, 0);
       });
 
-      testWidgets('scales vertically with FlScaleAxis.vertical',
-          (tester) async {
+      testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: ScatterChart(
@@ -259,8 +252,7 @@ void main() {
           ),
         );
 
-        final chartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         final scaleStart1 = chartCenterOffset;
         final scaleStart2 = chartCenterOffset;
         final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -294,8 +286,7 @@ void main() {
       });
 
       group('pans', () {
-        testWidgets('only horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('only horizontally with FlScaleAxis.horizontal', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: ScatterChart(
@@ -307,8 +298,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -325,8 +315,7 @@ void main() {
           final scatterChartLeafBeforePan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, 0);
 
           const panOffset = Offset(100, 100);
@@ -336,8 +325,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectBeforePan.size, chartVirtualRectAfterPan.size);
           expect(
@@ -347,8 +335,7 @@ void main() {
           expect(chartVirtualRectAfterPan.top, 0);
         });
 
-        testWidgets('only vertically with FlScaleAxis.vertical',
-            (tester) async {
+        testWidgets('only vertically with FlScaleAxis.vertical', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: ScatterChart(
@@ -360,8 +347,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -378,8 +364,7 @@ void main() {
           final scatterChartLeafBeforePan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.left, 0);
 
           const panOffset = Offset(100, 100);
@@ -389,8 +374,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectAfterPan.left, 0);
           expect(
@@ -411,8 +395,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -429,8 +412,7 @@ void main() {
           final scatterChartLeafBeforePan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, isNegative);
           expect(chartVirtualRectBeforePan.left, isNegative);
 
@@ -441,8 +423,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -458,8 +439,7 @@ void main() {
 
     group('trackpad scroll', () {
       group('pans', () {
-        testWidgets('only horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('only horizontally with FlScaleAxis.horizontal', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: ScatterChart(
@@ -471,8 +451,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -492,8 +471,7 @@ void main() {
             find.byType(ScatterChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, 0);
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
@@ -506,8 +484,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -528,8 +505,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -549,8 +525,7 @@ void main() {
             find.byType(ScatterChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.left, 0);
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
@@ -563,8 +538,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectAfterPan.left, 0);
           expect(
@@ -585,8 +559,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -606,8 +579,7 @@ void main() {
             find.byType(ScatterChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              scatterChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = scatterChartLeafBeforePan.chartVirtualRect!;
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
           const leftAndUp = Offset(-100, -100);
@@ -619,8 +591,7 @@ void main() {
           final scatterChartLeafAfterPan = tester.widget<ScatterChartLeaf>(
             find.byType(ScatterChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              scatterChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = scatterChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -652,8 +623,7 @@ void main() {
           );
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-          final chartCenterOffset =
-              tester.getCenter(find.byType(ScatterChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
           const scrollAmount = Offset(0, -100);
 
           await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -706,8 +676,7 @@ void main() {
         );
       }
 
-      testWidgets('scales horizontally with FlScaleAxis.horizontal',
-          (tester) async {
+      testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: ScatterChart(
@@ -721,8 +690,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -744,8 +712,7 @@ void main() {
         expect(chartVirtualRect.top, 0);
       });
 
-      testWidgets('scales vertically with FlScaleAxis.vertical',
-          (tester) async {
+      testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: ScatterChart(
@@ -759,8 +726,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -799,8 +765,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(ScatterChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(ScatterChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -808,8 +773,7 @@ void main() {
         await tester.sendEventToBinding(pointer.scroll(scrollAmount));
         await tester.pump();
 
-        final scatterChartLeaf =
-            tester.widget<ScatterChartLeaf>(find.byType(ScatterChartLeaf));
+        final scatterChartLeaf = tester.widget<ScatterChartLeaf>(find.byType(ScatterChartLeaf));
         final renderBox = tester.renderObject<RenderBox>(
           find.byType(ScatterChartLeaf),
         );

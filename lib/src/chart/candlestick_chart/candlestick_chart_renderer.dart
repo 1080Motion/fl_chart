@@ -23,15 +23,14 @@ class CandlestickChartLeaf extends LeafRenderObjectWidget {
   final bool canBeScaled;
 
   @override
-  RenderCandlestickChart createRenderObject(BuildContext context) =>
-      RenderCandlestickChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-        chartVirtualRect,
-        canBeScaled: canBeScaled,
-      );
+  RenderCandlestickChart createRenderObject(BuildContext context) => RenderCandlestickChart(
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+    chartVirtualRect,
+    canBeScaled: canBeScaled,
+  );
 
   @override
   void updateRenderObject(
@@ -58,15 +57,15 @@ class RenderCandlestickChart extends RenderBaseChart<CandlestickTouchResponse> {
     TextScaler textScaler,
     Rect? chartVirtualRect, {
     required bool canBeScaled,
-  })  : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        _chartVirtualRect = chartVirtualRect,
-        super(
-          targetData.candlestickTouchData,
-          context,
-          canBeScaled: canBeScaled,
-        );
+  }) : _data = data,
+       _targetData = targetData,
+       _textScaler = textScaler,
+       _chartVirtualRect = chartVirtualRect,
+       super(
+         targetData.candlestickTouchData,
+         context,
+         canBeScaled: canBeScaled,
+       );
 
   CandlestickChartData get data => _data;
   CandlestickChartData _data;

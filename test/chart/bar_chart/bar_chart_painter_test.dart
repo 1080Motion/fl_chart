@@ -54,23 +54,20 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -96,18 +93,16 @@ void main() {
       mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
 
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -180,23 +175,24 @@ void main() {
         maxContentWidth: 80,
         rotateAngle: 12,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: [
-              const TextSpan(text: 'helllo2'),
-              const TextSpan(text: 'helllo3'),
-            ],
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const TextSpan(text: 'helllo2'),
+                  const TextSpan(text: 'helllo3'),
+                ],
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -247,8 +243,7 @@ void main() {
       ]);
     });
 
-    test('only draws points within canvas when chart virtual rect is provided',
-        () {
+    test('only draws points within canvas when chart virtual rect is provided', () {
       const viewSize = Size(200, 200);
       const zoomedSize = Size(300, 300);
       final chartVirtualRect = const Offset(0, -150) & zoomedSize;
@@ -286,23 +281,24 @@ void main() {
         maxContentWidth: 80,
         rotateAngle: 12,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: [
-              const TextSpan(text: 'helllo2'),
-              const TextSpan(text: 'helllo3'),
-            ],
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const TextSpan(text: 'helllo2'),
+                  const TextSpan(text: 'helllo3'),
+                ],
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -411,23 +407,24 @@ void main() {
           maxContentWidth: 80,
           rotateAngle: 12,
           tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-          getTooltipItem: (
-            group,
-            groupIndex,
-            rod,
-            rodIndex,
-          ) {
-            return BarTooltipItem(
-              'helllo1',
-              textStyle1,
-              textAlign: TextAlign.right,
-              textDirection: TextDirection.rtl,
-              children: [
-                const TextSpan(text: 'helllo2'),
-                const TextSpan(text: 'helllo3'),
-              ],
-            );
-          },
+          getTooltipItem:
+              (
+                group,
+                groupIndex,
+                rod,
+                rodIndex,
+              ) {
+                return BarTooltipItem(
+                  'helllo1',
+                  textStyle1,
+                  textAlign: TextAlign.right,
+                  textDirection: TextDirection.rtl,
+                  children: [
+                    const TextSpan(text: 'helllo2'),
+                    const TextSpan(text: 'helllo3'),
+                  ],
+                );
+              },
         );
 
         final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -504,23 +501,24 @@ void main() {
         maxContentWidth: 80,
         rotateAngle: 12,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: [
-              const TextSpan(text: 'helllo2'),
-              const TextSpan(text: 'helllo3'),
-            ],
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const TextSpan(text: 'helllo2'),
+                  const TextSpan(text: 'helllo3'),
+                ],
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -607,9 +605,7 @@ void main() {
       );
 
       List<double> callWithAlignment(BarChartAlignment alignment) {
-        return data
-            .copyWith(alignment: alignment)
-            .calculateGroupsX(viewSize.width);
+        return data.copyWith(alignment: alignment).calculateGroupsX(viewSize.width);
       }
 
       expect(callWithAlignment(BarChartAlignment.center), [50, 92.5, 142.5]);
@@ -724,9 +720,7 @@ void main() {
       final barChartPainter = BarChartPainter();
 
       List<GroupBarsPosition> callWithAlignment(BarChartAlignment alignment) {
-        final groupsX = data
-            .copyWith(alignment: alignment)
-            .calculateGroupsX(viewSize.width);
+        final groupsX = data.copyWith(alignment: alignment).calculateGroupsX(viewSize.width);
         return barChartPainter.calculateGroupAndBarsPosition(
           viewSize,
           groupsX,
@@ -839,8 +833,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -854,8 +847,7 @@ void main() {
       );
 
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawRRect(captureAny, captureAny)).thenAnswer((inv) {
         final rRect = inv.positionalArguments[0] as RRect;
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
@@ -1113,8 +1105,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -1128,8 +1119,7 @@ void main() {
       );
 
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawRRect(captureAny, captureAny)).thenAnswer((inv) {
         final rrect = inv.positionalArguments[0] as RRect;
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
@@ -1300,8 +1290,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -1315,8 +1304,7 @@ void main() {
       );
 
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawRRect(captureAny, captureAny)).thenAnswer((inv) {
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
           'paint_color': paint.color,
@@ -1405,8 +1393,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -1422,8 +1409,7 @@ void main() {
       final rodDataResults = <Map<String, dynamic>>[];
       final borderResult = <Map<String, dynamic>>[];
 
-      when(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawRRect(captureAny, captureAny)).thenAnswer((inv) {
         final rrect = inv.positionalArguments[0] as RRect;
         final paint = inv.positionalArguments[1] as Paint;
         rodDataResults.add({
@@ -1432,8 +1418,7 @@ void main() {
         });
       });
 
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final path = inv.positionalArguments[0] as Path;
         final paint = inv.positionalArguments[1] as Paint;
         borderResult.add({
@@ -1510,8 +1495,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -1527,8 +1511,7 @@ void main() {
       final rodDataResults = <Map<String, dynamic>>[];
       final borderResult = <Map<String, dynamic>>[];
 
-      when(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawRRect(captureAny, captureAny)).thenAnswer((inv) {
         final rrect = inv.positionalArguments[0] as RRect;
         final paint = inv.positionalArguments[1] as Paint;
         rodDataResults.add({
@@ -1537,8 +1520,7 @@ void main() {
         });
       });
 
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final path = inv.positionalArguments[0] as Path;
         final paint = inv.positionalArguments[1] as Paint;
         borderResult.add({
@@ -1603,8 +1585,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -1651,8 +1632,7 @@ void main() {
       expect(
         rect2.bottom,
         closeTo(rect1.top, tolerance),
-        reason:
-            'Stack items should be adjacent without gaps (rect2.bottom should equal rect1.top)',
+        reason: 'Stack items should be adjacent without gaps (rect2.bottom should equal rect1.top)',
       );
 
       // The combined height should equal the scaled total height (cornerHeight)
@@ -1667,8 +1647,7 @@ void main() {
       expect(
         rect1.height,
         closeTo(rect2.height, tolerance),
-        reason:
-            'Stack items with equal data heights (1) should have equal pixel heights',
+        reason: 'Stack items with equal data heights (1) should have equal pixel heights',
       );
     });
   });
@@ -1680,18 +1659,16 @@ void main() {
     setUp(() {
       mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -1740,8 +1717,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -1809,8 +1785,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -1878,8 +1853,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -1923,8 +1897,7 @@ void main() {
       final mockUtils = MockUtils();
       when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(textStyle1);
       when(mockUtils.getEfficientInterval(any, any)).thenReturn(11);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenReturn(BorderRadius.zero);
+      when(mockUtils.normalizeBorderRadius(any, any)).thenReturn(BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenReturn(BorderSide.none);
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockUtils.getBestInitialIntervalValue(any, any, any)).thenReturn(0);
@@ -1991,23 +1964,24 @@ void main() {
         maxContentWidth: 80,
         rotateAngle: 12,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: [
-              const TextSpan(text: 'helllo2'),
-              const TextSpan(text: 'helllo3'),
-            ],
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const TextSpan(text: 'helllo2'),
+                  const TextSpan(text: 'helllo3'),
+                ],
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -2024,8 +1998,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -2050,8 +2023,7 @@ void main() {
           drawCallback: anyNamed('drawCallback'),
         ),
       ).thenAnswer((inv) {
-        final callback =
-            inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
+        final callback = inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
         callback();
         angles.add(inv.namedArguments[const Symbol('angle')] as double);
       });
@@ -2067,9 +2039,7 @@ void main() {
         0,
         holder,
       );
-      final result1 =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final result1 = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))..called(2);
       final rrect = result1.captured[0] as RRect;
       expect(rrect.blRadius, const Radius.circular(8));
       expect(rrect.width, 112);
@@ -2096,8 +2066,7 @@ void main() {
       expect(angles.length, 1);
       expect(angles[0], 12);
 
-      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))
-        ..called(1);
+      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))..called(1);
       final textPainter = result2.captured[0] as TextPainter;
       expect((textPainter.text as TextSpan?)!.text, 'helllo1');
       expect((textPainter.text as TextSpan?)!.style, textStyle1);
@@ -2120,8 +2089,7 @@ void main() {
       final mockUtils = MockUtils();
       when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(textStyle1);
       when(mockUtils.getEfficientInterval(any, any)).thenReturn(11);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenReturn(BorderRadius.zero);
+      when(mockUtils.normalizeBorderRadius(any, any)).thenReturn(BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenReturn(BorderSide.none);
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockUtils.getBestInitialIntervalValue(any, any, any)).thenReturn(0);
@@ -2194,23 +2162,24 @@ void main() {
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
         tooltipHorizontalAlignment: FLHorizontalAlignment.left,
         tooltipHorizontalOffset: -1.5,
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: [
-              const TextSpan(text: 'helllo2'),
-              const TextSpan(text: 'helllo3'),
-            ],
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: [
+                  const TextSpan(text: 'helllo2'),
+                  const TextSpan(text: 'helllo3'),
+                ],
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -2227,8 +2196,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -2253,8 +2221,7 @@ void main() {
           drawCallback: anyNamed('drawCallback'),
         ),
       ).thenAnswer((inv) {
-        final callback =
-            inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
+        final callback = inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
         callback();
         angles.add(inv.namedArguments[const Symbol('angle')] as double);
       });
@@ -2270,9 +2237,7 @@ void main() {
         0,
         holder,
       );
-      final result1 =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final result1 = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))..called(2);
       final rrect = result1.captured[0] as RRect;
       expect(rrect.tlRadius, const Radius.circular(10));
       expect(rrect.trRadius, const Radius.circular(8));
@@ -2305,8 +2270,7 @@ void main() {
       expect(angles.length, 1);
       expect(angles[0], 12);
 
-      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))
-        ..called(1);
+      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))..called(1);
       final textPainter = result2.captured[0] as TextPainter;
       expect((textPainter.text as TextSpan?)!.text, 'helllo1');
       expect((textPainter.text as TextSpan?)!.style, textStyle1);
@@ -2329,8 +2293,7 @@ void main() {
       final mockUtils = MockUtils();
       when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(textStyle1);
       when(mockUtils.getEfficientInterval(any, any)).thenReturn(11);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenReturn(BorderRadius.zero);
+      when(mockUtils.normalizeBorderRadius(any, any)).thenReturn(BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenReturn(BorderSide.none);
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockUtils.getBestInitialIntervalValue(any, any, any)).thenReturn(0);
@@ -2372,26 +2335,27 @@ void main() {
         direction: TooltipDirection.top,
         tooltipHorizontalAlignment: FLHorizontalAlignment.right,
         tooltipBorder: const BorderSide(color: Color(0xf33f33f3), width: 2),
-        getTooltipItem: (
-          group,
-          groupIndex,
-          rod,
-          rodIndex,
-        ) {
-          return BarTooltipItem(
-            'helllo1asdfasdfasdfasdfasdfasdfhelllo1asdfasdfasdfasd'
-            'fasdfasdfhelllo1asdfasdfasdfasdfasdfasdfhelllo1asdf'
-            'asdfasdfasdfasdfasdfhelllo1asdfasdfasdfasdfasdfasdfh'
-            'elllo1asdfasdfasdfasdfasdfasdf',
-            textStyle1,
-            textAlign: TextAlign.right,
-            textDirection: TextDirection.rtl,
-            children: List.generate(
-              500,
-              (index) => const TextSpan(text: '\nhelllo3'),
-            ),
-          );
-        },
+        getTooltipItem:
+            (
+              group,
+              groupIndex,
+              rod,
+              rodIndex,
+            ) {
+              return BarTooltipItem(
+                'helllo1asdfasdfasdfasdfasdfasdfhelllo1asdfasdfasdfasd'
+                'fasdfasdfhelllo1asdfasdfasdfasdfasdfasdfhelllo1asdf'
+                'asdfasdfasdfasdfasdfhelllo1asdfasdfasdfasdfasdfasdfh'
+                'elllo1asdfasdfasdfasdfasdfasdf',
+                textStyle1,
+                textAlign: TextAlign.right,
+                textDirection: TextDirection.rtl,
+                children: List.generate(
+                  500,
+                  (index) => const TextSpan(text: '\nhelllo3'),
+                ),
+              );
+            },
       );
 
       final (minY, maxY) = BarChartHelper().calculateMaxAxisValues(barGroups);
@@ -2408,8 +2372,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -2434,8 +2397,7 @@ void main() {
           drawCallback: anyNamed('drawCallback'),
         ),
       ).thenAnswer((inv) {
-        final callback =
-            inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
+        final callback = inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
         callback();
         angles.add(inv.namedArguments[const Symbol('angle')] as double);
       });
@@ -2451,9 +2413,7 @@ void main() {
         1,
         holder,
       );
-      final result1 =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final result1 = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))..called(2);
       final rrect = result1.captured[0] as RRect;
       expect(rrect.blRadius, const Radius.circular(8));
       expect(rrect.width, 2636);
@@ -2480,8 +2440,7 @@ void main() {
       expect(angles.length, 1);
       expect(angles[0], 12);
 
-      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))
-        ..called(1);
+      final result2 = verify(mockCanvasWrapper.drawText(captureAny, captureAny))..called(1);
 
       final drawOffset = result2.captured[1] as Offset;
       expect(drawOffset, const Offset(-2420, -6926));
@@ -2491,8 +2450,7 @@ void main() {
       final mockUtils = MockUtils();
       when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(textStyle1);
       when(mockUtils.getEfficientInterval(any, any)).thenReturn(11);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenReturn(BorderRadius.zero);
+      when(mockUtils.normalizeBorderRadius(any, any)).thenReturn(BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenReturn(BorderSide.none);
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockUtils.getBestInitialIntervalValue(any, any, any)).thenReturn(0);
@@ -2540,8 +2498,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -2565,8 +2522,7 @@ void main() {
           drawCallback: anyNamed('drawCallback'),
         ),
       ).thenAnswer((inv) {
-        final callback =
-            inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
+        final callback = inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
         callback();
       });
 
@@ -2598,8 +2554,7 @@ void main() {
         TextScaler.noScaling,
       );
       final groupsXNoLabel = dataNoLabel.calculateGroupsX(viewSize.width);
-      final barGroupsPositionNoLabel =
-          barChartPainter.calculateGroupAndBarsPosition(
+      final barGroupsPositionNoLabel = barChartPainter.calculateGroupAndBarsPosition(
         viewSize,
         groupsXNoLabel,
         barGroupsNoLabel,
@@ -2616,9 +2571,7 @@ void main() {
         0,
         holderNoLabel,
       );
-      final resultNoLabel =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final resultNoLabel = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))..called(2);
       final rrectNoLabel = resultNoLabel.captured[0] as RRect;
 
       // Now draw tooltip WITH label
@@ -2633,9 +2586,8 @@ void main() {
         0,
         holder,
       );
-      final resultWithLabel =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final resultWithLabel = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
+        ..called(2);
       final rrectWithLabel = resultWithLabel.captured[0] as RRect;
 
       // With a visible label, the tooltip should be shifted further up
@@ -2650,8 +2602,7 @@ void main() {
       final mockUtils = MockUtils();
       when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(textStyle1);
       when(mockUtils.getEfficientInterval(any, any)).thenReturn(11);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenReturn(BorderRadius.zero);
+      when(mockUtils.normalizeBorderRadius(any, any)).thenReturn(BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenReturn(BorderSide.none);
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockUtils.getBestInitialIntervalValue(any, any, any)).thenReturn(0);
@@ -2699,8 +2650,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -2724,8 +2674,7 @@ void main() {
           drawCallback: anyNamed('drawCallback'),
         ),
       ).thenAnswer((inv) {
-        final callback =
-            inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
+        final callback = inv.namedArguments[const Symbol('drawCallback')] as DrawCallback;
         callback();
       });
 
@@ -2758,8 +2707,7 @@ void main() {
         TextScaler.noScaling,
       );
       final groupsXNoLabel = dataNoLabel.calculateGroupsX(viewSize.width);
-      final barGroupsPositionNoLabel =
-          barChartPainter.calculateGroupAndBarsPosition(
+      final barGroupsPositionNoLabel = barChartPainter.calculateGroupAndBarsPosition(
         viewSize,
         groupsXNoLabel,
         barGroupsNoLabel,
@@ -2776,9 +2724,7 @@ void main() {
         0,
         holderNoLabel,
       );
-      final resultNoLabel =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final resultNoLabel = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))..called(2);
       final rrectNoLabel = resultNoLabel.captured[0] as RRect;
 
       // Now draw tooltip WITH label
@@ -2793,17 +2739,15 @@ void main() {
         0,
         holder,
       );
-      final resultWithLabel =
-          verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
-            ..called(2);
+      final resultWithLabel = verify(mockCanvasWrapper.drawRRect(captureAny, captureAny))
+        ..called(2);
       final rrectWithLabel = resultWithLabel.captured[0] as RRect;
 
       // With a visible label on a downward bar, tooltip should be shifted further down
       expect(
         rrectWithLabel.top,
         greaterThan(rrectNoLabel.top),
-        reason:
-            'Tooltip should be shifted down to avoid overlapping with label',
+        reason: 'Tooltip should be shifted down to avoid overlapping with label',
       );
     });
   });
@@ -2859,8 +2803,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -3051,8 +2994,7 @@ void main() {
       );
 
       final painter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       expect(painter.handleTouch(const Offset(10, 10), viewSize, holder), null);
       expect(
@@ -3064,13 +3006,11 @@ void main() {
       // 28.5, 0.0, 38.5, 100.0
       // 43.5, 20.0, 54.5, 100.0
       // 59.5, 20.0, 71.5, 100.0
-      final result1 =
-          painter.handleTouch(const Offset(27.5, 10), viewSize, holder);
+      final result1 = painter.handleTouch(const Offset(27.5, 10), viewSize, holder);
       expect(result1!.touchedBarGroupIndex, 0);
       expect(result1.touchedRodDataIndex, 0);
 
-      final result11 =
-          painter.handleTouch(const Offset(39.5, 10), viewSize, holder);
+      final result11 = painter.handleTouch(const Offset(39.5, 10), viewSize, holder);
       expect(result11!.touchedBarGroupIndex, 0);
       expect(result11.touchedRodDataIndex, 0);
 
@@ -3086,8 +3026,7 @@ void main() {
         painter.handleTouch(const Offset(100, 18.99), viewSize, holder),
         null,
       );
-      final result2 =
-          painter.handleTouch(const Offset(100, 19), viewSize, holder);
+      final result2 = painter.handleTouch(const Offset(100, 19), viewSize, holder);
       expect(result2!.touchedBarGroupIndex, 1);
       expect(result2.touchedRodDataIndex, 1);
 
@@ -3100,8 +3039,7 @@ void main() {
         painter.handleTouch(const Offset(165, 101.1), viewSize, holder),
         null,
       );
-      final result3 =
-          painter.handleTouch(const Offset(165, 101), viewSize, holder);
+      final result3 = painter.handleTouch(const Offset(165, 101), viewSize, holder);
       expect(result3!.touchedBarGroupIndex, 2);
       expect(result3.touchedRodDataIndex, 3);
     });
@@ -3159,8 +3097,7 @@ void main() {
       );
 
       final painter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       expect(
         painter.handleTouch(const Offset(134, 48.6), viewSize, holder),
@@ -3184,14 +3121,12 @@ void main() {
         null,
       );
 
-      final result1 =
-          painter.handleTouch(const Offset(89, 38.5), viewSize, holder);
+      final result1 = painter.handleTouch(const Offset(89, 38.5), viewSize, holder);
       expect(result1!.touchedBarGroupIndex, 0);
       expect(result1.touchedRodDataIndex, 0);
       expect(result1.touchedStackItemIndex, 0);
 
-      final result2 =
-          painter.handleTouch(const Offset(88.8, 16.5), viewSize, holder);
+      final result2 = painter.handleTouch(const Offset(88.8, 16.5), viewSize, holder);
       expect(result2!.touchedBarGroupIndex, 0);
       expect(result2.touchedRodDataIndex, 0);
       expect(result2.touchedStackItemIndex, -1);
@@ -3245,27 +3180,22 @@ void main() {
       );
 
       final painter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
-      final result1 =
-          painter.handleTouch(const Offset(4, 60), viewSize, holder);
+      final result1 = painter.handleTouch(const Offset(4, 60), viewSize, holder);
       expect(result1!.touchedBarGroupIndex, 0);
       expect(result1.touchedRodDataIndex, 0);
 
       // tap below the positive bar
-      final result11 =
-          painter.handleTouch(const Offset(4, 61.1), viewSize, holder);
+      final result11 = painter.handleTouch(const Offset(4, 61.1), viewSize, holder);
       expect(result11!.touchedBarGroupIndex, 0);
       expect(result11.touchedRodDataIndex, 0);
 
-      final result2 =
-          painter.handleTouch(const Offset(22, 60), viewSize, holder);
+      final result2 = painter.handleTouch(const Offset(22, 60), viewSize, holder);
       expect(result2!.touchedBarGroupIndex, 1);
       expect(result2.touchedRodDataIndex, 0);
 
-      final result22 =
-          painter.handleTouch(const Offset(22, 58.9), viewSize, holder);
+      final result22 = painter.handleTouch(const Offset(22, 58.9), viewSize, holder);
       expect(result22!.touchedBarGroupIndex, 1);
       expect(result22.touchedRodDataIndex, 0);
     });
@@ -3328,8 +3258,7 @@ void main() {
           Offset.zero & const Size(50, 50),
         );
 
-        final result1 =
-            painter.handleTouch(const Offset(4, 60), viewSize, holder);
+        final result1 = painter.handleTouch(const Offset(4, 60), viewSize, holder);
         expect(result1, null);
       },
     );
@@ -3392,8 +3321,7 @@ void main() {
           Offset.zero & const Size(50, 50),
         );
 
-        final result1 =
-            painter.handleTouch(const Offset(4, 30), viewSize, holder);
+        final result1 = painter.handleTouch(const Offset(4, 30), viewSize, holder);
         expect(result1!.touchedBarGroupIndex, 0);
         expect(result1.touchedRodDataIndex, 0);
       },
@@ -3401,9 +3329,7 @@ void main() {
   });
 
   group('drawExtraLines()', () {
-    test(
-        'should not draw lines when constructor is called with empty ExtraLinesData object',
-        () {
+    test('should not draw lines when constructor is called with empty ExtraLinesData object', () {
       const viewSize = Size(400, 400);
       final data = BarChartData(
         barGroups: [
@@ -3430,8 +3356,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
       final mockBuildContext = MockBuildContext();
       final mockCanvasWrapper = MockCanvasWrapper();
 
@@ -3454,8 +3379,7 @@ void main() {
       );
     });
 
-    test('should not draw lines when constructor is not passed extraLinesData',
-        () {
+    test('should not draw lines when constructor is not passed extraLinesData', () {
       const viewSize = Size(400, 400);
       final data = BarChartData(
         barGroups: [
@@ -3481,8 +3405,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
       final mockBuildContext = MockBuildContext();
       final mockCanvasWrapper = MockCanvasWrapper();
 
@@ -3542,23 +3465,20 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -3592,9 +3512,7 @@ void main() {
       Utils.changeInstance(utilsMainInstance);
     });
 
-    test(
-        'should not paint horizontal line if Y value is greater or less than Y axis',
-        () {
+    test('should not paint horizontal line if Y value is greater or less than Y axis', () {
       final utilsMainInstance = Utils();
       const viewSize = Size(400, 400);
 
@@ -3639,23 +3557,20 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -3738,23 +3653,20 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -3785,8 +3697,7 @@ void main() {
           'from': inv.positionalArguments[0] as Offset,
           'to': inv.positionalArguments[1] as Offset,
           'paint_color': (inv.positionalArguments[2] as Paint).color,
-          'paint_stroke_width':
-              (inv.positionalArguments[2] as Paint).strokeWidth,
+          'paint_stroke_width': (inv.positionalArguments[2] as Paint).strokeWidth,
         });
       });
 
@@ -3837,8 +3748,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
@@ -3875,18 +3785,16 @@ void main() {
     setUp(() {
       mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -3922,8 +3830,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -3989,8 +3896,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -4056,8 +3962,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -4110,8 +4015,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -4171,8 +4075,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -4234,8 +4137,7 @@ void main() {
       );
 
       final barChartPainter = BarChartPainter();
-      final holder =
-          PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<BarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvas = MockCanvas();
       final mockCanvasWrapper = MockCanvasWrapper();

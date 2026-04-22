@@ -11,11 +11,11 @@ class FlTransformationConfig {
     this.scaleEnabled = true,
     this.trackpadScrollCausesScale = false,
     this.transformationController,
-  })  : assert(minScale >= 1, 'minScale must be greater than or equal to 1'),
-        assert(
-          maxScale >= minScale,
-          'maxScale must be greater than or equal to minScale',
-        );
+  }) : assert(minScale >= 1, 'minScale must be greater than or equal to 1'),
+       assert(
+         maxScale >= minScale,
+         'maxScale must be greater than or equal to minScale',
+       );
 
   /// Determines what axis of the chart should be scaled.
   final FlScaleAxis scaleAxis;

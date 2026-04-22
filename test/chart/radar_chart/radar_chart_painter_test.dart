@@ -52,18 +52,16 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -118,23 +116,20 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final mockUtils = MockUtils();
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(MockData.textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(MockData.textStyle1);
       Utils.changeInstance(mockUtils);
 
       final mockContext = MockBuildContext();
 
       final drawCircleResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawCircleResults.add({
           'offset': inv.positionalArguments[0] as Offset,
           'radius': inv.positionalArguments[1] as double,
@@ -219,23 +214,20 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final mockUtils = MockUtils();
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(MockData.textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(MockData.textStyle1);
       Utils.changeInstance(mockUtils);
 
       final mockContext = MockBuildContext();
 
       final drawPathResult = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         drawPathResult.add({
           'path': inv.positionalArguments[0] as Path,
           'paint_color': (inv.positionalArguments[1] as Paint).color,
@@ -316,21 +308,18 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final mockUtils = MockUtils();
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(MockData.textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(MockData.textStyle1);
       Utils.changeInstance(mockUtils);
 
       final drawLineResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawLine(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawLine(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawLineResults.add({
           'offset_from': inv.positionalArguments[0] as Offset,
           'offset_to': inv.positionalArguments[1] as Offset,
@@ -414,8 +403,7 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -472,8 +460,7 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -484,8 +471,7 @@ void main() {
         (realInvocation) => realInvocation.positionalArguments[1] as TextStyle,
       );
       when(mockUtils.degrees(captureAny)).thenAnswer((inv) {
-        return utilsMainInstance
-            .degrees(inv.positionalArguments.first as double);
+        return utilsMainInstance.degrees(inv.positionalArguments.first as double);
       });
       Utils.changeInstance(mockUtils);
 
@@ -503,15 +489,10 @@ void main() {
       ).thenAnswer((inv) {
         (inv.namedArguments[const Symbol('drawCallback')] as void Function())();
       });
-      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         results.add({
-          'tp_text':
-              ((inv.positionalArguments[0] as TextPainter).text as TextSpan?)!
-                  .text,
-          'tp_style':
-              ((inv.positionalArguments[0] as TextPainter).text as TextSpan?)!
-                  .style,
+          'tp_text': ((inv.positionalArguments[0] as TextPainter).text as TextSpan?)!.text,
+          'tp_style': ((inv.positionalArguments[0] as TextPainter).text as TextSpan?)!.style,
         });
       });
 
@@ -588,8 +569,7 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -602,8 +582,7 @@ void main() {
       Utils.changeInstance(mockUtils);
 
       final drawCircleResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawCircleResults.add({
           'offset': inv.positionalArguments[0] as Offset,
           'radius': inv.positionalArguments[1] as double,
@@ -612,8 +591,7 @@ void main() {
       });
 
       final drawPathResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         drawPathResults.add({
           'path': inv.positionalArguments[0] as Path,
           'paint_color': (inv.positionalArguments[1] as Paint).color,
@@ -768,19 +746,16 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final mockUtils = MockUtils();
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(MockData.textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(MockData.textStyle1);
       when(mockUtils.degrees(captureAny)).thenAnswer((inv) {
-        return utilsMainInstance
-            .degrees(inv.positionalArguments.first as double);
+        return utilsMainInstance.degrees(inv.positionalArguments.first as double);
       });
       Utils.changeInstance(mockUtils);
 
@@ -802,11 +777,9 @@ void main() {
         });
         (inv.namedArguments[const Symbol('drawCallback')] as void Function())();
       });
-      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawTextResults.add({
-          'text':
-              (inv.positionalArguments[0] as TextPainter).text?.toPlainText(),
+          'text': (inv.positionalArguments[0] as TextPainter).text?.toPlainText(),
           'angle': inv.positionalArguments[2] as double,
         });
       });
@@ -860,19 +833,16 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final mockUtils = MockUtils();
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(MockData.textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenReturn(MockData.textStyle1);
       when(mockUtils.degrees(captureAny)).thenAnswer((inv) {
-        return utilsMainInstance
-            .degrees(inv.positionalArguments.first as double);
+        return utilsMainInstance.degrees(inv.positionalArguments.first as double);
       });
       Utils.changeInstance(mockUtils);
 
@@ -894,11 +864,9 @@ void main() {
         });
         (inv.namedArguments[const Symbol('drawCallback')] as void Function())();
       });
-      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawText(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawTextResults.add({
-          'text':
-              (inv.positionalArguments[0] as TextPainter).text?.toPlainText(),
+          'text': (inv.positionalArguments[0] as TextPainter).text?.toPlainText(),
           'angle': inv.positionalArguments[2] as double,
         });
       });
@@ -948,8 +916,7 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -962,8 +929,7 @@ void main() {
       Utils.changeInstance(mockUtils);
 
       final drawCircleResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawCircle(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         drawCircleResults.add({
           'offset': inv.positionalArguments[0] as Offset,
           'radius': inv.positionalArguments[1] as double,
@@ -972,8 +938,7 @@ void main() {
       });
 
       final drawPathResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         drawPathResults.add({
           'path': inv.positionalArguments[0] as Path,
           'paint_color': (inv.positionalArguments[1] as Paint).color,
@@ -1173,11 +1138,9 @@ void main() {
       );
 
       final radarChartPainter = RadarChartPainter();
-      final holder =
-          PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<RadarChartData>(data, data, TextScaler.noScaling);
 
-      final result =
-          radarChartPainter.calculateDataSetsPosition(viewSize, holder);
+      final result = radarChartPainter.calculateDataSetsPosition(viewSize, holder);
       expect(result.length, 3);
       expect(
         result[0].entriesOffset,

@@ -11,10 +11,11 @@ import 'package:flutter/material.dart';
 /// The [chartVirtualRect] is the virtual chart virtual rect to be used when
 /// laying out the chart's content. It is transformed based on users'
 /// interactions like scaling and panning.
-typedef ChartBuilder = Widget Function(
-  BuildContext context,
-  Rect? chartVirtualRect,
-);
+typedef ChartBuilder =
+    Widget Function(
+      BuildContext context,
+      Rect? chartVirtualRect,
+    );
 
 /// A scaffold to show a scalable axis-based chart
 ///
@@ -55,8 +56,7 @@ class AxisChartScaffoldWidget extends StatefulWidget {
   final FlTransformationConfig transformationConfig;
 
   @override
-  State<AxisChartScaffoldWidget> createState() =>
-      _AxisChartScaffoldWidgetState();
+  State<AxisChartScaffoldWidget> createState() => _AxisChartScaffoldWidgetState();
 }
 
 class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
@@ -64,8 +64,7 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
 
   final GlobalKey _chartKey = GlobalKey();
 
-  FlTransformationConfig get _transformationConfig =>
-      widget.transformationConfig;
+  FlTransformationConfig get _transformationConfig => widget.transformationConfig;
 
   bool get _canScaleHorizontally =>
       _transformationConfig.scaleAxis == FlScaleAxis.horizontal ||
@@ -79,8 +78,7 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
   void initState() {
     super.initState();
     _transformationController =
-        _transformationConfig.transformationController ??
-            TransformationController();
+        _transformationConfig.transformationController ?? TransformationController();
     _transformationController.addListener(_transformationControllerListener);
   }
 
@@ -99,31 +97,24 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
 
     switch ((
       oldWidget.transformationConfig.transformationController,
-      widget.transformationConfig.transformationController
+      widget.transformationConfig.transformationController,
     )) {
       case (null, null):
         break;
       case (null, TransformationController()):
         _transformationController.dispose();
-        _transformationController =
-            widget.transformationConfig.transformationController!;
-        _transformationController
-            .addListener(_transformationControllerListener);
+        _transformationController = widget.transformationConfig.transformationController!;
+        _transformationController.addListener(_transformationControllerListener);
       case (TransformationController(), null):
-        _transformationController
-            .removeListener(_transformationControllerListener);
+        _transformationController.removeListener(_transformationControllerListener);
         _transformationController = TransformationController();
-        _transformationController
-            .addListener(_transformationControllerListener);
+        _transformationController.addListener(_transformationControllerListener);
       case (TransformationController(), TransformationController()):
         if (oldWidget.transformationConfig.transformationController !=
             widget.transformationConfig.transformationController) {
-          _transformationController
-              .removeListener(_transformationControllerListener);
-          _transformationController =
-              widget.transformationConfig.transformationController!;
-          _transformationController
-              .addListener(_transformationControllerListener);
+          _transformationController.removeListener(_transformationControllerListener);
+          _transformationController = widget.transformationConfig.transformationController!;
+          _transformationController.addListener(_transformationControllerListener);
         }
     }
   }
@@ -201,14 +192,10 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
 
   List<Widget> _stackWidgets(BoxConstraints constraints) {
     final margin = widget.data.titlesData.allSidesPadding;
-    final borderData = widget.data.borderData.isVisible()
-        ? widget.data.borderData.border
-        : null;
+    final borderData = widget.data.borderData.isVisible() ? widget.data.borderData.border : null;
 
-    final borderWidth =
-        borderData == null ? 0 : borderData.dimensions.horizontal;
-    final borderHeight =
-        borderData == null ? 0 : borderData.dimensions.vertical;
+    final borderWidth = borderData == null ? 0 : borderData.dimensions.horizontal;
+    final borderHeight = borderData == null ? 0 : borderData.dimensions.vertical;
 
     final rect = Rect.fromLTRB(
       0,
@@ -232,20 +219,19 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
     final child = switch (_transformationConfig.scaleAxis) {
       FlScaleAxis.none => chart,
       FlScaleAxis() => CustomInteractiveViewer(
-          transformationController: _transformationController,
-          clipBehavior: Clip.none,
-          trackpadScrollCausesScale:
-              _transformationConfig.trackpadScrollCausesScale,
-          maxScale: _transformationConfig.maxScale,
-          minScale: _transformationConfig.minScale,
-          panEnabled: _transformationConfig.panEnabled,
-          scaleEnabled: _transformationConfig.scaleEnabled,
-          child: SizedBox(
-            width: rect.width,
-            height: rect.height,
-            child: chart,
-          ),
+        transformationController: _transformationController,
+        clipBehavior: Clip.none,
+        trackpadScrollCausesScale: _transformationConfig.trackpadScrollCausesScale,
+        maxScale: _transformationConfig.maxScale,
+        minScale: _transformationConfig.minScale,
+        panEnabled: _transformationConfig.panEnabled,
+        scaleEnabled: _transformationConfig.scaleEnabled,
+        child: SizedBox(
+          width: rect.width,
+          height: rect.height,
+          child: chart,
         ),
+      ),
     };
 
     final widgets = <Widget>[
@@ -305,7 +291,42 @@ class _AxisChartScaffoldWidgetState extends State<AxisChartScaffoldWidget> {
         ),
       );
     }
+
+    _addOnTopAxisNames(widgets, margin);
+
     return widgets;
+  }
+
+  void _addOnTopAxisNames(List<Widget> widgets, EdgeInsets margin) {
+    final leftTitles = widget.data.titlesData.leftTitles;
+    if (leftTitles.axisNameOnTop && leftTitles.axisNameWidget != null) {
+      widgets.add(
+        Positioned(
+          top: margin.top - leftTitles.axisNameSize,
+          left: 0,
+          child: SizedBox(
+            width: margin.left,
+            height: leftTitles.axisNameSize,
+            child: Center(child: leftTitles.axisNameWidget),
+          ),
+        ),
+      );
+    }
+
+    final rightTitles = widget.data.titlesData.rightTitles;
+    if (rightTitles.axisNameOnTop && rightTitles.axisNameWidget != null) {
+      widgets.add(
+        Positioned(
+          top: margin.top - rightTitles.axisNameSize,
+          right: 0,
+          child: SizedBox(
+            width: margin.right,
+            height: rightTitles.axisNameSize,
+            child: Center(child: rightTitles.axisNameWidget),
+          ),
+        ),
+      );
+    }
   }
 
   @override

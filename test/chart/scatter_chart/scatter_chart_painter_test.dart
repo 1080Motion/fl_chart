@@ -36,18 +36,16 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
-      when(mockUtils.calculateRotationOffset(any, any))
-          .thenAnswer((realInvocation) => Offset.zero);
-      when(mockUtils.convertRadiusToSigma(any))
-          .thenAnswer((realInvocation) => 4.0);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.normalizeBorderRadius(any, any))
-          .thenAnswer((realInvocation) => BorderRadius.zero);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.calculateRotationOffset(any, any)).thenAnswer((realInvocation) => Offset.zero);
+      when(mockUtils.convertRadiusToSigma(any)).thenAnswer((realInvocation) => 4.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.normalizeBorderRadius(any, any),
+      ).thenAnswer((realInvocation) => BorderRadius.zero);
       when(mockUtils.normalizeBorderSide(any, any)).thenAnswer(
         (realInvocation) => const BorderSide(color: MockData.color0),
       );
@@ -193,8 +191,7 @@ void main() {
         clipData: const FlClipData.all(),
         scatterLabelSettings: ScatterLabelSettings(
           showLabel: true,
-          getLabelTextStyleFunction: (index, spot) =>
-              const TextStyle(fontSize: 12),
+          getLabelTextStyleFunction: (index, spot) => const TextStyle(fontSize: 12),
           getLabelFunction: (index, spot) {
             if (index == 5) {
               return '';
@@ -218,8 +215,9 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(const TextStyle(color: Color(0x00ffffff)));
+      when(
+        mockUtils.getThemeAwareTextStyle(any, any),
+      ).thenReturn(const TextStyle(color: Color(0x00ffffff)));
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
 
       scatterChartPainter.drawSpots(
@@ -299,8 +297,9 @@ void main() {
       final mockBuildContext = MockBuildContext();
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(const TextStyle(color: Color(0x00ffffff)));
+      when(
+        mockUtils.getThemeAwareTextStyle(any, any),
+      ).thenReturn(const TextStyle(color: Color(0x00ffffff)));
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockCanvasWrapper.size).thenReturn(viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
@@ -354,8 +353,9 @@ void main() {
       final mockBuildContext = MockBuildContext();
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(const TextStyle(color: Color(0x00ffffff)));
+      when(
+        mockUtils.getThemeAwareTextStyle(any, any),
+      ).thenReturn(const TextStyle(color: Color(0x00ffffff)));
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockCanvasWrapper.size).thenReturn(viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
@@ -450,8 +450,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -557,8 +556,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -664,8 +662,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -895,8 +892,7 @@ void main() {
       );
 
       final scatterChartPainter = ScatterChartPainter();
-      final holder =
-          PaintHolder<ScatterChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<ScatterChartData>(data, data, TextScaler.noScaling);
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());

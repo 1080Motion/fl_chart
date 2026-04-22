@@ -152,9 +152,8 @@ class LineChartSample6 extends StatelessWidget {
                     .toList();
               },
               touchSpotThreshold: 12,
-              distanceCalculator:
-                  (Offset touchPoint, Offset spotPixelCoordinates) =>
-                      (touchPoint - spotPixelCoordinates).distance,
+              distanceCalculator: (Offset touchPoint, Offset spotPixelCoordinates) =>
+                  (touchPoint - spotPixelCoordinates).distance,
             ),
             lineBarsData: [
               LineChartBarData(

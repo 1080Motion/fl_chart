@@ -25,7 +25,7 @@ void main() {
             MockData.flSpot1,
             MockData.flSpot2,
             MockData.flSpot3,
-          ]
+          ],
         ],
       );
     });
@@ -46,7 +46,7 @@ void main() {
             MockData.flSpot1,
             MockData.flSpot2,
             MockData.flSpot3,
-          ]
+          ],
         ],
       );
     });
@@ -72,7 +72,7 @@ void main() {
             MockData.flSpot1,
             MockData.flSpot2,
             MockData.flSpot3,
-          ]
+          ],
         ],
       );
     });
@@ -105,7 +105,7 @@ void main() {
           ],
           [
             MockData.flSpot1,
-          ]
+          ],
         ],
       );
     });

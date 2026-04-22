@@ -15,8 +15,8 @@ abstract class RenderBaseChart<R extends BaseTouchResponse> extends RenderBox
     FlTouchData<R>? touchData,
     BuildContext context, {
     required bool canBeScaled,
-  })  : _canBeScaled = canBeScaled,
-        _buildContext = context {
+  }) : _canBeScaled = canBeScaled,
+       _buildContext = context {
     updateBaseTouchData(touchData);
     initGestureRecognizers();
   }
@@ -95,8 +95,7 @@ abstract class RenderBaseChart<R extends BaseTouchResponse> extends RenderBox
         _notifyTouchEvent(FlTapUpEvent(tapUpDetails));
       };
 
-    longPressGestureRecognizer =
-        LongPressGestureRecognizer(duration: _longPressDuration);
+    longPressGestureRecognizer = LongPressGestureRecognizer(duration: _longPressDuration);
     longPressGestureRecognizer
       ..onLongPressStart = (longPressStartDetails) {
         _notifyTouchEvent(FlLongPressStart(longPressStartDetails));

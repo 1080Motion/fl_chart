@@ -25,13 +25,13 @@ class LineChartLeaf extends LeafRenderObjectWidget {
 
   @override
   RenderLineChart createRenderObject(BuildContext context) => RenderLineChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-        chartVirtualRect,
-        canBeScaled: canBeScaled,
-      );
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+    chartVirtualRect,
+    canBeScaled: canBeScaled,
+  );
 
   @override
   void updateRenderObject(BuildContext context, RenderLineChart renderObject) {
@@ -55,15 +55,15 @@ class RenderLineChart extends RenderBaseChart<LineTouchResponse> {
     TextScaler textScaler,
     Rect? chartVirtualRect, {
     required bool canBeScaled,
-  })  : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        _chartVirtualRect = chartVirtualRect,
-        super(
-          targetData.lineTouchData,
-          context,
-          canBeScaled: canBeScaled,
-        );
+  }) : _data = data,
+       _targetData = targetData,
+       _textScaler = textScaler,
+       _chartVirtualRect = chartVirtualRect,
+       super(
+         targetData.lineTouchData,
+         context,
+         canBeScaled: canBeScaled,
+       );
 
   LineChartData get data => _data;
   LineChartData _data;

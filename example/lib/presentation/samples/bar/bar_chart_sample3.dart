@@ -83,8 +83,7 @@ class BarChartSample3State extends State<BarChartSample3> {
         end: Alignment.topCenter,
       );
 
-  List<BarChartGroupData> get barGroups =>
-      [8, 10, 14, 15, 13, 10, 16].asMap().entries.map((entry) {
+  List<BarChartGroupData> get barGroups => [8, 10, 14, 15, 13, 10, 16].asMap().entries.map((entry) {
         int i = entry.key;
         int value = entry.value;
         final isTouched = i == touchedGroupIndex;

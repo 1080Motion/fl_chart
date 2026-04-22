@@ -109,8 +109,7 @@ class _AppVersionRow extends StatelessWidget {
                         TextSpan(
                           text: '\nfl_chart: ',
                           recognizer: TapGestureRecognizer()
-                            ..onTap = BlocProvider.of<AppCubit>(context)
-                                .onVersionClicked,
+                            ..onTap = BlocProvider.of<AppCubit>(context).onVersionClicked,
                         ),
                         TextSpan(
                           text: 'v${state.usingFlChartVersion}',
@@ -118,8 +117,7 @@ class _AppVersionRow extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                           recognizer: TapGestureRecognizer()
-                            ..onTap = BlocProvider.of<AppCubit>(context)
-                                .onVersionClicked,
+                            ..onTap = BlocProvider.of<AppCubit>(context).onVersionClicked,
                         ),
                       ]
                     ],

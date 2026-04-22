@@ -50,33 +50,36 @@ class ScatterChartData extends AxisChartData with EquatableMixin {
     super.backgroundColor,
     ScatterLabelSettings? scatterLabelSettings,
     super.rotationQuarterTurns,
-    this.errorIndicatorData =
-        const FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput>(),
-  })  : scatterSpots = scatterSpots ?? const [],
-        scatterTouchData = scatterTouchData ?? ScatterTouchData(),
-        showingTooltipIndicators = showingTooltipIndicators ?? const [],
-        scatterLabelSettings = scatterLabelSettings ?? ScatterLabelSettings(),
-        super(
-          gridData: gridData ?? const FlGridData(),
-          titlesData: titlesData ?? const FlTitlesData(),
-          clipData: clipData ?? const FlClipData.none(),
-          minX: minX ??
-              ScatterChartHelper.calculateMaxAxisValues(
-                scatterSpots ?? const [],
-              ).$1,
-          maxX: maxX ??
-              ScatterChartHelper.calculateMaxAxisValues(
-                scatterSpots ?? const [],
-              ).$2,
-          minY: minY ??
-              ScatterChartHelper.calculateMaxAxisValues(
-                scatterSpots ?? const [],
-              ).$3,
-          maxY: maxY ??
-              ScatterChartHelper.calculateMaxAxisValues(
-                scatterSpots ?? const [],
-              ).$4,
-        );
+    this.errorIndicatorData = const FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput>(),
+  }) : scatterSpots = scatterSpots ?? const [],
+       scatterTouchData = scatterTouchData ?? ScatterTouchData(),
+       showingTooltipIndicators = showingTooltipIndicators ?? const [],
+       scatterLabelSettings = scatterLabelSettings ?? ScatterLabelSettings(),
+       super(
+         gridData: gridData ?? const FlGridData(),
+         titlesData: titlesData ?? const FlTitlesData(),
+         clipData: clipData ?? const FlClipData.none(),
+         minX:
+             minX ??
+             ScatterChartHelper.calculateMaxAxisValues(
+               scatterSpots ?? const [],
+             ).$1,
+         maxX:
+             maxX ??
+             ScatterChartHelper.calculateMaxAxisValues(
+               scatterSpots ?? const [],
+             ).$2,
+         minY:
+             minY ??
+             ScatterChartHelper.calculateMaxAxisValues(
+               scatterSpots ?? const [],
+             ).$3,
+         maxY:
+             maxY ??
+             ScatterChartHelper.calculateMaxAxisValues(
+               scatterSpots ?? const [],
+             ).$4,
+       );
   final List<ScatterSpot> scatterSpots;
   final ScatterTouchData scatterTouchData;
 
@@ -91,8 +94,7 @@ class ScatterChartData extends AxisChartData with EquatableMixin {
   final ScatterLabelSettings scatterLabelSettings;
 
   /// Holds data for showing error indicators on the [scatterSpots]
-  final FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput>
-      errorIndicatorData;
+  final FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput> errorIndicatorData;
 
   /// Lerps a [ScatterChartData] based on [t] value, check [Tween.lerp].
   @override
@@ -153,53 +155,50 @@ class ScatterChartData extends AxisChartData with EquatableMixin {
     Color? backgroundColor,
     ScatterLabelSettings? scatterLabelSettings,
     int? rotationQuarterTurns,
-    FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput>?
-        errorIndicatorData,
-  }) =>
-      ScatterChartData(
-        scatterSpots: scatterSpots ?? this.scatterSpots,
-        titlesData: titlesData ?? this.titlesData,
-        scatterTouchData: scatterTouchData ?? this.scatterTouchData,
-        showingTooltipIndicators:
-            showingTooltipIndicators ?? this.showingTooltipIndicators,
-        gridData: gridData ?? this.gridData,
-        borderData: borderData ?? this.borderData,
-        minX: minX ?? this.minX,
-        maxX: maxX ?? this.maxX,
-        baselineX: baselineX ?? this.baselineX,
-        minY: minY ?? this.minY,
-        maxY: maxY ?? this.maxY,
-        baselineY: baselineY ?? this.baselineY,
-        clipData: clipData ?? this.clipData,
-        backgroundColor: backgroundColor ?? this.backgroundColor,
-        scatterLabelSettings: scatterLabelSettings ?? this.scatterLabelSettings,
-        rotationQuarterTurns: rotationQuarterTurns ?? this.rotationQuarterTurns,
-        errorIndicatorData: errorIndicatorData ?? this.errorIndicatorData,
-      );
+    FlErrorIndicatorData<ScatterChartSpotErrorRangeCallbackInput>? errorIndicatorData,
+  }) => ScatterChartData(
+    scatterSpots: scatterSpots ?? this.scatterSpots,
+    titlesData: titlesData ?? this.titlesData,
+    scatterTouchData: scatterTouchData ?? this.scatterTouchData,
+    showingTooltipIndicators: showingTooltipIndicators ?? this.showingTooltipIndicators,
+    gridData: gridData ?? this.gridData,
+    borderData: borderData ?? this.borderData,
+    minX: minX ?? this.minX,
+    maxX: maxX ?? this.maxX,
+    baselineX: baselineX ?? this.baselineX,
+    minY: minY ?? this.minY,
+    maxY: maxY ?? this.maxY,
+    baselineY: baselineY ?? this.baselineY,
+    clipData: clipData ?? this.clipData,
+    backgroundColor: backgroundColor ?? this.backgroundColor,
+    scatterLabelSettings: scatterLabelSettings ?? this.scatterLabelSettings,
+    rotationQuarterTurns: rotationQuarterTurns ?? this.rotationQuarterTurns,
+    errorIndicatorData: errorIndicatorData ?? this.errorIndicatorData,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        scatterSpots,
-        scatterTouchData,
-        showingTooltipIndicators,
-        gridData,
-        titlesData,
-        rangeAnnotations,
-        minX,
-        maxX,
-        baselineX,
-        minY,
-        maxY,
-        baselineY,
-        rangeAnnotations,
-        scatterLabelSettings,
-        clipData,
-        backgroundColor,
-        borderData,
-        rotationQuarterTurns,
-        errorIndicatorData,
-      ];
+    scatterSpots,
+    scatterTouchData,
+    showingTooltipIndicators,
+    gridData,
+    titlesData,
+    rangeAnnotations,
+    minX,
+    maxX,
+    baselineX,
+    minY,
+    maxY,
+    baselineY,
+    rangeAnnotations,
+    scatterLabelSettings,
+    clipData,
+    backgroundColor,
+    borderData,
+    rotationQuarterTurns,
+    errorIndicatorData,
+  ];
 }
 
 /// Defines information about a spot in the [ScatterChart]
@@ -215,14 +214,14 @@ class ScatterSpot extends FlSpot with EquatableMixin {
     FlDotPainter? dotPainter,
     super.xError,
     super.yError,
-  })  : show = show ?? true,
-        renderPriority = renderPriority ?? 0,
-        dotPainter = dotPainter ??
-            FlDotCirclePainter(
-              radius: 6,
-              color:
-                  Colors.primaries[((x * y) % Colors.primaries.length).toInt()],
-            );
+  }) : show = show ?? true,
+       renderPriority = renderPriority ?? 0,
+       dotPainter =
+           dotPainter ??
+           FlDotCirclePainter(
+             radius: 6,
+             color: Colors.primaries[((x * y) % Colors.primaries.length).toInt()],
+           );
 
   /// Determines show or hide the spot.
   final bool show;
@@ -252,41 +251,38 @@ class ScatterSpot extends FlSpot with EquatableMixin {
     FlDotPainter? dotPainter,
     FlErrorRange? xError,
     FlErrorRange? yError,
-  }) =>
-      ScatterSpot(
-        x ?? this.x,
-        y ?? this.y,
-        show: show ?? this.show,
-        renderPriority: renderPriority ?? this.renderPriority,
-        dotPainter: dotPainter ?? this.dotPainter,
-        xError: xError ?? this.xError,
-        yError: yError ?? this.yError,
-      );
+  }) => ScatterSpot(
+    x ?? this.x,
+    y ?? this.y,
+    show: show ?? this.show,
+    renderPriority: renderPriority ?? this.renderPriority,
+    dotPainter: dotPainter ?? this.dotPainter,
+    xError: xError ?? this.xError,
+    yError: yError ?? this.yError,
+  );
 
   /// Lerps a [ScatterSpot] based on [t] value, check [Tween.lerp].
-  static ScatterSpot lerp(ScatterSpot a, ScatterSpot b, double t) =>
-      ScatterSpot(
-        lerpDouble(a.x, b.x, t)!,
-        lerpDouble(a.y, b.y, t)!,
-        show: b.show,
-        renderPriority: a.renderPriority +
-            (t * (b.renderPriority - a.renderPriority)).round(),
-        dotPainter: a.dotPainter.lerp(a.dotPainter, b.dotPainter, t),
-        xError: FlErrorRange.lerp(a.xError, b.xError, t),
-        yError: FlErrorRange.lerp(a.yError, b.yError, t),
-      );
+  static ScatterSpot lerp(ScatterSpot a, ScatterSpot b, double t) => ScatterSpot(
+    lerpDouble(a.x, b.x, t)!,
+    lerpDouble(a.y, b.y, t)!,
+    show: b.show,
+    renderPriority: a.renderPriority + (t * (b.renderPriority - a.renderPriority)).round(),
+    dotPainter: a.dotPainter.lerp(a.dotPainter, b.dotPainter, t),
+    xError: FlErrorRange.lerp(a.xError, b.xError, t),
+    yError: FlErrorRange.lerp(a.yError, b.yError, t),
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        x,
-        y,
-        show,
-        renderPriority,
-        dotPainter,
-        xError,
-        yError,
-      ];
+    x,
+    y,
+    show,
+    renderPriority,
+    dotPainter,
+    xError,
+    yError,
+  ];
 }
 
 /// Holds data to handle touch events, and touch responses in the [ScatterChart].
@@ -294,8 +290,7 @@ class ScatterSpot extends FlSpot with EquatableMixin {
 /// There is a touch flow, explained [here](https://github.com/imaNNeo/fl_chart/blob/main/repo_files/documentations/handle_touches.md)
 /// in a simple way, each chart's renderer captures the touch events, and passes the pointerEvent
 /// to the painter, and gets touched spot, and wraps it into a concrete [ScatterTouchResponse].
-class ScatterTouchData extends FlTouchData<ScatterTouchResponse>
-    with EquatableMixin {
+class ScatterTouchData extends FlTouchData<ScatterTouchResponse> with EquatableMixin {
   /// You can disable or enable the touch system using [enabled] flag,
   ///
   /// [touchCallback] notifies you about the happened touch/pointer events.
@@ -319,15 +314,15 @@ class ScatterTouchData extends FlTouchData<ScatterTouchResponse>
     ScatterTouchTooltipData? touchTooltipData,
     double? touchSpotThreshold,
     bool? handleBuiltInTouches,
-  })  : touchTooltipData = touchTooltipData ?? const ScatterTouchTooltipData(),
-        touchSpotThreshold = touchSpotThreshold ?? 0,
-        handleBuiltInTouches = handleBuiltInTouches ?? true,
-        super(
-          enabled ?? true,
-          touchCallback,
-          mouseCursorResolver,
-          longPressDuration,
-        );
+  }) : touchTooltipData = touchTooltipData ?? const ScatterTouchTooltipData(),
+       touchSpotThreshold = touchSpotThreshold ?? 0,
+       handleBuiltInTouches = handleBuiltInTouches ?? true,
+       super(
+         enabled ?? true,
+         touchCallback,
+         mouseCursorResolver,
+         longPressDuration,
+       );
 
   /// show a tooltip on touched spots
   final ScatterTouchTooltipData touchTooltipData;
@@ -349,28 +344,27 @@ class ScatterTouchData extends FlTouchData<ScatterTouchResponse>
     ScatterTouchTooltipData? touchTooltipData,
     double? touchSpotThreshold,
     bool? handleBuiltInTouches,
-  }) =>
-      ScatterTouchData(
-        enabled: enabled ?? this.enabled,
-        touchCallback: touchCallback ?? this.touchCallback,
-        mouseCursorResolver: mouseCursorResolver ?? this.mouseCursorResolver,
-        longPressDuration: longPressDuration ?? this.longPressDuration,
-        touchTooltipData: touchTooltipData ?? this.touchTooltipData,
-        handleBuiltInTouches: handleBuiltInTouches ?? this.handleBuiltInTouches,
-        touchSpotThreshold: touchSpotThreshold ?? this.touchSpotThreshold,
-      );
+  }) => ScatterTouchData(
+    enabled: enabled ?? this.enabled,
+    touchCallback: touchCallback ?? this.touchCallback,
+    mouseCursorResolver: mouseCursorResolver ?? this.mouseCursorResolver,
+    longPressDuration: longPressDuration ?? this.longPressDuration,
+    touchTooltipData: touchTooltipData ?? this.touchTooltipData,
+    handleBuiltInTouches: handleBuiltInTouches ?? this.handleBuiltInTouches,
+    touchSpotThreshold: touchSpotThreshold ?? this.touchSpotThreshold,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        enabled,
-        touchCallback,
-        mouseCursorResolver,
-        longPressDuration,
-        touchTooltipData,
-        touchSpotThreshold,
-        handleBuiltInTouches,
-      ];
+    enabled,
+    touchCallback,
+    mouseCursorResolver,
+    longPressDuration,
+    touchTooltipData,
+    touchSpotThreshold,
+    handleBuiltInTouches,
+  ];
 }
 
 /// [ScatterChart]'s touch callback.
@@ -400,12 +394,11 @@ class ScatterTouchResponse extends AxisBaseTouchResponse {
     Offset? touchLocation,
     Offset? touchChartCoordinate,
     ScatterTouchedSpot? touchedSpot,
-  }) =>
-      ScatterTouchResponse(
-        touchLocation: touchLocation ?? this.touchLocation,
-        touchChartCoordinate: touchChartCoordinate ?? this.touchChartCoordinate,
-        touchedSpot: touchedSpot ?? this.touchedSpot,
-      );
+  }) => ScatterTouchResponse(
+    touchLocation: touchLocation ?? this.touchLocation,
+    touchChartCoordinate: touchChartCoordinate ?? this.touchChartCoordinate,
+    touchedSpot: touchedSpot ?? this.touchedSpot,
+  );
 }
 
 /// Holds the touched spot data
@@ -423,17 +416,16 @@ class ScatterTouchedSpot with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        spot,
-        spotIndex,
-      ];
+    spot,
+    spotIndex,
+  ];
 
   /// Copies current [ScatterTouchedSpot] to a new [ScatterTouchedSpot],
   /// and replaces provided values.
   ScatterTouchedSpot copyWith({
     ScatterSpot? spot,
     int? spotIndex,
-  }) =>
-      ScatterTouchedSpot(spot ?? this.spot, spotIndex ?? this.spotIndex);
+  }) => ScatterTouchedSpot(spot ?? this.spot, spotIndex ?? this.spotIndex);
 }
 
 /// Holds representation data for showing tooltip popup on top of spots.
@@ -462,27 +454,24 @@ class ScatterTouchTooltipData with EquatableMixin {
     double? rotateAngle,
     BorderSide? tooltipBorder,
     GetScatterTooltipColor? getTooltipColor,
-  })  : _tooltipBorderRadius = tooltipBorderRadius,
-        tooltipPadding = tooltipPadding ??
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        tooltipHorizontalAlignment =
-            tooltipHorizontalAlignment ?? FLHorizontalAlignment.center,
-        tooltipHorizontalOffset = tooltipHorizontalOffset ?? 0,
-        maxContentWidth = maxContentWidth ?? 120,
-        getTooltipItems = getTooltipItems ?? defaultScatterTooltipItem,
-        fitInsideHorizontally = fitInsideHorizontally ?? false,
-        fitInsideVertically = fitInsideVertically ?? false,
-        rotateAngle = rotateAngle ?? 0.0,
-        tooltipBorder = tooltipBorder ?? BorderSide.none,
-        getTooltipColor = getTooltipColor ?? defaultScatterTooltipColor,
-        super();
+  }) : _tooltipBorderRadius = tooltipBorderRadius,
+       tooltipPadding = tooltipPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+       tooltipHorizontalAlignment = tooltipHorizontalAlignment ?? FLHorizontalAlignment.center,
+       tooltipHorizontalOffset = tooltipHorizontalOffset ?? 0,
+       maxContentWidth = maxContentWidth ?? 120,
+       getTooltipItems = getTooltipItems ?? defaultScatterTooltipItem,
+       fitInsideHorizontally = fitInsideHorizontally ?? false,
+       fitInsideVertically = fitInsideVertically ?? false,
+       rotateAngle = rotateAngle ?? 0.0,
+       tooltipBorder = tooltipBorder ?? BorderSide.none,
+       getTooltipColor = getTooltipColor ?? defaultScatterTooltipColor,
+       super();
 
   /// Sets a rounded radius for the tooltip.
   final BorderRadius? _tooltipBorderRadius;
 
   /// Sets a rounded radius for the tooltip.
-  BorderRadius get tooltipBorderRadius =>
-      _tooltipBorderRadius ?? BorderRadius.circular(4);
+  BorderRadius get tooltipBorderRadius => _tooltipBorderRadius ?? BorderRadius.circular(4);
 
   /// Applies a padding for showing contents inside the tooltip.
   final EdgeInsets tooltipPadding;
@@ -517,18 +506,18 @@ class ScatterTouchTooltipData with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        _tooltipBorderRadius,
-        tooltipPadding,
-        tooltipHorizontalAlignment,
-        tooltipHorizontalOffset,
-        maxContentWidth,
-        getTooltipItems,
-        fitInsideHorizontally,
-        fitInsideVertically,
-        rotateAngle,
-        tooltipBorder,
-        getTooltipColor,
-      ];
+    _tooltipBorderRadius,
+    tooltipPadding,
+    tooltipHorizontalAlignment,
+    tooltipHorizontalOffset,
+    maxContentWidth,
+    getTooltipItems,
+    fitInsideHorizontally,
+    fitInsideVertically,
+    rotateAngle,
+    tooltipBorder,
+    getTooltipColor,
+  ];
 
   /// Copies current [ScatterTouchTooltipData] to a new [ScatterTouchTooltipData],
   /// and replaces provided values.
@@ -543,22 +532,18 @@ class ScatterTouchTooltipData with EquatableMixin {
     double? rotateAngle,
     BorderSide? tooltipBorder,
     GetScatterTooltipColor? getTooltipColor,
-  }) =>
-      ScatterTouchTooltipData(
-        tooltipPadding: tooltipPadding ?? this.tooltipPadding,
-        tooltipHorizontalAlignment:
-            tooltipHorizontalAlignment ?? this.tooltipHorizontalAlignment,
-        tooltipHorizontalOffset:
-            tooltipHorizontalOffset ?? this.tooltipHorizontalOffset,
-        maxContentWidth: maxContentWidth ?? this.maxContentWidth,
-        getTooltipItems: getTooltipItems ?? this.getTooltipItems,
-        fitInsideHorizontally:
-            fitInsideHorizontally ?? this.fitInsideHorizontally,
-        fitInsideVertically: fitInsideVertically ?? this.fitInsideVertically,
-        rotateAngle: rotateAngle ?? this.rotateAngle,
-        tooltipBorder: tooltipBorder ?? this.tooltipBorder,
-        getTooltipColor: getTooltipColor ?? this.getTooltipColor,
-      );
+  }) => ScatterTouchTooltipData(
+    tooltipPadding: tooltipPadding ?? this.tooltipPadding,
+    tooltipHorizontalAlignment: tooltipHorizontalAlignment ?? this.tooltipHorizontalAlignment,
+    tooltipHorizontalOffset: tooltipHorizontalOffset ?? this.tooltipHorizontalOffset,
+    maxContentWidth: maxContentWidth ?? this.maxContentWidth,
+    getTooltipItems: getTooltipItems ?? this.getTooltipItems,
+    fitInsideHorizontally: fitInsideHorizontally ?? this.fitInsideHorizontally,
+    fitInsideVertically: fitInsideVertically ?? this.fitInsideVertically,
+    rotateAngle: rotateAngle ?? this.rotateAngle,
+    tooltipBorder: tooltipBorder ?? this.tooltipBorder,
+    getTooltipColor: getTooltipColor ?? this.getTooltipColor,
+  );
 }
 
 /// Provides a [ScatterTooltipItem] for showing content inside the [ScatterTouchTooltipData].
@@ -567,9 +552,10 @@ class ScatterTouchTooltipData with EquatableMixin {
 /// [touchedSpot] that touch happened on,
 /// then you should and pass your custom [ScatterTooltipItem]
 /// to show it inside the tooltip popup.
-typedef GetScatterTooltipItems = ScatterTooltipItem? Function(
-  ScatterSpot touchedSpot,
-);
+typedef GetScatterTooltipItems =
+    ScatterTooltipItem? Function(
+      ScatterSpot touchedSpot,
+    );
 
 /// Default implementation for [ScatterTouchTooltipData.getTooltipItems].
 ScatterTooltipItem? defaultScatterTooltipItem(ScatterSpot touchedSpot) {
@@ -596,13 +582,13 @@ ScatterTooltipItem? defaultScatterTooltipItem(ScatterSpot touchedSpot) {
 /// [touchedSpot] that touch happened on,
 /// then you should and pass your custom [Color]
 /// to show it inside the tooltip popup.
-typedef GetScatterTooltipColor = Color Function(
-  ScatterSpot touchedSpot,
-);
+typedef GetScatterTooltipColor =
+    Color Function(
+      ScatterSpot touchedSpot,
+    );
 
 /// Default implementation for [ScatterTouchTooltipData.getTooltipItems].
-Color defaultScatterTooltipColor(ScatterSpot touchedSpot) =>
-    Colors.blueGrey.darken(15);
+Color defaultScatterTooltipColor(ScatterSpot touchedSpot) => Colors.blueGrey.darken(15);
 
 /// Holds data of showing each item in the tooltip popup.
 class ScatterTooltipItem with EquatableMixin {
@@ -615,9 +601,9 @@ class ScatterTooltipItem with EquatableMixin {
     TextAlign? textAlign,
     TextDirection? textDirection,
     this.children,
-  })  : bottomMargin = bottomMargin ?? 8,
-        textAlign = textAlign ?? TextAlign.center,
-        textDirection = textDirection ?? TextDirection.ltr;
+  }) : bottomMargin = bottomMargin ?? 8,
+       textAlign = textAlign ?? TextAlign.center,
+       textDirection = textDirection ?? TextDirection.ltr;
 
   /// Showing text.
   final String text;
@@ -640,13 +626,13 @@ class ScatterTooltipItem with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        text,
-        textStyle,
-        bottomMargin,
-        textAlign,
-        textDirection,
-        children,
-      ];
+    text,
+    textStyle,
+    bottomMargin,
+    textAlign,
+    textDirection,
+    children,
+  ];
 
   /// Copies current [ScatterTooltipItem] to a new [ScatterTooltipItem],
   /// and replaces provided values.
@@ -657,15 +643,14 @@ class ScatterTooltipItem with EquatableMixin {
     TextAlign? textAlign,
     TextDirection? textDirection,
     List<TextSpan>? children,
-  }) =>
-      ScatterTooltipItem(
-        text ?? this.text,
-        textStyle: textStyle ?? this.textStyle,
-        bottomMargin: bottomMargin ?? this.bottomMargin,
-        textAlign: textAlign ?? this.textAlign,
-        textDirection: textDirection ?? this.textDirection,
-        children: children ?? this.children,
-      );
+  }) => ScatterTooltipItem(
+    text ?? this.text,
+    textStyle: textStyle ?? this.textStyle,
+    bottomMargin: bottomMargin ?? this.bottomMargin,
+    textAlign: textAlign ?? this.textAlign,
+    textDirection: textDirection ?? this.textDirection,
+    children: children ?? this.children,
+  );
 }
 
 /// It lerps a [ScatterChartData] to another [ScatterChartData] (handles animation for updating values)
@@ -681,16 +666,18 @@ class ScatterChartDataTween extends Tween<ScatterChartData> {
 }
 
 /// It gives you the index value as well as the spot and gets the text style of the label.
-typedef GetLabelTextStyleFunction = TextStyle? Function(
-  int spotIndex,
-  ScatterSpot spot,
-);
+typedef GetLabelTextStyleFunction =
+    TextStyle? Function(
+      int spotIndex,
+      ScatterSpot spot,
+    );
 
 /// It gives you the index value as well as the spot and returns the label of the spot.
-typedef GetLabelFunction = String Function(
-  int spotIndex,
-  ScatterSpot spot,
-);
+typedef GetLabelFunction =
+    String Function(
+      int spotIndex,
+      ScatterSpot spot,
+    );
 
 /// It gives you the default text style of the label for a spot.
 TextStyle? getDefaultLabelTextStyleFunction(
@@ -704,8 +691,7 @@ TextStyle? getDefaultLabelTextStyleFunction(
 String getDefaultLabelFunction(
   int spotIndex,
   ScatterSpot spot,
-) =>
-    spot.defaultLabel;
+) => spot.defaultLabel;
 
 /// Defines information about the labels in the [ScatterChart]
 class ScatterLabelSettings with EquatableMixin {
@@ -716,11 +702,10 @@ class ScatterLabelSettings with EquatableMixin {
     GetLabelTextStyleFunction? getLabelTextStyleFunction,
     GetLabelFunction? getLabelFunction,
     TextDirection? textDirection,
-  })  : showLabel = showLabel ?? false,
-        getLabelTextStyleFunction =
-            getLabelTextStyleFunction ?? getDefaultLabelTextStyleFunction,
-        getLabelFunction = getLabelFunction ?? getDefaultLabelFunction,
-        textDirection = textDirection ?? TextDirection.ltr;
+  }) : showLabel = showLabel ?? false,
+       getLabelTextStyleFunction = getLabelTextStyleFunction ?? getDefaultLabelTextStyleFunction,
+       getLabelFunction = getLabelFunction ?? getDefaultLabelFunction,
+       textDirection = textDirection ?? TextDirection.ltr;
 
   /// Determines whether to show or hide the labels.
   final bool showLabel;
@@ -742,8 +727,7 @@ class ScatterLabelSettings with EquatableMixin {
   }) {
     return ScatterLabelSettings(
       showLabel: showLabel ?? this.showLabel,
-      getLabelTextStyleFunction:
-          getLabelTextStyleFunction ?? this.getLabelTextStyleFunction,
+      getLabelTextStyleFunction: getLabelTextStyleFunction ?? this.getLabelTextStyleFunction,
       getLabelFunction: getLabelFunction ?? this.getLabelFunction,
       textDirection: textDirection ?? this.textDirection,
     );
@@ -754,22 +738,21 @@ class ScatterLabelSettings with EquatableMixin {
     ScatterLabelSettings a,
     ScatterLabelSettings b,
     double t,
-  ) =>
-      ScatterLabelSettings(
-        showLabel: b.showLabel,
-        getLabelTextStyleFunction: b.getLabelTextStyleFunction,
-        getLabelFunction: b.getLabelFunction,
-        textDirection: b.textDirection,
-      );
+  ) => ScatterLabelSettings(
+    showLabel: b.showLabel,
+    getLabelTextStyleFunction: b.getLabelTextStyleFunction,
+    getLabelFunction: b.getLabelFunction,
+    textDirection: b.textDirection,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        showLabel,
-        getLabelTextStyleFunction,
-        getLabelFunction,
-        textDirection,
-      ];
+    showLabel,
+    getLabelTextStyleFunction,
+    getLabelFunction,
+    textDirection,
+  ];
 }
 
 /// It is the input of the [GetSpotRangeErrorPainter] callback in
@@ -778,8 +761,7 @@ class ScatterLabelSettings with EquatableMixin {
 /// It contains the [spot] and [spotIndex] that the error range
 /// should be drawn for.
 /// It works based on the [ScatterSpot.xError] and [ScatterSpot.yError] values.
-class ScatterChartSpotErrorRangeCallbackInput
-    extends FlSpotErrorRangeCallbackInput {
+class ScatterChartSpotErrorRangeCallbackInput extends FlSpotErrorRangeCallbackInput {
   ScatterChartSpotErrorRangeCallbackInput({
     required this.spot,
     required this.spotIndex,
@@ -790,7 +772,7 @@ class ScatterChartSpotErrorRangeCallbackInput
 
   @override
   List<Object?> get props => [
-        spot,
-        spotIndex,
-      ];
+    spot,
+    spotIndex,
+  ];
 }

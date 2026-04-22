@@ -8,8 +8,7 @@ class BarChartSample2 extends StatefulWidget {
 
   final Color leftBarColor = AppColors.contentColorRed;
   final Color rightBarColor = AppColors.contentColorYellow;
-  final Color avgColor =
-      AppColors.contentColorOrange.avg(AppColors.contentColorRed);
+  final Color avgColor = AppColors.contentColorOrange.avg(AppColors.contentColorRed);
 
   @override
   State<StatefulWidget> createState() => BarChartSample2State();
@@ -112,20 +111,14 @@ class BarChartSample2State extends State<BarChartSample2> {
                         showingBarGroups = List.of(rawBarGroups);
                         if (touchedGroupIndex != -1) {
                           var sum = 0.0;
-                          for (final rod
-                              in showingBarGroups[touchedGroupIndex].barRods) {
+                          for (final rod in showingBarGroups[touchedGroupIndex].barRods) {
                             sum += rod.toY;
                           }
-                          final avg = sum /
-                              showingBarGroups[touchedGroupIndex]
-                                  .barRods
-                                  .length;
+                          final avg = sum / showingBarGroups[touchedGroupIndex].barRods.length;
 
                           showingBarGroups[touchedGroupIndex] =
                               showingBarGroups[touchedGroupIndex].copyWith(
-                            barRods: showingBarGroups[touchedGroupIndex]
-                                .barRods
-                                .map((rod) {
+                            barRods: showingBarGroups[touchedGroupIndex].barRods.map((rod) {
                               return rod.copyWith(
                                 toY: avg,
                                 color: widget.avgColor,

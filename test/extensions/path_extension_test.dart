@@ -17,8 +17,7 @@ void main() {
       path1,
     );
 
-    final path2 =
-        dashPath(path1, dashArray: CircularIntervalList<double>([10.0, 5.0]));
+    final path2 = dashPath(path1, dashArray: CircularIntervalList<double>([10.0, 5.0]));
 
     expect(HelperMethods.equalsPaths(path1.toDashedPath([10, 5]), path2), true);
   });

@@ -143,8 +143,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
           )
           ..restore();
         _sectionPaint.blendMode = BlendMode.srcOver;
-        if (section.borderSide.width != 0.0 &&
-            section.borderSide.color.a != 0.0) {
+        if (section.borderSide.width != 0.0 && section.borderSide.color.a != 0.0) {
           _sectionStrokePaint
             ..strokeWidth = section.borderSide.width
             ..color = section.borderSide.color;
@@ -155,7 +154,6 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
               centerRadius + section.radius - (section.borderSide.width / 2),
               _sectionStrokePaint,
             )
-
             // Inner
             ..drawCircle(
               center,
@@ -205,8 +203,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
     final sweepRadians = Utils().radians(sectionDegree);
     final endRadians = startRadians + sweepRadians;
 
-    final startLineDirection =
-        Offset(math.cos(startRadians), math.sin(startRadians));
+    final startLineDirection = Offset(math.cos(startRadians), math.sin(startRadians));
 
     final startLineFrom = center + startLineDirection * centerRadius;
     final startLineTo = startLineFrom + startLineDirection * section.radius;
@@ -258,8 +255,10 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         /// https://github.com/imaNNeo/fl_chart/issues/955
       }
 
-      final endLineSeparatorPath =
-          createRectPathAroundLine(Line(endLineFrom, endLineTo), sectionSpace);
+      final endLineSeparatorPath = createRectPathAroundLine(
+        Line(endLineFrom, endLineTo),
+        sectionSpace,
+      );
       try {
         sectionPath = Path.combine(
           PathOperation.difference,
@@ -316,12 +315,11 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
 
     if (cornerRadius <= 1) {
       // if corner radius is too small, return standard section path
-      final innerStart = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
-      final outerStart = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) * outerRadius;
-      final innerEnd = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
+      final innerStart =
+          center + Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
+      final outerStart =
+          center + Offset(math.cos(startRadians), math.sin(startRadians)) * outerRadius;
+      final innerEnd = center + Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
 
       path
         ..moveTo(innerStart.dx, innerStart.dy)
@@ -336,8 +334,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
       // and for the inner arc (based on centerRadius). This keeps rounding
       // visually stable across different section sizes.
       final maxRadiusForSection = section.radius * _kRadiusSafetyMargin;
-      final maxRadiusForOuterArc =
-          sweepRadians * outerRadius * _kRadiusSafetyMargin;
+      final maxRadiusForOuterArc = sweepRadians * outerRadius * _kRadiusSafetyMargin;
       final maxRadiusForInnerArc = centerRadius > 0
           ? sweepRadians * centerRadius * _kRadiusSafetyMargin
           : 0.0;
@@ -354,10 +351,8 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
       // Compute angular offsets that correspond to the linear corner radii.
       // These are used to trim the sweep angles so the rounded joins fit
       // cleanly along the arc.
-      final outerAngleOffset =
-          outerRadius > 0 ? clampedOuterRadius / outerRadius : 0.0;
-      final innerAngleOffset =
-          centerRadius > 0 ? clampedInnerRadius / centerRadius : 0.0;
+      final outerAngleOffset = outerRadius > 0 ? clampedOuterRadius / outerRadius : 0.0;
+      final innerAngleOffset = centerRadius > 0 ? clampedInnerRadius / centerRadius : 0.0;
 
       // Tight angles for outside corners
       final outerStartAngle = startRadians + outerAngleOffset;
@@ -370,44 +365,42 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
       final innerSweepAngle = sweepRadians - (2 * innerAngleOffset);
 
       // Points of the outer corners
-      final outerStartPoint = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) * outerRadius;
-      final outerEndPoint = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) * outerRadius;
-      final outerStartRounded = center +
-          Offset(math.cos(outerStartAngle), math.sin(outerStartAngle)) *
-              outerRadius;
-      final outerEndRounded = center +
-          Offset(math.cos(outerEndAngle), math.sin(outerEndAngle)) *
-              outerRadius;
+      final outerStartPoint =
+          center + Offset(math.cos(startRadians), math.sin(startRadians)) * outerRadius;
+      final outerEndPoint =
+          center + Offset(math.cos(endRadians), math.sin(endRadians)) * outerRadius;
+      final outerStartRounded =
+          center + Offset(math.cos(outerStartAngle), math.sin(outerStartAngle)) * outerRadius;
+      final outerEndRounded =
+          center + Offset(math.cos(outerEndAngle), math.sin(outerEndAngle)) * outerRadius;
 
       // Points of the inner corners
-      final innerStartPoint = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
-      final innerEndPoint = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
-      final innerStartRounded = center +
-          Offset(math.cos(innerStartAngle), math.sin(innerStartAngle)) *
-              centerRadius;
-      final innerEndRounded = center +
-          Offset(math.cos(innerEndAngle), math.sin(innerEndAngle)) *
-              centerRadius;
+      final innerStartPoint =
+          center + Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
+      final innerEndPoint =
+          center + Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
+      final innerStartRounded =
+          center + Offset(math.cos(innerStartAngle), math.sin(innerStartAngle)) * centerRadius;
+      final innerEndRounded =
+          center + Offset(math.cos(innerEndAngle), math.sin(innerEndAngle)) * centerRadius;
 
       // Control points used to connect the rounded corner bezier segments to
       // the inner/outer arcs. They lie along the original radial directions
       // but offset inward/outward by the clamped radii.
-      final startOuterControl = center +
+      final startOuterControl =
+          center +
           Offset(math.cos(startRadians), math.sin(startRadians)) *
               (outerRadius - clampedOuterRadius);
-      final endOuterControl = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) *
-              (outerRadius - clampedOuterRadius);
-      final startInnerControl = center +
+      final endOuterControl =
+          center +
+          Offset(math.cos(endRadians), math.sin(endRadians)) * (outerRadius - clampedOuterRadius);
+      final startInnerControl =
+          center +
           Offset(math.cos(startRadians), math.sin(startRadians)) *
               (centerRadius + clampedInnerRadius);
-      final endInnerControl = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) *
-              (centerRadius + clampedInnerRadius);
+      final endInnerControl =
+          center +
+          Offset(math.cos(endRadians), math.sin(endRadians)) * (centerRadius + clampedInnerRadius);
 
       // Build the rounded path step by step
       if (centerRadius > 0) {
@@ -517,25 +510,16 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
     final normalized = line.normalize();
 
     final verticalAngle = line.direction() + (math.pi / 2);
-    final verticalDirection =
-        Offset(math.cos(verticalAngle), math.sin(verticalAngle));
+    final verticalDirection = Offset(math.cos(verticalAngle), math.sin(verticalAngle));
 
     final startPoint1 = Offset(
-      line.from.dx -
-          (normalized * (width / 2)).dx -
-          (verticalDirection * width).dx,
-      line.from.dy -
-          (normalized * (width / 2)).dy -
-          (verticalDirection * width).dy,
+      line.from.dx - (normalized * (width / 2)).dx - (verticalDirection * width).dx,
+      line.from.dy - (normalized * (width / 2)).dy - (verticalDirection * width).dy,
     );
 
     final startPoint2 = Offset(
-      line.to.dx +
-          (normalized * (width / 2)).dx -
-          (verticalDirection * width).dx,
-      line.to.dy +
-          (normalized * (width / 2)).dy -
-          (verticalDirection * width).dy,
+      line.to.dx + (normalized * (width / 2)).dx - (verticalDirection * width).dx,
+      line.to.dy + (normalized * (width / 2)).dy - (verticalDirection * width).dy,
     );
 
     final startPoint3 = Offset(
@@ -642,8 +626,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
                 (centerRadius + (section.radius * percentageOffset)),
           );
 
-      final sectionCenterOffsetTitle =
-          sectionCenter(section.titlePositionPercentageOffset);
+      final sectionCenterOffsetTitle = sectionCenter(section.titlePositionPercentageOffset);
 
       if (section.showTitle) {
         final span = TextSpan(
@@ -678,8 +661,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
     if (data.centerSpaceRadius.isFinite) {
       return data.centerSpaceRadius;
     }
-    final maxRadius =
-        data.sections.reduce((a, b) => a.radius > b.radius ? a : b).radius;
+    final maxRadius = data.sections.reduce((a, b) => a.radius > b.radius ? a : b).radius;
     return (viewSize.shortestSide - (maxRadius * 2)) / 2;
   }
 
@@ -718,11 +700,9 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
 
       if (sectionAngle == 360) {
         final distance = math.sqrt(
-          math.pow(localPosition.dx - center.dx, 2) +
-              math.pow(localPosition.dy - center.dy, 2),
+          math.pow(localPosition.dx - center.dx, 2) + math.pow(localPosition.dy - center.dy, 2),
         );
-        if (distance >= centerRadius &&
-            distance <= section.radius + centerRadius) {
+        if (distance >= centerRadius && distance <= section.radius + centerRadius) {
           foundSectionData = section;
           foundSectionDataPosition = i;
         }
@@ -787,8 +767,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
                 (centerRadius + (section.radius * percentageOffset)),
           );
 
-      final sectionCenterOffsetBadgeWidget =
-          sectionCenter(section.badgePositionPercentageOffset);
+      final sectionCenterOffsetBadgeWidget = sectionCenter(section.badgePositionPercentageOffset);
 
       badgeWidgetsOffsets[i] = sectionCenterOffsetBadgeWidget;
 

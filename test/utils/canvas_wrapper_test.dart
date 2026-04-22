@@ -83,21 +83,18 @@ void main() {
 
   test('test drawCircle', () {
     canvasWrapper.drawCircle(MockData.offset1, 12, MockData.paint1);
-    verify(mockCanvas.drawCircle(MockData.offset1, 12, MockData.paint1))
-        .called(1);
+    verify(mockCanvas.drawCircle(MockData.offset1, 12, MockData.paint1)).called(1);
   });
 
   test('test drawArc', () {
     canvasWrapper.drawArc(MockData.rect1, 12, 22, false, MockData.paint1);
-    verify(mockCanvas.drawArc(MockData.rect1, 12, 22, false, MockData.paint1))
-        .called(1);
+    verify(mockCanvas.drawArc(MockData.rect1, 12, 22, false, MockData.paint1)).called(1);
   });
 
   test('test drawDot', () {
     final painter = MockFlDotPainter();
     canvasWrapper.drawDot(painter, MockData.lineBarSpot1, MockData.offset1);
-    verify(painter.draw(mockCanvas, MockData.lineBarSpot1, MockData.offset1))
-        .called(1);
+    verify(painter.draw(mockCanvas, MockData.lineBarSpot1, MockData.offset1)).called(1);
   });
 
   test('test drawRotated', () {
@@ -141,11 +138,9 @@ void main() {
 
     canvasWrapper.drawVerticalText(tp, MockData.offset1);
     verify(mockCanvas.save()).called(1);
-    verify(mockCanvas.translate(MockData.offset1.dx, MockData.offset1.dy))
-        .called(1);
+    verify(mockCanvas.translate(MockData.offset1.dx, MockData.offset1.dy)).called(1);
     verify(mockCanvas.rotate(90)).called(1);
-    verify(mockCanvas.translate(-MockData.offset1.dx, -MockData.offset1.dy))
-        .called(1);
+    verify(mockCanvas.translate(-MockData.offset1.dx, -MockData.offset1.dy)).called(1);
     verify(tp.paint(mockCanvas, MockData.offset1)).called(1);
     verify(mockCanvas.restore()).called(1);
   });

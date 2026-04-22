@@ -16,8 +16,7 @@ final appRouterConfig = GoRouter(
     ...ChartType.values.map(
       (ChartType chartType) => GoRoute(
         path: '/${chartType.name}',
-        pageBuilder: (BuildContext context, GoRouterState state) =>
-            MaterialPage<void>(
+        pageBuilder: (BuildContext context, GoRouterState state) => MaterialPage<void>(
           /// We set a key for HomePage to prevent recreate it
           /// when user choose a new chart type to show
           key: const ValueKey('home_page'),

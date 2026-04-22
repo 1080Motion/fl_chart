@@ -39,57 +39,51 @@ class _FakeWidget_0 extends _i1.SmartFake implements _i2.Widget {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
-class _FakeInheritedWidget_1 extends _i1.SmartFake
-    implements _i2.InheritedWidget {
+class _FakeInheritedWidget_1 extends _i1.SmartFake implements _i2.InheritedWidget {
   _FakeInheritedWidget_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
-class _FakeDiagnosticsNode_2 extends _i1.SmartFake
-    implements _i3.DiagnosticsNode {
+class _FakeDiagnosticsNode_2 extends _i1.SmartFake implements _i3.DiagnosticsNode {
   _FakeDiagnosticsNode_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
   String toString({
     _i3.TextTreeConfiguration? parentConfiguration,
     _i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info,
-  }) =>
-      super.toString();
+  }) => super.toString();
 }
 
-class _FakeVelocityTracker_3 extends _i1.SmartFake
-    implements _i4.VelocityTracker {
+class _FakeVelocityTracker_3 extends _i1.SmartFake implements _i4.VelocityTracker {
   _FakeVelocityTracker_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 }
 
 class _FakeOffsetPair_4 extends _i1.SmartFake implements _i5.OffsetPair {
@@ -97,9 +91,9 @@ class _FakeOffsetPair_4 extends _i1.SmartFake implements _i5.OffsetPair {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 }
 
 /// A class which mocks [BuildContext].
@@ -111,25 +105,31 @@ class MockBuildContext extends _i1.Mock implements _i2.BuildContext {
   }
 
   @override
-  _i2.Widget get widget => (super.noSuchMethod(
-        Invocation.getter(#widget),
-        returnValue: _FakeWidget_0(
-          this,
-          Invocation.getter(#widget),
-        ),
-      ) as _i2.Widget);
+  _i2.Widget get widget =>
+      (super.noSuchMethod(
+            Invocation.getter(#widget),
+            returnValue: _FakeWidget_0(
+              this,
+              Invocation.getter(#widget),
+            ),
+          )
+          as _i2.Widget);
 
   @override
-  bool get mounted => (super.noSuchMethod(
-        Invocation.getter(#mounted),
-        returnValue: false,
-      ) as bool);
+  bool get mounted =>
+      (super.noSuchMethod(
+            Invocation.getter(#mounted),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  bool get debugDoingBuild => (super.noSuchMethod(
-        Invocation.getter(#debugDoingBuild),
-        returnValue: false,
-      ) as bool);
+  bool get debugDoingBuild =>
+      (super.noSuchMethod(
+            Invocation.getter(#debugDoingBuild),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   _i2.InheritedWidget dependOnInheritedElement(
@@ -137,49 +137,48 @@ class MockBuildContext extends _i1.Mock implements _i2.BuildContext {
     Object? aspect,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #dependOnInheritedElement,
-          [ancestor],
-          {#aspect: aspect},
-        ),
-        returnValue: _FakeInheritedWidget_1(
-          this,
-          Invocation.method(
-            #dependOnInheritedElement,
-            [ancestor],
-            {#aspect: aspect},
-          ),
-        ),
-      ) as _i2.InheritedWidget);
+            Invocation.method(
+              #dependOnInheritedElement,
+              [ancestor],
+              {#aspect: aspect},
+            ),
+            returnValue: _FakeInheritedWidget_1(
+              this,
+              Invocation.method(
+                #dependOnInheritedElement,
+                [ancestor],
+                {#aspect: aspect},
+              ),
+            ),
+          )
+          as _i2.InheritedWidget);
 
   @override
-  void visitAncestorElements(_i2.ConditionalElementVisitor? visitor) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #visitAncestorElements,
-          [visitor],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void visitAncestorElements(_i2.ConditionalElementVisitor? visitor) => super.noSuchMethod(
+    Invocation.method(
+      #visitAncestorElements,
+      [visitor],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void visitChildElements(_i2.ElementVisitor? visitor) => super.noSuchMethod(
-        Invocation.method(
-          #visitChildElements,
-          [visitor],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #visitChildElements,
+      [visitor],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void dispatchNotification(_i6.Notification? notification) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #dispatchNotification,
-          [notification],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void dispatchNotification(_i6.Notification? notification) => super.noSuchMethod(
+    Invocation.method(
+      #dispatchNotification,
+      [notification],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   _i3.DiagnosticsNode describeElement(
@@ -187,20 +186,21 @@ class MockBuildContext extends _i1.Mock implements _i2.BuildContext {
     _i3.DiagnosticsTreeStyle? style = _i3.DiagnosticsTreeStyle.errorProperty,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeElement,
-          [name],
-          {#style: style},
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #describeElement,
-            [name],
-            {#style: style},
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeElement,
+              [name],
+              {#style: style},
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #describeElement,
+                [name],
+                {#style: style},
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
   _i3.DiagnosticsNode describeWidget(
@@ -208,254 +208,267 @@ class MockBuildContext extends _i1.Mock implements _i2.BuildContext {
     _i3.DiagnosticsTreeStyle? style = _i3.DiagnosticsTreeStyle.errorProperty,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeWidget,
-          [name],
-          {#style: style},
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #describeWidget,
-            [name],
-            {#style: style},
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeWidget,
+              [name],
+              {#style: style},
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #describeWidget,
+                [name],
+                {#style: style},
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
-  List<_i3.DiagnosticsNode> describeMissingAncestor(
-          {required Type? expectedAncestorType}) =>
+  List<_i3.DiagnosticsNode> describeMissingAncestor({required Type? expectedAncestorType}) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeMissingAncestor,
-          [],
-          {#expectedAncestorType: expectedAncestorType},
-        ),
-        returnValue: <_i3.DiagnosticsNode>[],
-      ) as List<_i3.DiagnosticsNode>);
+            Invocation.method(
+              #describeMissingAncestor,
+              [],
+              {#expectedAncestorType: expectedAncestorType},
+            ),
+            returnValue: <_i3.DiagnosticsNode>[],
+          )
+          as List<_i3.DiagnosticsNode>);
 
   @override
   _i3.DiagnosticsNode describeOwnershipChain(String? name) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeOwnershipChain,
-          [name],
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #describeOwnershipChain,
-            [name],
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeOwnershipChain,
+              [name],
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #describeOwnershipChain,
+                [name],
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 }
 
 /// A class which mocks [PanGestureRecognizer].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockPanGestureRecognizer extends _i1.Mock
-    implements _i7.PanGestureRecognizer {
+class MockPanGestureRecognizer extends _i1.Mock implements _i7.PanGestureRecognizer {
   MockPanGestureRecognizer() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  String get debugDescription => (super.noSuchMethod(
-        Invocation.getter(#debugDescription),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.getter(#debugDescription),
-        ),
-      ) as String);
+  String get debugDescription =>
+      (super.noSuchMethod(
+            Invocation.getter(#debugDescription),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.getter(#debugDescription),
+            ),
+          )
+          as String);
 
   @override
-  _i5.DragStartBehavior get dragStartBehavior => (super.noSuchMethod(
-        Invocation.getter(#dragStartBehavior),
-        returnValue: _i5.DragStartBehavior.down,
-      ) as _i5.DragStartBehavior);
+  _i5.DragStartBehavior get dragStartBehavior =>
+      (super.noSuchMethod(
+            Invocation.getter(#dragStartBehavior),
+            returnValue: _i5.DragStartBehavior.down,
+          )
+          as _i5.DragStartBehavior);
 
   @override
-  _i5.MultitouchDragStrategy get multitouchDragStrategy => (super.noSuchMethod(
-        Invocation.getter(#multitouchDragStrategy),
-        returnValue: _i5.MultitouchDragStrategy.latestPointer,
-      ) as _i5.MultitouchDragStrategy);
+  _i5.MultitouchDragStrategy get multitouchDragStrategy =>
+      (super.noSuchMethod(
+            Invocation.getter(#multitouchDragStrategy),
+            returnValue: _i5.MultitouchDragStrategy.latestPointer,
+          )
+          as _i5.MultitouchDragStrategy);
 
   @override
-  bool get onlyAcceptDragOnThreshold => (super.noSuchMethod(
-        Invocation.getter(#onlyAcceptDragOnThreshold),
-        returnValue: false,
-      ) as bool);
+  bool get onlyAcceptDragOnThreshold =>
+      (super.noSuchMethod(
+            Invocation.getter(#onlyAcceptDragOnThreshold),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   _i7.GestureVelocityTrackerBuilder get velocityTrackerBuilder =>
       (super.noSuchMethod(
-        Invocation.getter(#velocityTrackerBuilder),
-        returnValue: (_i9.PointerEvent event) => _FakeVelocityTracker_3(
-          this,
-          Invocation.getter(#velocityTrackerBuilder),
-        ),
-      ) as _i7.GestureVelocityTrackerBuilder);
+            Invocation.getter(#velocityTrackerBuilder),
+            returnValue: (_i9.PointerEvent event) => _FakeVelocityTracker_3(
+              this,
+              Invocation.getter(#velocityTrackerBuilder),
+            ),
+          )
+          as _i7.GestureVelocityTrackerBuilder);
 
   @override
-  _i5.OffsetPair get lastPosition => (super.noSuchMethod(
-        Invocation.getter(#lastPosition),
-        returnValue: _FakeOffsetPair_4(
-          this,
-          Invocation.getter(#lastPosition),
-        ),
-      ) as _i5.OffsetPair);
+  _i5.OffsetPair get lastPosition =>
+      (super.noSuchMethod(
+            Invocation.getter(#lastPosition),
+            returnValue: _FakeOffsetPair_4(
+              this,
+              Invocation.getter(#lastPosition),
+            ),
+          )
+          as _i5.OffsetPair);
 
   @override
-  double get globalDistanceMoved => (super.noSuchMethod(
-        Invocation.getter(#globalDistanceMoved),
-        returnValue: 0.0,
-      ) as double);
+  double get globalDistanceMoved =>
+      (super.noSuchMethod(
+            Invocation.getter(#globalDistanceMoved),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
   set dragStartBehavior(_i5.DragStartBehavior? value) => super.noSuchMethod(
-        Invocation.setter(
-          #dragStartBehavior,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #dragStartBehavior,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set multitouchDragStrategy(_i5.MultitouchDragStrategy? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #multitouchDragStrategy,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set multitouchDragStrategy(_i5.MultitouchDragStrategy? value) => super.noSuchMethod(
+    Invocation.setter(
+      #multitouchDragStrategy,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onDown(_i10.GestureDragDownCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onStart(_i10.GestureDragStartCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onStart,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onStart,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onUpdate(_i10.GestureDragUpdateCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onUpdate,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onUpdate,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onEnd(_i7.GestureDragEndCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onEnd,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onEnd,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onCancel(_i7.GestureDragCancelCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set minFlingDistance(double? value) => super.noSuchMethod(
-        Invocation.setter(
-          #minFlingDistance,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #minFlingDistance,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set minFlingVelocity(double? value) => super.noSuchMethod(
-        Invocation.setter(
-          #minFlingVelocity,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #minFlingVelocity,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set maxFlingVelocity(double? value) => super.noSuchMethod(
-        Invocation.setter(
-          #maxFlingVelocity,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #maxFlingVelocity,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onlyAcceptDragOnThreshold(bool? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onlyAcceptDragOnThreshold,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onlyAcceptDragOnThreshold,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set velocityTrackerBuilder(_i7.GestureVelocityTrackerBuilder? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #velocityTrackerBuilder,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set velocityTrackerBuilder(_i7.GestureVelocityTrackerBuilder? value) => super.noSuchMethod(
+    Invocation.setter(
+      #velocityTrackerBuilder,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set team(_i5.GestureArenaTeam? value) => super.noSuchMethod(
-        Invocation.setter(
-          #team,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #team,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  _i5.AllowedButtonsFilter get allowedButtonsFilter => (super.noSuchMethod(
-        Invocation.getter(#allowedButtonsFilter),
-        returnValue: (int buttons) => false,
-      ) as _i5.AllowedButtonsFilter);
+  _i5.AllowedButtonsFilter get allowedButtonsFilter =>
+      (super.noSuchMethod(
+            Invocation.getter(#allowedButtonsFilter),
+            returnValue: (int buttons) => false,
+          )
+          as _i5.AllowedButtonsFilter);
 
   @override
   set gestureSettings(_i11.DeviceGestureSettings? value) => super.noSuchMethod(
-        Invocation.setter(
-          #gestureSettings,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #gestureSettings,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set supportedDevices(Set<_i12.PointerDeviceKind>? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #supportedDevices,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set supportedDevices(Set<_i12.PointerDeviceKind>? value) => super.noSuchMethod(
+    Invocation.setter(
+      #supportedDevices,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   bool isFlingGesture(
@@ -463,28 +476,32 @@ class MockPanGestureRecognizer extends _i1.Mock
     _i12.PointerDeviceKind? kind,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #isFlingGesture,
-          [
-            estimate,
-            kind,
-          ],
-        ),
-        returnValue: false,
-      ) as bool);
+            Invocation.method(
+              #isFlingGesture,
+              [
+                estimate,
+                kind,
+              ],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   _i10.DragEndDetails? considerFling(
     _i4.VelocityEstimate? estimate,
     _i12.PointerDeviceKind? kind,
   ) =>
-      (super.noSuchMethod(Invocation.method(
-        #considerFling,
-        [
-          estimate,
-          kind,
-        ],
-      )) as _i10.DragEndDetails?);
+      (super.noSuchMethod(
+            Invocation.method(
+              #considerFling,
+              [
+                estimate,
+                kind,
+              ],
+            ),
+          )
+          as _i10.DragEndDetails?);
 
   @override
   bool hasSufficientGlobalDistanceToAccept(
@@ -492,216 +509,214 @@ class MockPanGestureRecognizer extends _i1.Mock
     double? deviceTouchSlop,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #hasSufficientGlobalDistanceToAccept,
-          [
-            pointerDeviceKind,
-            deviceTouchSlop,
-          ],
-        ),
-        returnValue: false,
-      ) as bool);
+            Invocation.method(
+              #hasSufficientGlobalDistanceToAccept,
+              [
+                pointerDeviceKind,
+                deviceTouchSlop,
+              ],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  bool isPointerAllowed(_i9.PointerEvent? event) => (super.noSuchMethod(
-        Invocation.method(
-          #isPointerAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+  bool isPointerAllowed(_i9.PointerEvent? event) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #isPointerAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   void addAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handleEvent(_i9.PointerEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #handleEvent,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #handleEvent,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void acceptGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #acceptGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #acceptGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void rejectGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #rejectGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #rejectGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void didStopTrackingLastPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #didStopTrackingLastPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #didStopTrackingLastPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #dispose,
+      [],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #debugFillProperties,
-          [properties],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) => super.noSuchMethod(
+    Invocation.method(
+      #debugFillProperties,
+      [properties],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointer(_i9.PointerDownEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolve(_i5.GestureDisposition? disposition) => super.noSuchMethod(
-        Invocation.method(
-          #resolve,
-          [disposition],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #resolve,
+      [disposition],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolvePointer(
     int? pointer,
     _i5.GestureDisposition? disposition,
-  ) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #resolvePointer,
-          [
-            pointer,
-            disposition,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ) => super.noSuchMethod(
+    Invocation.method(
+      #resolvePointer,
+      [
+        pointer,
+        disposition,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void startTrackingPointer(
     int? pointer, [
     _i9.Matrix4? transform,
-  ]) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #startTrackingPointer,
-          [
-            pointer,
-            transform,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ]) => super.noSuchMethod(
+    Invocation.method(
+      #startTrackingPointer,
+      [
+        pointer,
+        transform,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void stopTrackingPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #stopTrackingPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingIfPointerNoLongerDown,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #stopTrackingIfPointerNoLongerDown,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void addPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   bool isPointerPanZoomAllowed(_i11.PointerPanZoomStartEvent? event) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #isPointerPanZoomAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+            Invocation.method(
+              #isPointerPanZoomAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  _i12.PointerDeviceKind getKindForPointer(int? pointer) => (super.noSuchMethod(
-        Invocation.method(
-          #getKindForPointer,
-          [pointer],
-        ),
-        returnValue: _i12.PointerDeviceKind.touch,
-      ) as _i12.PointerDeviceKind);
+  _i12.PointerDeviceKind getKindForPointer(int? pointer) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getKindForPointer,
+              [pointer],
+            ),
+            returnValue: _i12.PointerDeviceKind.touch,
+          )
+          as _i12.PointerDeviceKind);
 
   @override
   T? invokeCallback<T>(
@@ -709,18 +724,20 @@ class MockPanGestureRecognizer extends _i1.Mock
     _i5.RecognizerCallback<T>? callback, {
     String Function()? debugReport,
   }) =>
-      (super.noSuchMethod(Invocation.method(
-        #invokeCallback,
-        [
-          name,
-          callback,
-        ],
-        {#debugReport: debugReport},
-      )) as T?);
+      (super.noSuchMethod(
+            Invocation.method(
+              #invokeCallback,
+              [
+                name,
+                callback,
+              ],
+              {#debugReport: debugReport},
+            ),
+          )
+          as T?);
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 
   @override
   String toStringShallow({
@@ -728,26 +745,27 @@ class MockPanGestureRecognizer extends _i1.Mock
     _i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.debug,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringShallow,
-          [],
-          {
-            #joiner: joiner,
-            #minLevel: minLevel,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShallow,
-            [],
-            {
-              #joiner: joiner,
-              #minLevel: minLevel,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringShallow,
+              [],
+              {
+                #joiner: joiner,
+                #minLevel: minLevel,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShallow,
+                [],
+                {
+                  #joiner: joiner,
+                  #minLevel: minLevel,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
   String toStringDeep({
@@ -757,45 +775,48 @@ class MockPanGestureRecognizer extends _i1.Mock
     int? wrapWidth = 65,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringDeep,
-          [],
-          {
-            #prefixLineOne: prefixLineOne,
-            #prefixOtherLines: prefixOtherLines,
-            #minLevel: minLevel,
-            #wrapWidth: wrapWidth,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringDeep,
-            [],
-            {
-              #prefixLineOne: prefixLineOne,
-              #prefixOtherLines: prefixOtherLines,
-              #minLevel: minLevel,
-              #wrapWidth: wrapWidth,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringDeep,
+              [],
+              {
+                #prefixLineOne: prefixLineOne,
+                #prefixOtherLines: prefixOtherLines,
+                #minLevel: minLevel,
+                #wrapWidth: wrapWidth,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringDeep,
+                [],
+                {
+                  #prefixLineOne: prefixLineOne,
+                  #prefixOtherLines: prefixOtherLines,
+                  #minLevel: minLevel,
+                  #wrapWidth: wrapWidth,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
-  String toStringShort() => (super.noSuchMethod(
-        Invocation.method(
-          #toStringShort,
-          [],
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShort,
-            [],
-          ),
-        ),
-      ) as String);
+  String toStringShort() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #toStringShort,
+              [],
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShort,
+                [],
+              ),
+            ),
+          )
+          as String);
 
   @override
   _i3.DiagnosticsNode toDiagnosticsNode({
@@ -803,493 +824,488 @@ class MockPanGestureRecognizer extends _i1.Mock
     _i3.DiagnosticsTreeStyle? style,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toDiagnosticsNode,
-          [],
-          {
-            #name: name,
-            #style: style,
-          },
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #toDiagnosticsNode,
-            [],
-            {
-              #name: name,
-              #style: style,
-            },
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #toDiagnosticsNode,
+              [],
+              {
+                #name: name,
+                #style: style,
+              },
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #toDiagnosticsNode,
+                [],
+                {
+                  #name: name,
+                  #style: style,
+                },
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
-  List<_i3.DiagnosticsNode> debugDescribeChildren() => (super.noSuchMethod(
-        Invocation.method(
-          #debugDescribeChildren,
-          [],
-        ),
-        returnValue: <_i3.DiagnosticsNode>[],
-      ) as List<_i3.DiagnosticsNode>);
+  List<_i3.DiagnosticsNode> debugDescribeChildren() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #debugDescribeChildren,
+              [],
+            ),
+            returnValue: <_i3.DiagnosticsNode>[],
+          )
+          as List<_i3.DiagnosticsNode>);
 }
 
 /// A class which mocks [TapGestureRecognizer].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTapGestureRecognizer extends _i1.Mock
-    implements _i13.TapGestureRecognizer {
+class MockTapGestureRecognizer extends _i1.Mock implements _i13.TapGestureRecognizer {
   MockTapGestureRecognizer() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  String get debugDescription => (super.noSuchMethod(
-        Invocation.getter(#debugDescription),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.getter(#debugDescription),
-        ),
-      ) as String);
+  String get debugDescription =>
+      (super.noSuchMethod(
+            Invocation.getter(#debugDescription),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.getter(#debugDescription),
+            ),
+          )
+          as String);
 
   @override
   set onTapDown(_i13.GestureTapDownCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTapDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTapDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onTapUp(_i13.GestureTapUpCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTapUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTapUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onTap(_i13.GestureTapCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTap,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTap,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onTapMove(_i13.GestureTapMoveCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTapMove,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTapMove,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onTapCancel(_i13.GestureTapCancelCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTapCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTapCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onSecondaryTap(_i13.GestureTapCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryTap,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onSecondaryTap,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryTapDown(_i13.GestureTapDownCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryTapDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryTapDown(_i13.GestureTapDownCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryTapDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onSecondaryTapUp(_i13.GestureTapUpCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryTapUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onSecondaryTapUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryTapCancel(_i13.GestureTapCancelCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryTapCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryTapCancel(_i13.GestureTapCancelCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryTapCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryTapDown(_i13.GestureTapDownCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryTapDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryTapDown(_i13.GestureTapDownCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryTapDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onTertiaryTapUp(_i13.GestureTapUpCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryTapUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onTertiaryTapUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryTapCancel(_i13.GestureTapCancelCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryTapCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryTapCancel(_i13.GestureTapCancelCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryTapCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  _i5.GestureRecognizerState get state => (super.noSuchMethod(
-        Invocation.getter(#state),
-        returnValue: _i5.GestureRecognizerState.ready,
-      ) as _i5.GestureRecognizerState);
+  _i5.GestureRecognizerState get state =>
+      (super.noSuchMethod(
+            Invocation.getter(#state),
+            returnValue: _i5.GestureRecognizerState.ready,
+          )
+          as _i5.GestureRecognizerState);
 
   @override
   set team(_i5.GestureArenaTeam? value) => super.noSuchMethod(
-        Invocation.setter(
-          #team,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #team,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  _i5.AllowedButtonsFilter get allowedButtonsFilter => (super.noSuchMethod(
-        Invocation.getter(#allowedButtonsFilter),
-        returnValue: (int buttons) => false,
-      ) as _i5.AllowedButtonsFilter);
+  _i5.AllowedButtonsFilter get allowedButtonsFilter =>
+      (super.noSuchMethod(
+            Invocation.getter(#allowedButtonsFilter),
+            returnValue: (int buttons) => false,
+          )
+          as _i5.AllowedButtonsFilter);
 
   @override
   set gestureSettings(_i11.DeviceGestureSettings? value) => super.noSuchMethod(
-        Invocation.setter(
-          #gestureSettings,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #gestureSettings,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set supportedDevices(Set<_i12.PointerDeviceKind>? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #supportedDevices,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set supportedDevices(Set<_i12.PointerDeviceKind>? value) => super.noSuchMethod(
+    Invocation.setter(
+      #supportedDevices,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  bool isPointerAllowed(_i9.PointerDownEvent? event) => (super.noSuchMethod(
-        Invocation.method(
-          #isPointerAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+  bool isPointerAllowed(_i9.PointerDownEvent? event) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #isPointerAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  void handleTapDown({required _i9.PointerDownEvent? down}) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleTapDown,
-          [],
-          {#down: down},
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleTapDown({required _i9.PointerDownEvent? down}) => super.noSuchMethod(
+    Invocation.method(
+      #handleTapDown,
+      [],
+      {#down: down},
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handleTapUp({
     required _i9.PointerDownEvent? down,
     required _i9.PointerUpEvent? up,
-  }) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleTapUp,
-          [],
-          {
-            #down: down,
-            #up: up,
-          },
-        ),
-        returnValueForMissingStub: null,
-      );
+  }) => super.noSuchMethod(
+    Invocation.method(
+      #handleTapUp,
+      [],
+      {
+        #down: down,
+        #up: up,
+      },
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleTapMove({required _i9.PointerMoveEvent? move}) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleTapMove,
-          [],
-          {#move: move},
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleTapMove({required _i9.PointerMoveEvent? move}) => super.noSuchMethod(
+    Invocation.method(
+      #handleTapMove,
+      [],
+      {#move: move},
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handleTapCancel({
     required _i9.PointerDownEvent? down,
     _i9.PointerCancelEvent? cancel,
     required String? reason,
-  }) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleTapCancel,
-          [],
-          {
-            #down: down,
-            #cancel: cancel,
-            #reason: reason,
-          },
-        ),
-        returnValueForMissingStub: null,
-      );
+  }) => super.noSuchMethod(
+    Invocation.method(
+      #handleTapCancel,
+      [],
+      {
+        #down: down,
+        #cancel: cancel,
+        #reason: reason,
+      },
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void addAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void startTrackingPointer(
     int? pointer, [
     _i9.Matrix4? transform,
-  ]) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #startTrackingPointer,
-          [
-            pointer,
-            transform,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ]) => super.noSuchMethod(
+    Invocation.method(
+      #startTrackingPointer,
+      [
+        pointer,
+        transform,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handlePrimaryPointer(_i9.PointerEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #handlePrimaryPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #handlePrimaryPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolve(_i5.GestureDisposition? disposition) => super.noSuchMethod(
-        Invocation.method(
-          #resolve,
-          [disposition],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #resolve,
+      [disposition],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void didExceedDeadline() => super.noSuchMethod(
-        Invocation.method(
-          #didExceedDeadline,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #didExceedDeadline,
+      [],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void acceptGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #acceptGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #acceptGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void rejectGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #rejectGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #rejectGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #debugFillProperties,
-          [properties],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) => super.noSuchMethod(
+    Invocation.method(
+      #debugFillProperties,
+      [properties],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointer(_i9.PointerDownEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handleEvent(_i9.PointerEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #handleEvent,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #handleEvent,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void didExceedDeadlineWithEvent(_i9.PointerDownEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #didExceedDeadlineWithEvent,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void didExceedDeadlineWithEvent(_i9.PointerDownEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #didExceedDeadlineWithEvent,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void didStopTrackingLastPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #didStopTrackingLastPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #didStopTrackingLastPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #dispose,
+      [],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolvePointer(
     int? pointer,
     _i5.GestureDisposition? disposition,
-  ) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #resolvePointer,
-          [
-            pointer,
-            disposition,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ) => super.noSuchMethod(
+    Invocation.method(
+      #resolvePointer,
+      [
+        pointer,
+        disposition,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void stopTrackingPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #stopTrackingPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingIfPointerNoLongerDown,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #stopTrackingIfPointerNoLongerDown,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void addPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   bool isPointerPanZoomAllowed(_i11.PointerPanZoomStartEvent? event) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #isPointerPanZoomAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+            Invocation.method(
+              #isPointerPanZoomAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  _i12.PointerDeviceKind getKindForPointer(int? pointer) => (super.noSuchMethod(
-        Invocation.method(
-          #getKindForPointer,
-          [pointer],
-        ),
-        returnValue: _i12.PointerDeviceKind.touch,
-      ) as _i12.PointerDeviceKind);
+  _i12.PointerDeviceKind getKindForPointer(int? pointer) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getKindForPointer,
+              [pointer],
+            ),
+            returnValue: _i12.PointerDeviceKind.touch,
+          )
+          as _i12.PointerDeviceKind);
 
   @override
   T? invokeCallback<T>(
@@ -1297,18 +1313,20 @@ class MockTapGestureRecognizer extends _i1.Mock
     _i5.RecognizerCallback<T>? callback, {
     String Function()? debugReport,
   }) =>
-      (super.noSuchMethod(Invocation.method(
-        #invokeCallback,
-        [
-          name,
-          callback,
-        ],
-        {#debugReport: debugReport},
-      )) as T?);
+      (super.noSuchMethod(
+            Invocation.method(
+              #invokeCallback,
+              [
+                name,
+                callback,
+              ],
+              {#debugReport: debugReport},
+            ),
+          )
+          as T?);
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 
   @override
   String toStringShallow({
@@ -1316,26 +1334,27 @@ class MockTapGestureRecognizer extends _i1.Mock
     _i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.debug,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringShallow,
-          [],
-          {
-            #joiner: joiner,
-            #minLevel: minLevel,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShallow,
-            [],
-            {
-              #joiner: joiner,
-              #minLevel: minLevel,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringShallow,
+              [],
+              {
+                #joiner: joiner,
+                #minLevel: minLevel,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShallow,
+                [],
+                {
+                  #joiner: joiner,
+                  #minLevel: minLevel,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
   String toStringDeep({
@@ -1345,45 +1364,48 @@ class MockTapGestureRecognizer extends _i1.Mock
     int? wrapWidth = 65,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringDeep,
-          [],
-          {
-            #prefixLineOne: prefixLineOne,
-            #prefixOtherLines: prefixOtherLines,
-            #minLevel: minLevel,
-            #wrapWidth: wrapWidth,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringDeep,
-            [],
-            {
-              #prefixLineOne: prefixLineOne,
-              #prefixOtherLines: prefixOtherLines,
-              #minLevel: minLevel,
-              #wrapWidth: wrapWidth,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringDeep,
+              [],
+              {
+                #prefixLineOne: prefixLineOne,
+                #prefixOtherLines: prefixOtherLines,
+                #minLevel: minLevel,
+                #wrapWidth: wrapWidth,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringDeep,
+                [],
+                {
+                  #prefixLineOne: prefixLineOne,
+                  #prefixOtherLines: prefixOtherLines,
+                  #minLevel: minLevel,
+                  #wrapWidth: wrapWidth,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
-  String toStringShort() => (super.noSuchMethod(
-        Invocation.method(
-          #toStringShort,
-          [],
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShort,
-            [],
-          ),
-        ),
-      ) as String);
+  String toStringShort() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #toStringShort,
+              [],
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShort,
+                [],
+              ),
+            ),
+          )
+          as String);
 
   @override
   _i3.DiagnosticsNode toDiagnosticsNode({
@@ -1391,167 +1413,160 @@ class MockTapGestureRecognizer extends _i1.Mock
     _i3.DiagnosticsTreeStyle? style,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toDiagnosticsNode,
-          [],
-          {
-            #name: name,
-            #style: style,
-          },
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #toDiagnosticsNode,
-            [],
-            {
-              #name: name,
-              #style: style,
-            },
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #toDiagnosticsNode,
+              [],
+              {
+                #name: name,
+                #style: style,
+              },
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #toDiagnosticsNode,
+                [],
+                {
+                  #name: name,
+                  #style: style,
+                },
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
-  List<_i3.DiagnosticsNode> debugDescribeChildren() => (super.noSuchMethod(
-        Invocation.method(
-          #debugDescribeChildren,
-          [],
-        ),
-        returnValue: <_i3.DiagnosticsNode>[],
-      ) as List<_i3.DiagnosticsNode>);
+  List<_i3.DiagnosticsNode> debugDescribeChildren() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #debugDescribeChildren,
+              [],
+            ),
+            returnValue: <_i3.DiagnosticsNode>[],
+          )
+          as List<_i3.DiagnosticsNode>);
 }
 
 /// A class which mocks [LongPressGestureRecognizer].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLongPressGestureRecognizer extends _i1.Mock
-    implements _i14.LongPressGestureRecognizer {
+class MockLongPressGestureRecognizer extends _i1.Mock implements _i14.LongPressGestureRecognizer {
   MockLongPressGestureRecognizer() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  String get debugDescription => (super.noSuchMethod(
-        Invocation.getter(#debugDescription),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.getter(#debugDescription),
-        ),
-      ) as String);
+  String get debugDescription =>
+      (super.noSuchMethod(
+            Invocation.getter(#debugDescription),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.getter(#debugDescription),
+            ),
+          )
+          as String);
 
   @override
-  set onLongPressDown(_i14.GestureLongPressDownCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressDown(_i14.GestureLongPressDownCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onLongPressCancel(_i14.GestureLongPressCancelCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressCancel(_i14.GestureLongPressCancelCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   set onLongPress(_i14.GestureLongPressCallback? value) => super.noSuchMethod(
-        Invocation.setter(
-          #onLongPress,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #onLongPress,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onLongPressStart(_i14.GestureLongPressStartCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressStart,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressStart(_i14.GestureLongPressStartCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressStart,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onLongPressMoveUpdate(_i14.GestureLongPressMoveUpdateCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressMoveUpdate,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressMoveUpdate(_i14.GestureLongPressMoveUpdateCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressMoveUpdate,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onLongPressUp(_i14.GestureLongPressUpCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressUp(_i14.GestureLongPressUpCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onLongPressEnd(_i14.GestureLongPressEndCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onLongPressEnd,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onLongPressEnd(_i14.GestureLongPressEndCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onLongPressEnd,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPressDown(_i14.GestureLongPressDownCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPressDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPressDown(_i14.GestureLongPressDownCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPressDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPressCancel(_i14.GestureLongPressCancelCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPressCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPressCancel(_i14.GestureLongPressCancelCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPressCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPress(_i14.GestureLongPressCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPress,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPress(_i14.GestureLongPressCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPress,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPressStart(_i14.GestureLongPressStartCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPressStart,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPressStart(_i14.GestureLongPressStartCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPressStart,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPressMoveUpdate(
-          _i14.GestureLongPressMoveUpdateCallback? value) =>
+  set onSecondaryLongPressMoveUpdate(_i14.GestureLongPressMoveUpdateCallback? value) =>
       super.noSuchMethod(
         Invocation.setter(
           #onSecondaryLongPressMoveUpdate,
@@ -1561,68 +1576,61 @@ class MockLongPressGestureRecognizer extends _i1.Mock
       );
 
   @override
-  set onSecondaryLongPressUp(_i14.GestureLongPressUpCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPressUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPressUp(_i14.GestureLongPressUpCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPressUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onSecondaryLongPressEnd(_i14.GestureLongPressEndCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onSecondaryLongPressEnd,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onSecondaryLongPressEnd(_i14.GestureLongPressEndCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onSecondaryLongPressEnd,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPressDown(_i14.GestureLongPressDownCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPressDown,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPressDown(_i14.GestureLongPressDownCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPressDown,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPressCancel(_i14.GestureLongPressCancelCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPressCancel,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPressCancel(_i14.GestureLongPressCancelCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPressCancel,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPress(_i14.GestureLongPressCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPress,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPress(_i14.GestureLongPressCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPress,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPressStart(_i14.GestureLongPressStartCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPressStart,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPressStart(_i14.GestureLongPressStartCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPressStart,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPressMoveUpdate(
-          _i14.GestureLongPressMoveUpdateCallback? value) =>
+  set onTertiaryLongPressMoveUpdate(_i14.GestureLongPressMoveUpdateCallback? value) =>
       super.noSuchMethod(
         Invocation.setter(
           #onTertiaryLongPressMoveUpdate,
@@ -1632,293 +1640,290 @@ class MockLongPressGestureRecognizer extends _i1.Mock
       );
 
   @override
-  set onTertiaryLongPressUp(_i14.GestureLongPressUpCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPressUp,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPressUp(_i14.GestureLongPressUpCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPressUp,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set onTertiaryLongPressEnd(_i14.GestureLongPressEndCallback? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #onTertiaryLongPressEnd,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set onTertiaryLongPressEnd(_i14.GestureLongPressEndCallback? value) => super.noSuchMethod(
+    Invocation.setter(
+      #onTertiaryLongPressEnd,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  _i5.GestureRecognizerState get state => (super.noSuchMethod(
-        Invocation.getter(#state),
-        returnValue: _i5.GestureRecognizerState.ready,
-      ) as _i5.GestureRecognizerState);
+  _i5.GestureRecognizerState get state =>
+      (super.noSuchMethod(
+            Invocation.getter(#state),
+            returnValue: _i5.GestureRecognizerState.ready,
+          )
+          as _i5.GestureRecognizerState);
 
   @override
   set team(_i5.GestureArenaTeam? value) => super.noSuchMethod(
-        Invocation.setter(
-          #team,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #team,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  _i5.AllowedButtonsFilter get allowedButtonsFilter => (super.noSuchMethod(
-        Invocation.getter(#allowedButtonsFilter),
-        returnValue: (int buttons) => false,
-      ) as _i5.AllowedButtonsFilter);
+  _i5.AllowedButtonsFilter get allowedButtonsFilter =>
+      (super.noSuchMethod(
+            Invocation.getter(#allowedButtonsFilter),
+            returnValue: (int buttons) => false,
+          )
+          as _i5.AllowedButtonsFilter);
 
   @override
   set gestureSettings(_i11.DeviceGestureSettings? value) => super.noSuchMethod(
-        Invocation.setter(
-          #gestureSettings,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.setter(
+      #gestureSettings,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  set supportedDevices(Set<_i12.PointerDeviceKind>? value) =>
-      super.noSuchMethod(
-        Invocation.setter(
-          #supportedDevices,
-          value,
-        ),
-        returnValueForMissingStub: null,
-      );
+  set supportedDevices(Set<_i12.PointerDeviceKind>? value) => super.noSuchMethod(
+    Invocation.setter(
+      #supportedDevices,
+      value,
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  bool isPointerAllowed(_i9.PointerDownEvent? event) => (super.noSuchMethod(
-        Invocation.method(
-          #isPointerAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+  bool isPointerAllowed(_i9.PointerDownEvent? event) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #isPointerAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   void didExceedDeadline() => super.noSuchMethod(
-        Invocation.method(
-          #didExceedDeadline,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #didExceedDeadline,
+      [],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handlePrimaryPointer(_i9.PointerEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #handlePrimaryPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #handlePrimaryPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolve(_i5.GestureDisposition? disposition) => super.noSuchMethod(
-        Invocation.method(
-          #resolve,
-          [disposition],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #resolve,
+      [disposition],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void acceptGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #acceptGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #acceptGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void addAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointer(_i9.PointerDownEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void handleEvent(_i9.PointerEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #handleEvent,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #handleEvent,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void didExceedDeadlineWithEvent(_i9.PointerDownEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #didExceedDeadlineWithEvent,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void didExceedDeadlineWithEvent(_i9.PointerDownEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #didExceedDeadlineWithEvent,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void rejectGesture(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #rejectGesture,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #rejectGesture,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void didStopTrackingLastPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #didStopTrackingLastPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #didStopTrackingLastPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #dispose,
+      [],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #debugFillProperties,
-          [properties],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void debugFillProperties(_i3.DiagnosticPropertiesBuilder? properties) => super.noSuchMethod(
+    Invocation.method(
+      #debugFillProperties,
+      [properties],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void resolvePointer(
     int? pointer,
     _i5.GestureDisposition? disposition,
-  ) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #resolvePointer,
-          [
-            pointer,
-            disposition,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ) => super.noSuchMethod(
+    Invocation.method(
+      #resolvePointer,
+      [
+        pointer,
+        disposition,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void startTrackingPointer(
     int? pointer, [
     _i9.Matrix4? transform,
-  ]) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #startTrackingPointer,
-          [
-            pointer,
-            transform,
-          ],
-        ),
-        returnValueForMissingStub: null,
-      );
+  ]) => super.noSuchMethod(
+    Invocation.method(
+      #startTrackingPointer,
+      [
+        pointer,
+        transform,
+      ],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void stopTrackingPointer(int? pointer) => super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingPointer,
-          [pointer],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #stopTrackingPointer,
+      [pointer],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #stopTrackingIfPointerNoLongerDown,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void stopTrackingIfPointerNoLongerDown(_i9.PointerEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #stopTrackingIfPointerNoLongerDown,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #addAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void addAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #addAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void addPointer(_i9.PointerDownEvent? event) => super.noSuchMethod(
-        Invocation.method(
-          #addPointer,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #addPointer,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #handleNonAllowedPointerPanZoom,
-          [event],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void handleNonAllowedPointerPanZoom(_i11.PointerPanZoomStartEvent? event) => super.noSuchMethod(
+    Invocation.method(
+      #handleNonAllowedPointerPanZoom,
+      [event],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   bool isPointerPanZoomAllowed(_i11.PointerPanZoomStartEvent? event) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #isPointerPanZoomAllowed,
-          [event],
-        ),
-        returnValue: false,
-      ) as bool);
+            Invocation.method(
+              #isPointerPanZoomAllowed,
+              [event],
+            ),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  _i12.PointerDeviceKind getKindForPointer(int? pointer) => (super.noSuchMethod(
-        Invocation.method(
-          #getKindForPointer,
-          [pointer],
-        ),
-        returnValue: _i12.PointerDeviceKind.touch,
-      ) as _i12.PointerDeviceKind);
+  _i12.PointerDeviceKind getKindForPointer(int? pointer) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getKindForPointer,
+              [pointer],
+            ),
+            returnValue: _i12.PointerDeviceKind.touch,
+          )
+          as _i12.PointerDeviceKind);
 
   @override
   T? invokeCallback<T>(
@@ -1926,18 +1931,20 @@ class MockLongPressGestureRecognizer extends _i1.Mock
     _i5.RecognizerCallback<T>? callback, {
     String Function()? debugReport,
   }) =>
-      (super.noSuchMethod(Invocation.method(
-        #invokeCallback,
-        [
-          name,
-          callback,
-        ],
-        {#debugReport: debugReport},
-      )) as T?);
+      (super.noSuchMethod(
+            Invocation.method(
+              #invokeCallback,
+              [
+                name,
+                callback,
+              ],
+              {#debugReport: debugReport},
+            ),
+          )
+          as T?);
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 
   @override
   String toStringShallow({
@@ -1945,26 +1952,27 @@ class MockLongPressGestureRecognizer extends _i1.Mock
     _i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.debug,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringShallow,
-          [],
-          {
-            #joiner: joiner,
-            #minLevel: minLevel,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShallow,
-            [],
-            {
-              #joiner: joiner,
-              #minLevel: minLevel,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringShallow,
+              [],
+              {
+                #joiner: joiner,
+                #minLevel: minLevel,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShallow,
+                [],
+                {
+                  #joiner: joiner,
+                  #minLevel: minLevel,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
   String toStringDeep({
@@ -1974,45 +1982,48 @@ class MockLongPressGestureRecognizer extends _i1.Mock
     int? wrapWidth = 65,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toStringDeep,
-          [],
-          {
-            #prefixLineOne: prefixLineOne,
-            #prefixOtherLines: prefixOtherLines,
-            #minLevel: minLevel,
-            #wrapWidth: wrapWidth,
-          },
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringDeep,
-            [],
-            {
-              #prefixLineOne: prefixLineOne,
-              #prefixOtherLines: prefixOtherLines,
-              #minLevel: minLevel,
-              #wrapWidth: wrapWidth,
-            },
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #toStringDeep,
+              [],
+              {
+                #prefixLineOne: prefixLineOne,
+                #prefixOtherLines: prefixOtherLines,
+                #minLevel: minLevel,
+                #wrapWidth: wrapWidth,
+              },
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringDeep,
+                [],
+                {
+                  #prefixLineOne: prefixLineOne,
+                  #prefixOtherLines: prefixOtherLines,
+                  #minLevel: minLevel,
+                  #wrapWidth: wrapWidth,
+                },
+              ),
+            ),
+          )
+          as String);
 
   @override
-  String toStringShort() => (super.noSuchMethod(
-        Invocation.method(
-          #toStringShort,
-          [],
-        ),
-        returnValue: _i8.dummyValue<String>(
-          this,
-          Invocation.method(
-            #toStringShort,
-            [],
-          ),
-        ),
-      ) as String);
+  String toStringShort() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #toStringShort,
+              [],
+            ),
+            returnValue: _i8.dummyValue<String>(
+              this,
+              Invocation.method(
+                #toStringShort,
+                [],
+              ),
+            ),
+          )
+          as String);
 
   @override
   _i3.DiagnosticsNode toDiagnosticsNode({
@@ -2020,33 +2031,36 @@ class MockLongPressGestureRecognizer extends _i1.Mock
     _i3.DiagnosticsTreeStyle? style,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #toDiagnosticsNode,
-          [],
-          {
-            #name: name,
-            #style: style,
-          },
-        ),
-        returnValue: _FakeDiagnosticsNode_2(
-          this,
-          Invocation.method(
-            #toDiagnosticsNode,
-            [],
-            {
-              #name: name,
-              #style: style,
-            },
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #toDiagnosticsNode,
+              [],
+              {
+                #name: name,
+                #style: style,
+              },
+            ),
+            returnValue: _FakeDiagnosticsNode_2(
+              this,
+              Invocation.method(
+                #toDiagnosticsNode,
+                [],
+                {
+                  #name: name,
+                  #style: style,
+                },
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
-  List<_i3.DiagnosticsNode> debugDescribeChildren() => (super.noSuchMethod(
-        Invocation.method(
-          #debugDescribeChildren,
-          [],
-        ),
-        returnValue: <_i3.DiagnosticsNode>[],
-      ) as List<_i3.DiagnosticsNode>);
+  List<_i3.DiagnosticsNode> debugDescribeChildren() =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #debugDescribeChildren,
+              [],
+            ),
+            returnValue: <_i3.DiagnosticsNode>[],
+          )
+          as List<_i3.DiagnosticsNode>);
 }

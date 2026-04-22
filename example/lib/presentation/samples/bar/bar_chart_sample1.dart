@@ -18,8 +18,7 @@ class BarChartSample1 extends StatefulWidget {
         AppColors.contentColorRed,
       ];
 
-  final Color barBackgroundColor =
-      AppColors.contentColorWhite.darken().withValues(alpha: 0.3);
+  final Color barBackgroundColor = AppColors.contentColorWhite.darken().withValues(alpha: 0.3);
   final Color barColor = AppColors.contentColorWhite;
   final Color touchedBarColor = AppColors.contentColorGreen;
 
@@ -138,18 +137,17 @@ class BarChartSample1State extends State<BarChartSample1> {
   }
 
   List<BarChartGroupData> showingGroups() => List.generate(
-        7,
-        (i) => switch (i) {
-          0 => makeGroupData(0, 5, isTouched: i == touchedIndex),
-          1 => makeGroupData(1, 6.5, isTouched: i == touchedIndex),
-          2 => makeGroupData(2, 5, isTouched: i == touchedIndex),
-          3 => makeGroupData(3, 7.5, isTouched: i == touchedIndex),
-          4 => makeGroupData(4, 9, isTouched: i == touchedIndex),
-          5 => makeGroupData(5, 11.5, isTouched: i == touchedIndex),
-          6 => makeGroupData(6, 6.5, isTouched: i == touchedIndex),
-          _ => throw Error(),
-        }
-      );
+      7,
+      (i) => switch (i) {
+            0 => makeGroupData(0, 5, isTouched: i == touchedIndex),
+            1 => makeGroupData(1, 6.5, isTouched: i == touchedIndex),
+            2 => makeGroupData(2, 5, isTouched: i == touchedIndex),
+            3 => makeGroupData(3, 7.5, isTouched: i == touchedIndex),
+            4 => makeGroupData(4, 9, isTouched: i == touchedIndex),
+            5 => makeGroupData(5, 11.5, isTouched: i == touchedIndex),
+            6 => makeGroupData(6, 6.5, isTouched: i == touchedIndex),
+            _ => throw Error(),
+          });
 
   BarChartData mainBarData() {
     return BarChartData(
@@ -292,8 +290,7 @@ class BarChartSample1State extends State<BarChartSample1> {
         (i) => makeGroupData(
           i,
           Random().nextInt(15).toDouble() + 6,
-          barColor: widget
-              .availableColors[Random().nextInt(widget.availableColors.length)],
+          barColor: widget.availableColors[Random().nextInt(widget.availableColors.length)],
         ),
       ),
       gridData: const FlGridData(show: false),

@@ -38,13 +38,11 @@ void main() {
       );
 
       final pieChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
       when(mockUtils.radians(any)).thenAnswer((realInvocation) => 12);
 
       final mockBuildContext = MockBuildContext();
@@ -99,8 +97,7 @@ void main() {
       );
 
       final barChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -134,8 +131,7 @@ void main() {
       );
 
       final pieChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       final mockBuildContext = MockBuildContext();
       final mockCanvasWrapper = MockCanvasWrapper();
@@ -144,8 +140,7 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenAnswer((realInvocation) => textStyle1);
+      when(mockUtils.getThemeAwareTextStyle(any, any)).thenAnswer((realInvocation) => textStyle1);
       when(mockUtils.radians(any)).thenAnswer((realInvocation) => 12);
 
       final centerRadius = pieChartPainter.calculateCenterRadius(
@@ -194,8 +189,7 @@ void main() {
       );
 
       final barChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -262,15 +256,13 @@ void main() {
       );
 
       final barChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
           'path': inv.positionalArguments[0] as Path,
@@ -703,13 +695,12 @@ void main() {
       );
 
       const endRadians = startRadians + sweepRadians;
-      final innerStart = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
-      final outerStart = center +
-          Offset(math.cos(startRadians), math.sin(startRadians)) *
-              (centerRadius + section.radius);
-      final innerEnd = center +
-          Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
+      final innerStart =
+          center + Offset(math.cos(startRadians), math.sin(startRadians)) * centerRadius;
+      final outerStart =
+          center +
+          Offset(math.cos(startRadians), math.sin(startRadians)) * (centerRadius + section.radius);
+      final innerEnd = center + Offset(math.cos(endRadians), math.sin(endRadians)) * centerRadius;
 
       final expected = Path()
         ..moveTo(innerStart.dx, innerStart.dy)
@@ -828,8 +819,7 @@ void main() {
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
           'path': inv.positionalArguments[0] as Path,
@@ -912,8 +902,7 @@ void main() {
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
       final results = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final paint = inv.positionalArguments[1] as Paint;
         results.add({
           'path': inv.positionalArguments[0] as Path,
@@ -996,8 +985,7 @@ void main() {
       });
 
       final drawPathResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.drawPath(captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockCanvasWrapper.drawPath(captureAny, captureAny)).thenAnswer((inv) {
         final paint = inv.positionalArguments[1] as Paint;
         drawPathResults.add({
           'path': inv.positionalArguments[0] as Path,
@@ -1185,73 +1173,50 @@ void main() {
         ],
       );
       final barChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       expect(
-        barChartPainter
-            .handleTouch(const Offset(191, 110), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(191, 110), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(156, 110), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(156, 110), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(107, 190), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(107, 190), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(90, 156), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(90, 156), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(53, 131), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(53, 131), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(53, 131), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(53, 131), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(43, 94), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(43, 94), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(36, 57), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(36, 57), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(36, 57), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(36, 57), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(65, 4.3), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(65, 4.3), viewSize, holder).touchedSectionIndex,
         -1,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(7, 108), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(7, 108), viewSize, holder).touchedSectionIndex,
         -1,
       );
 
@@ -1306,9 +1271,7 @@ void main() {
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(66.2, 177), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(66.2, 177), viewSize, holder).touchedSectionIndex,
         2,
       );
       expect(
@@ -1318,70 +1281,48 @@ void main() {
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(19.1, 131), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(19.1, 131), viewSize, holder).touchedSectionIndex,
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(19.1, 131), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(19.1, 131), viewSize, holder).touchedSectionIndex,
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(17.7, 83.7), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(17.7, 83.7), viewSize, holder).touchedSectionIndex,
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(27.8, 59.4), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(27.8, 59.4), viewSize, holder).touchedSectionIndex,
         2,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(44.1, 75.2), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(44.1, 75.2), viewSize, holder).touchedSectionIndex,
         2,
       );
 
       expect(
-        barChartPainter
-            .handleTouch(const Offset(56.1, 55.6), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(56.1, 55.6), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(42.1, 46.3), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(42.1, 46.3), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(30.9, 38.4), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(30.9, 38.4), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(55.3, 17.8), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(55.3, 17.8), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(81.2, 39.8), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(81.2, 39.8), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
-        barChartPainter
-            .handleTouch(const Offset(100.5, 4.1), viewSize, holder)
-            .touchedSectionIndex,
+        barChartPainter.handleTouch(const Offset(100.5, 4.1), viewSize, holder).touchedSectionIndex,
         3,
       );
       expect(
@@ -1422,8 +1363,7 @@ void main() {
         ],
       );
       final barChartPainter = PieChartPainter();
-      final holder =
-          PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
+      final holder = PaintHolder<PieChartData>(data, data, TextScaler.noScaling);
 
       expect(
         barChartPainter

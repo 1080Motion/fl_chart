@@ -24,13 +24,13 @@ class BarChartLeaf extends LeafRenderObjectWidget {
 
   @override
   RenderBarChart createRenderObject(BuildContext context) => RenderBarChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-        chartVirtualRect,
-        canBeScaled: canBeScaled,
-      );
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+    chartVirtualRect,
+    canBeScaled: canBeScaled,
+  );
 
   @override
   void updateRenderObject(BuildContext context, RenderBarChart renderObject) {
@@ -54,11 +54,11 @@ class RenderBarChart extends RenderBaseChart<BarTouchResponse> {
     TextScaler textScaler,
     Rect? chartVirtualRect, {
     required bool canBeScaled,
-  })  : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        _chartVirtualRect = chartVirtualRect,
-        super(targetData.barTouchData, context, canBeScaled: canBeScaled);
+  }) : _data = data,
+       _targetData = targetData,
+       _textScaler = textScaler,
+       _chartVirtualRect = chartVirtualRect,
+       super(targetData.barTouchData, context, canBeScaled: canBeScaled);
 
   BarChartData get data => _data;
   BarChartData _data;

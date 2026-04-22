@@ -12,15 +12,14 @@ class PieChart extends ImplicitlyAnimatedWidget {
   const PieChart(
     this.data, {
     super.key,
-    @Deprecated('Please use [duration] instead')
-    Duration? swapAnimationDuration,
+    @Deprecated('Please use [duration] instead') Duration? swapAnimationDuration,
     Duration duration = const Duration(milliseconds: 150),
     @Deprecated('Please use [curve] instead') Curve? swapAnimationCurve,
     Curve curve = Curves.linear,
   }) : super(
-          duration: swapAnimationDuration ?? duration,
-          curve: swapAnimationCurve ?? curve,
-        );
+         duration: swapAnimationDuration ?? duration,
+         curve: swapAnimationCurve ?? curve,
+       );
 
   /// Default duration to reuse externally.
   static const defaultDuration = Duration(milliseconds: 150);
@@ -68,12 +67,13 @@ class _PieChartState extends AnimatedWidgetBaseState<PieChart> {
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _pieChartDataTween = visitor(
-      _pieChartDataTween,
-      widget.data,
-      (dynamic value) =>
-          PieChartDataTween(begin: value as PieChartData, end: widget.data),
-    ) as PieChartDataTween?;
+    _pieChartDataTween =
+        visitor(
+              _pieChartDataTween,
+              widget.data,
+              (dynamic value) => PieChartDataTween(begin: value as PieChartData, end: widget.data),
+            )
+            as PieChartDataTween?;
   }
 }
 

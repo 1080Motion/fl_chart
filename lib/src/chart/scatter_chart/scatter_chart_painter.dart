@@ -125,8 +125,7 @@ class ScatterChartPainter extends AxisChartPainter<ScatterChartData> {
         final scatterSpot = data.scatterSpots[i];
         final spotIndex = i;
 
-        final label =
-            data.scatterLabelSettings.getLabelFunction(spotIndex, scatterSpot);
+        final label = data.scatterLabelSettings.getLabelFunction(spotIndex, scatterSpot);
 
         if (label.isEmpty || !scatterSpot.show) {
           continue;
@@ -399,12 +398,16 @@ class ScatterChartPainter extends AxisChartPainter<ScatterChartData> {
     _bgTouchTooltipPaint.color = tooltipData.getTooltipColor(showOnSpot);
 
     final rotateAngle = tooltipData.rotateAngle;
-    final rectRotationOffset =
-        Offset(0, Utils().calculateRotationOffset(rect.size, rotateAngle).dy);
+    final rectRotationOffset = Offset(
+      0,
+      Utils().calculateRotationOffset(rect.size, rotateAngle).dy,
+    );
     final rectDrawOffset = Offset(roundedRect.left, roundedRect.top);
 
-    final textRotationOffset =
-        Utils().calculateRotationOffset(drawingTextPainter.size, rotateAngle);
+    final textRotationOffset = Utils().calculateRotationOffset(
+      drawingTextPainter.size,
+      rotateAngle,
+    );
 
     final drawOffset = Offset(
       rect.center.dx - (drawingTextPainter.width / 2),

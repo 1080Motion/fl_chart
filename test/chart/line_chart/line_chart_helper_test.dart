@@ -9,8 +9,7 @@ void main() {
     test('Test validity 1', () {
       final lineChartHelper = LineChartHelper();
       final lineBars = [lineChartBarData1, lineChartBarData2];
-      final (minX, maxX, minY, maxY) =
-          lineChartHelper.calculateMaxAxisValues(lineBars);
+      final (minX, maxX, minY, maxY) = lineChartHelper.calculateMaxAxisValues(lineBars);
       expect(minX, 1);
       expect(maxX, 4);
       expect(minY, 1);
@@ -28,8 +27,7 @@ void main() {
           ],
         ),
       ];
-      final (minX, maxX, minY, maxY) =
-          lineChartHelper.calculateMaxAxisValues(lineBars);
+      final (minX, maxX, minY, maxY) = lineChartHelper.calculateMaxAxisValues(lineBars);
       expect(minX, -3);
       expect(maxX, 14);
       expect(minY, -10);

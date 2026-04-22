@@ -87,8 +87,7 @@ void main() {
     ),
   );
 
-  final lineChartDataWithOnlyLeftTitlesWithoutAxisName =
-      lineChartDataBase.copyWith(
+  final lineChartDataWithOnlyLeftTitlesWithoutAxisName = lineChartDataBase.copyWith(
     titlesData: FlTitlesData(
       leftTitles: AxisTitles(
         sideTitles: SideTitles(

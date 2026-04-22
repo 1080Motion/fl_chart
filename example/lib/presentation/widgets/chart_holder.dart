@@ -43,8 +43,7 @@ class ChartHolder extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             color: AppColors.itemsBackground,
-            borderRadius:
-                BorderRadius.all(Radius.circular(AppDimens.defaultRadius)),
+            borderRadius: BorderRadius.all(Radius.circular(AppDimens.defaultRadius)),
           ),
           child: chartSample.builder(context),
         ),

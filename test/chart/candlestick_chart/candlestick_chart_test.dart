@@ -36,8 +36,7 @@ void main() {
       );
     });
 
-    testWidgets('passes interaction parameters to AxisChartScaffoldWidget',
-        (tester) async {
+    testWidgets('passes interaction parameters to AxisChartScaffoldWidget', (tester) async {
       await tester.pumpWidget(
         createTestWidget(
           chart: CandlestickChart(
@@ -103,8 +102,7 @@ void main() {
       });
     }
 
-    testWidgets('passes canBeScaled false for FlScaleAxis.none',
-        (tester) async {
+    testWidgets('passes canBeScaled false for FlScaleAxis.none', (tester) async {
       await tester.pumpWidget(
         createTestWidget(
           chart: CandlestickChart(
@@ -136,8 +134,7 @@ void main() {
           ),
         );
 
-        final candlestickChartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final candlestickChartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         final scaleStart1 = candlestickChartCenterOffset;
         final scaleStart2 = candlestickChartCenterOffset;
         final scaleEnd1 = candlestickChartCenterOffset + const Offset(100, 100);
@@ -172,8 +169,7 @@ void main() {
           ),
         );
 
-        final candlestickChartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final candlestickChartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         final scaleStart1 = candlestickChartCenterOffset;
         final scaleStart2 = candlestickChartCenterOffset;
         final scaleEnd1 = candlestickChartCenterOffset + const Offset(100, 100);
@@ -202,8 +198,7 @@ void main() {
         expect(chartVirtualRect.top, isNegative);
       });
 
-      testWidgets('scales horizontally with FlScaleAxis.horizontal',
-          (tester) async {
+      testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: CandlestickChart(
@@ -215,8 +210,7 @@ void main() {
           ),
         );
 
-        final chartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         final scaleStart1 = chartCenterOffset;
         final scaleStart2 = chartCenterOffset;
         final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -246,8 +240,7 @@ void main() {
         expect(chartVirtualRect.top, 0);
       });
 
-      testWidgets('scales vertically with FlScaleAxis.vertical',
-          (tester) async {
+      testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: CandlestickChart(
@@ -259,8 +252,7 @@ void main() {
           ),
         );
 
-        final chartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         final scaleStart1 = chartCenterOffset;
         final scaleStart2 = chartCenterOffset;
         final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -294,8 +286,7 @@ void main() {
       });
 
       group('pans', () {
-        testWidgets('only horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('only horizontally with FlScaleAxis.horizontal', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: CandlestickChart(
@@ -307,8 +298,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -322,24 +312,20 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, 0);
 
           const panOffset = Offset(100, 100);
           await tester.dragFrom(chartCenterOffset, panOffset);
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectBeforePan.size, chartVirtualRectAfterPan.size);
           expect(
@@ -349,8 +335,7 @@ void main() {
           expect(chartVirtualRectAfterPan.top, 0);
         });
 
-        testWidgets('only vertically with FlScaleAxis.vertical',
-            (tester) async {
+        testWidgets('only vertically with FlScaleAxis.vertical', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: CandlestickChart(
@@ -362,8 +347,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -377,24 +361,20 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.left, 0);
 
           const panOffset = Offset(100, 100);
           await tester.dragFrom(chartCenterOffset, panOffset);
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectAfterPan.left, 0);
           expect(
@@ -415,8 +395,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -430,12 +409,10 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, isNegative);
           expect(chartVirtualRectBeforePan.left, isNegative);
 
@@ -443,12 +420,10 @@ void main() {
           await tester.dragFrom(chartCenterOffset, panOffset);
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -464,8 +439,7 @@ void main() {
 
     group('trackpad scroll', () {
       group('pans', () {
-        testWidgets('only horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('only horizontally with FlScaleAxis.horizontal', (tester) async {
           await tester.pumpWidget(
             createTestWidget(
               chart: CandlestickChart(
@@ -477,8 +451,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -494,13 +467,11 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.top, 0);
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
@@ -510,12 +481,10 @@ void main() {
           await tester.sendEventToBinding(pointer.scroll(leftAndUp));
           await tester.pump();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -536,8 +505,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -553,13 +521,11 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
           expect(chartVirtualRectBeforePan.left, 0);
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
@@ -569,12 +535,10 @@ void main() {
           await tester.sendEventToBinding(pointer.scroll(leftAndUp));
           await tester.pump();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(chartVirtualRectAfterPan.left, 0);
           expect(
@@ -595,8 +559,7 @@ void main() {
             ),
           );
 
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           final scaleStart1 = chartCenterOffset;
           final scaleStart2 = chartCenterOffset;
           final scaleEnd1 = chartCenterOffset + const Offset(100, 100);
@@ -612,13 +575,11 @@ void main() {
           await gesture2.up();
           await tester.pumpAndSettle();
 
-          final candlestickChartLeafBeforePan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafBeforePan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
 
-          final chartVirtualRectBeforePan =
-              candlestickChartLeafBeforePan.chartVirtualRect!;
+          final chartVirtualRectBeforePan = candlestickChartLeafBeforePan.chartVirtualRect!;
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
           const leftAndUp = Offset(-100, -100);
@@ -627,12 +588,10 @@ void main() {
           await tester.sendEventToBinding(pointer.scroll(leftAndUp));
           await tester.pump();
 
-          final candlestickChartLeafAfterPan =
-              tester.widget<CandlestickChartLeaf>(
+          final candlestickChartLeafAfterPan = tester.widget<CandlestickChartLeaf>(
             find.byType(CandlestickChartLeaf),
           );
-          final chartVirtualRectAfterPan =
-              candlestickChartLeafAfterPan.chartVirtualRect!;
+          final chartVirtualRectAfterPan = candlestickChartLeafAfterPan.chartVirtualRect!;
 
           expect(
             chartVirtualRectAfterPan.left,
@@ -664,8 +623,7 @@ void main() {
           );
 
           final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-          final chartCenterOffset =
-              tester.getCenter(find.byType(CandlestickChartLeaf));
+          final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
           const scrollAmount = Offset(0, -100);
 
           await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -718,8 +676,7 @@ void main() {
         );
       }
 
-      testWidgets('scales horizontally with FlScaleAxis.horizontal',
-          (tester) async {
+      testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: CandlestickChart(
@@ -733,8 +690,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -756,8 +712,7 @@ void main() {
         expect(chartVirtualRect.top, 0);
       });
 
-      testWidgets('scales vertically with FlScaleAxis.vertical',
-          (tester) async {
+      testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
         await tester.pumpWidget(
           createTestWidget(
             chart: CandlestickChart(
@@ -771,8 +726,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -811,8 +765,7 @@ void main() {
         );
 
         final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-        final chartCenterOffset =
-            tester.getCenter(find.byType(CandlestickChartLeaf));
+        final chartCenterOffset = tester.getCenter(find.byType(CandlestickChartLeaf));
         const scrollAmount = Offset(0, -100);
 
         await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -820,8 +773,9 @@ void main() {
         await tester.sendEventToBinding(pointer.scroll(scrollAmount));
         await tester.pump();
 
-        final candlestickChartLeaf = tester
-            .widget<CandlestickChartLeaf>(find.byType(CandlestickChartLeaf));
+        final candlestickChartLeaf = tester.widget<CandlestickChartLeaf>(
+          find.byType(CandlestickChartLeaf),
+        );
         final renderBox = tester.renderObject<RenderBox>(
           find.byType(CandlestickChartLeaf),
         );

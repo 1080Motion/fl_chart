@@ -34,8 +34,7 @@ class CanvasWrapper {
     Rect rect, {
     ClipOp clipOp = ClipOp.intersect,
     bool doAntiAlias = true,
-  }) =>
-      canvas.clipRect(rect, clipOp: clipOp, doAntiAlias: doAntiAlias);
+  }) => canvas.clipRect(rect, clipOp: clipOp, doAntiAlias: doAntiAlias);
 
   /// Directly calls [Canvas.translate]
   void translate(double dx, double dy) => canvas.translate(dx, dy);
@@ -53,8 +52,7 @@ class CanvasWrapper {
   void drawPicture(Picture picture) => canvas.drawPicture(picture);
 
   /// Directly calls [Canvas.drawImage]
-  void drawImage(Image image, Offset offset, Paint paint) =>
-      canvas.drawImage(image, offset, paint);
+  void drawImage(Image image, Offset offset, Paint paint) => canvas.drawImage(image, offset, paint);
 
   /// Directly calls [Canvas.clipPath]
   void clipPath(Path path, {bool doAntiAlias = true}) =>
@@ -64,8 +62,7 @@ class CanvasWrapper {
   void drawRect(Rect rect, Paint paint) => canvas.drawRect(rect, paint);
 
   /// Directly calls [Canvas.drawLine]
-  void drawLine(Offset p1, Offset p2, Paint paint) =>
-      canvas.drawLine(p1, p2, paint);
+  void drawLine(Offset p1, Offset p2, Paint paint) => canvas.drawLine(p1, p2, paint);
 
   /// Directly calls [Canvas.drawCircle]
   void drawCircle(Offset center, double radius, Paint paint) =>
@@ -78,8 +75,7 @@ class CanvasWrapper {
     double sweepAngle,
     bool useCenter,
     Paint paint,
-  ) =>
-      canvas.drawArc(rect, startAngle, sweepAngle, useCenter, paint);
+  ) => canvas.drawArc(rect, startAngle, sweepAngle, useCenter, paint);
 
   /// Paints a text on the [Canvas]
   ///

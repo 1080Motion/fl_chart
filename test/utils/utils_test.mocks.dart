@@ -31,9 +31,9 @@ class _FakeOffset_0 extends _i1.SmartFake implements _i2.Offset {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 }
 
 class _FakeBorderSide_1 extends _i1.SmartFake implements _i3.BorderSide {
@@ -41,13 +41,12 @@ class _FakeBorderSide_1 extends _i1.SmartFake implements _i3.BorderSide {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
 class _FakeTextStyle_2 extends _i1.SmartFake implements _i3.TextStyle {
@@ -55,13 +54,12 @@ class _FakeTextStyle_2 extends _i1.SmartFake implements _i3.TextStyle {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
 class _FakeWidget_3 extends _i1.SmartFake implements _i3.Widget {
@@ -69,46 +67,41 @@ class _FakeWidget_3 extends _i1.SmartFake implements _i3.Widget {
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
-class _FakeInheritedWidget_4 extends _i1.SmartFake
-    implements _i3.InheritedWidget {
+class _FakeInheritedWidget_4 extends _i1.SmartFake implements _i3.InheritedWidget {
   _FakeInheritedWidget_4(
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
-  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) =>
-      super.toString();
+  String toString({_i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info}) => super.toString();
 }
 
-class _FakeDiagnosticsNode_5 extends _i1.SmartFake
-    implements _i3.DiagnosticsNode {
+class _FakeDiagnosticsNode_5 extends _i1.SmartFake implements _i3.DiagnosticsNode {
   _FakeDiagnosticsNode_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
-          parent,
-          parentInvocation,
-        );
+        parent,
+        parentInvocation,
+      );
 
   @override
   String toString({
     _i4.TextTreeConfiguration? parentConfiguration,
     _i3.DiagnosticLevel? minLevel = _i3.DiagnosticLevel.info,
-  }) =>
-      super.toString();
+  }) => super.toString();
 }
 
 /// A class which mocks [Utils].
@@ -120,22 +113,26 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
   }
 
   @override
-  double radians(double? degrees) => (super.noSuchMethod(
-        Invocation.method(
-          #radians,
-          [degrees],
-        ),
-        returnValue: 0.0,
-      ) as double);
+  double radians(double? degrees) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #radians,
+              [degrees],
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
-  double degrees(double? radians) => (super.noSuchMethod(
-        Invocation.method(
-          #degrees,
-          [radians],
-        ),
-        returnValue: 0.0,
-      ) as double);
+  double degrees(double? radians) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #degrees,
+              [radians],
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
   double translateRotatedPosition(
@@ -143,15 +140,16 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? degree,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #translateRotatedPosition,
-          [
-            size,
-            degree,
-          ],
-        ),
-        returnValue: 0.0,
-      ) as double);
+            Invocation.method(
+              #translateRotatedPosition,
+              [
+                size,
+                degree,
+              ],
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
   _i2.Offset calculateRotationOffset(
@@ -159,37 +157,41 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? degree,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #calculateRotationOffset,
-          [
-            size,
-            degree,
-          ],
-        ),
-        returnValue: _FakeOffset_0(
-          this,
-          Invocation.method(
-            #calculateRotationOffset,
-            [
-              size,
-              degree,
-            ],
-          ),
-        ),
-      ) as _i2.Offset);
+            Invocation.method(
+              #calculateRotationOffset,
+              [
+                size,
+                degree,
+              ],
+            ),
+            returnValue: _FakeOffset_0(
+              this,
+              Invocation.method(
+                #calculateRotationOffset,
+                [
+                  size,
+                  degree,
+                ],
+              ),
+            ),
+          )
+          as _i2.Offset);
 
   @override
   _i3.BorderRadius? normalizeBorderRadius(
     _i3.BorderRadius? borderRadius,
     double? width,
   ) =>
-      (super.noSuchMethod(Invocation.method(
-        #normalizeBorderRadius,
-        [
-          borderRadius,
-          width,
-        ],
-      )) as _i3.BorderRadius?);
+      (super.noSuchMethod(
+            Invocation.method(
+              #normalizeBorderRadius,
+              [
+                borderRadius,
+                width,
+              ],
+            ),
+          )
+          as _i3.BorderRadius?);
 
   @override
   _i3.BorderSide normalizeBorderSide(
@@ -197,24 +199,25 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? width,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #normalizeBorderSide,
-          [
-            borderSide,
-            width,
-          ],
-        ),
-        returnValue: _FakeBorderSide_1(
-          this,
-          Invocation.method(
-            #normalizeBorderSide,
-            [
-              borderSide,
-              width,
-            ],
-          ),
-        ),
-      ) as _i3.BorderSide);
+            Invocation.method(
+              #normalizeBorderSide,
+              [
+                borderSide,
+                width,
+              ],
+            ),
+            returnValue: _FakeBorderSide_1(
+              this,
+              Invocation.method(
+                #normalizeBorderSide,
+                [
+                  borderSide,
+                  width,
+                ],
+              ),
+            ),
+          )
+          as _i3.BorderSide);
 
   @override
   double getEfficientInterval(
@@ -223,34 +226,39 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? pixelPerInterval = 40.0,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #getEfficientInterval,
-          [
-            axisViewSize,
-            diffInAxis,
-          ],
-          {#pixelPerInterval: pixelPerInterval},
-        ),
-        returnValue: 0.0,
-      ) as double);
+            Invocation.method(
+              #getEfficientInterval,
+              [
+                axisViewSize,
+                diffInAxis,
+              ],
+              {#pixelPerInterval: pixelPerInterval},
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
-  double roundInterval(double? input) => (super.noSuchMethod(
-        Invocation.method(
-          #roundInterval,
-          [input],
-        ),
-        returnValue: 0.0,
-      ) as double);
+  double roundInterval(double? input) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #roundInterval,
+              [input],
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
-  int getFractionDigits(double? value) => (super.noSuchMethod(
-        Invocation.method(
-          #getFractionDigits,
-          [value],
-        ),
-        returnValue: 0,
-      ) as int);
+  int getFractionDigits(double? value) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #getFractionDigits,
+              [value],
+            ),
+            returnValue: 0,
+          )
+          as int);
 
   @override
   String formatNumber(
@@ -259,26 +267,27 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? axisValue,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #formatNumber,
-          [
-            axisMin,
-            axisMax,
-            axisValue,
-          ],
-        ),
-        returnValue: _i6.dummyValue<String>(
-          this,
-          Invocation.method(
-            #formatNumber,
-            [
-              axisMin,
-              axisMax,
-              axisValue,
-            ],
-          ),
-        ),
-      ) as String);
+            Invocation.method(
+              #formatNumber,
+              [
+                axisMin,
+                axisMax,
+                axisValue,
+              ],
+            ),
+            returnValue: _i6.dummyValue<String>(
+              this,
+              Invocation.method(
+                #formatNumber,
+                [
+                  axisMin,
+                  axisMax,
+                  axisValue,
+                ],
+              ),
+            ),
+          )
+          as String);
 
   @override
   _i3.TextStyle getThemeAwareTextStyle(
@@ -286,24 +295,25 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     _i3.TextStyle? providedStyle,
   ) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #getThemeAwareTextStyle,
-          [
-            context,
-            providedStyle,
-          ],
-        ),
-        returnValue: _FakeTextStyle_2(
-          this,
-          Invocation.method(
-            #getThemeAwareTextStyle,
-            [
-              context,
-              providedStyle,
-            ],
-          ),
-        ),
-      ) as _i3.TextStyle);
+            Invocation.method(
+              #getThemeAwareTextStyle,
+              [
+                context,
+                providedStyle,
+              ],
+            ),
+            returnValue: _FakeTextStyle_2(
+              this,
+              Invocation.method(
+                #getThemeAwareTextStyle,
+                [
+                  context,
+                  providedStyle,
+                ],
+              ),
+            ),
+          )
+          as _i3.TextStyle);
 
   @override
   double getBestInitialIntervalValue(
@@ -313,26 +323,29 @@ class MockUtils extends _i1.Mock implements _i5.Utils {
     double? baseline = 0.0,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #getBestInitialIntervalValue,
-          [
-            min,
-            max,
-            interval,
-          ],
-          {#baseline: baseline},
-        ),
-        returnValue: 0.0,
-      ) as double);
+            Invocation.method(
+              #getBestInitialIntervalValue,
+              [
+                min,
+                max,
+                interval,
+              ],
+              {#baseline: baseline},
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 
   @override
-  double convertRadiusToSigma(double? radius) => (super.noSuchMethod(
-        Invocation.method(
-          #convertRadiusToSigma,
-          [radius],
-        ),
-        returnValue: 0.0,
-      ) as double);
+  double convertRadiusToSigma(double? radius) =>
+      (super.noSuchMethod(
+            Invocation.method(
+              #convertRadiusToSigma,
+              [radius],
+            ),
+            returnValue: 0.0,
+          )
+          as double);
 }
 
 /// A class which mocks [BuildContext].
@@ -344,25 +357,31 @@ class MockBuildContext extends _i1.Mock implements _i3.BuildContext {
   }
 
   @override
-  _i3.Widget get widget => (super.noSuchMethod(
-        Invocation.getter(#widget),
-        returnValue: _FakeWidget_3(
-          this,
-          Invocation.getter(#widget),
-        ),
-      ) as _i3.Widget);
+  _i3.Widget get widget =>
+      (super.noSuchMethod(
+            Invocation.getter(#widget),
+            returnValue: _FakeWidget_3(
+              this,
+              Invocation.getter(#widget),
+            ),
+          )
+          as _i3.Widget);
 
   @override
-  bool get mounted => (super.noSuchMethod(
-        Invocation.getter(#mounted),
-        returnValue: false,
-      ) as bool);
+  bool get mounted =>
+      (super.noSuchMethod(
+            Invocation.getter(#mounted),
+            returnValue: false,
+          )
+          as bool);
 
   @override
-  bool get debugDoingBuild => (super.noSuchMethod(
-        Invocation.getter(#debugDoingBuild),
-        returnValue: false,
-      ) as bool);
+  bool get debugDoingBuild =>
+      (super.noSuchMethod(
+            Invocation.getter(#debugDoingBuild),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   _i3.InheritedWidget dependOnInheritedElement(
@@ -370,49 +389,48 @@ class MockBuildContext extends _i1.Mock implements _i3.BuildContext {
     Object? aspect,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #dependOnInheritedElement,
-          [ancestor],
-          {#aspect: aspect},
-        ),
-        returnValue: _FakeInheritedWidget_4(
-          this,
-          Invocation.method(
-            #dependOnInheritedElement,
-            [ancestor],
-            {#aspect: aspect},
-          ),
-        ),
-      ) as _i3.InheritedWidget);
+            Invocation.method(
+              #dependOnInheritedElement,
+              [ancestor],
+              {#aspect: aspect},
+            ),
+            returnValue: _FakeInheritedWidget_4(
+              this,
+              Invocation.method(
+                #dependOnInheritedElement,
+                [ancestor],
+                {#aspect: aspect},
+              ),
+            ),
+          )
+          as _i3.InheritedWidget);
 
   @override
-  void visitAncestorElements(_i3.ConditionalElementVisitor? visitor) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #visitAncestorElements,
-          [visitor],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void visitAncestorElements(_i3.ConditionalElementVisitor? visitor) => super.noSuchMethod(
+    Invocation.method(
+      #visitAncestorElements,
+      [visitor],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void visitChildElements(_i3.ElementVisitor? visitor) => super.noSuchMethod(
-        Invocation.method(
-          #visitChildElements,
-          [visitor],
-        ),
-        returnValueForMissingStub: null,
-      );
+    Invocation.method(
+      #visitChildElements,
+      [visitor],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
-  void dispatchNotification(_i3.Notification? notification) =>
-      super.noSuchMethod(
-        Invocation.method(
-          #dispatchNotification,
-          [notification],
-        ),
-        returnValueForMissingStub: null,
-      );
+  void dispatchNotification(_i3.Notification? notification) => super.noSuchMethod(
+    Invocation.method(
+      #dispatchNotification,
+      [notification],
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   _i3.DiagnosticsNode describeElement(
@@ -420,20 +438,21 @@ class MockBuildContext extends _i1.Mock implements _i3.BuildContext {
     _i4.DiagnosticsTreeStyle? style = _i4.DiagnosticsTreeStyle.errorProperty,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeElement,
-          [name],
-          {#style: style},
-        ),
-        returnValue: _FakeDiagnosticsNode_5(
-          this,
-          Invocation.method(
-            #describeElement,
-            [name],
-            {#style: style},
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeElement,
+              [name],
+              {#style: style},
+            ),
+            returnValue: _FakeDiagnosticsNode_5(
+              this,
+              Invocation.method(
+                #describeElement,
+                [name],
+                {#style: style},
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
   _i3.DiagnosticsNode describeWidget(
@@ -441,46 +460,48 @@ class MockBuildContext extends _i1.Mock implements _i3.BuildContext {
     _i4.DiagnosticsTreeStyle? style = _i4.DiagnosticsTreeStyle.errorProperty,
   }) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeWidget,
-          [name],
-          {#style: style},
-        ),
-        returnValue: _FakeDiagnosticsNode_5(
-          this,
-          Invocation.method(
-            #describeWidget,
-            [name],
-            {#style: style},
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeWidget,
+              [name],
+              {#style: style},
+            ),
+            returnValue: _FakeDiagnosticsNode_5(
+              this,
+              Invocation.method(
+                #describeWidget,
+                [name],
+                {#style: style},
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 
   @override
-  List<_i3.DiagnosticsNode> describeMissingAncestor(
-          {required Type? expectedAncestorType}) =>
+  List<_i3.DiagnosticsNode> describeMissingAncestor({required Type? expectedAncestorType}) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeMissingAncestor,
-          [],
-          {#expectedAncestorType: expectedAncestorType},
-        ),
-        returnValue: <_i3.DiagnosticsNode>[],
-      ) as List<_i3.DiagnosticsNode>);
+            Invocation.method(
+              #describeMissingAncestor,
+              [],
+              {#expectedAncestorType: expectedAncestorType},
+            ),
+            returnValue: <_i3.DiagnosticsNode>[],
+          )
+          as List<_i3.DiagnosticsNode>);
 
   @override
   _i3.DiagnosticsNode describeOwnershipChain(String? name) =>
       (super.noSuchMethod(
-        Invocation.method(
-          #describeOwnershipChain,
-          [name],
-        ),
-        returnValue: _FakeDiagnosticsNode_5(
-          this,
-          Invocation.method(
-            #describeOwnershipChain,
-            [name],
-          ),
-        ),
-      ) as _i3.DiagnosticsNode);
+            Invocation.method(
+              #describeOwnershipChain,
+              [name],
+            ),
+            returnValue: _FakeDiagnosticsNode_5(
+              this,
+              Invocation.method(
+                #describeOwnershipChain,
+                [name],
+              ),
+            ),
+          )
+          as _i3.DiagnosticsNode);
 }

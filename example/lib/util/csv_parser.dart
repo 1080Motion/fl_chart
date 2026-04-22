@@ -1,7 +1,6 @@
 class CsvParser {
   static List<List<String>> parse(String rawCsvData) {
-    final lines =
-        rawCsvData.split('\n').where((line) => line.isNotEmpty).toList();
+    final lines = rawCsvData.split('\n').where((line) => line.isNotEmpty).toList();
     final headers = _parseCsvLine(lines.first);
 
     return [

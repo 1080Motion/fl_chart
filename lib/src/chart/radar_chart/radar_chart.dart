@@ -12,15 +12,14 @@ class RadarChart extends ImplicitlyAnimatedWidget {
   const RadarChart(
     this.data, {
     super.key,
-    @Deprecated('Please use [duration] instead')
-    Duration? swapAnimationDuration,
+    @Deprecated('Please use [duration] instead') Duration? swapAnimationDuration,
     Duration duration = const Duration(milliseconds: 150),
     @Deprecated('Please use [curve] instead') Curve? swapAnimationCurve,
     Curve curve = Curves.linear,
   }) : super(
-          duration: swapAnimationDuration ?? duration,
-          curve: swapAnimationCurve ?? curve,
-        );
+         duration: swapAnimationDuration ?? duration,
+         curve: swapAnimationCurve ?? curve,
+       );
 
   /// Determines how the [RadarChart] should be look like.
   final RadarChartData data;
@@ -48,11 +47,13 @@ class _RadarChartState extends AnimatedWidgetBaseState<RadarChart> {
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _radarChartDataTween = visitor(
-      _radarChartDataTween,
-      widget.data,
-      (dynamic value) =>
-          RadarChartDataTween(begin: value as RadarChartData, end: widget.data),
-    ) as RadarChartDataTween?;
+    _radarChartDataTween =
+        visitor(
+              _radarChartDataTween,
+              widget.data,
+              (dynamic value) =>
+                  RadarChartDataTween(begin: value as RadarChartData, end: widget.data),
+            )
+            as RadarChartDataTween?;
   }
 }

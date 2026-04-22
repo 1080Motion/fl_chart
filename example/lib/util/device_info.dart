@@ -33,14 +33,9 @@ class DeviceScreen {
   }
 
   // Shortcuts for various mobile device types
-  static bool isPhone(BuildContext context) =>
-      isSmallPhone(context) || isLargePhone(context);
-  static bool isTablet(BuildContext context) =>
-      get(context) == FormFactorType.tablet;
-  static bool isMonitor(BuildContext context) =>
-      get(context) == FormFactorType.monitor;
-  static bool isSmallPhone(BuildContext context) =>
-      get(context) == FormFactorType.smallPhone;
-  static bool isLargePhone(BuildContext context) =>
-      get(context) == FormFactorType.largePhone;
+  static bool isPhone(BuildContext context) => isSmallPhone(context) || isLargePhone(context);
+  static bool isTablet(BuildContext context) => get(context) == FormFactorType.tablet;
+  static bool isMonitor(BuildContext context) => get(context) == FormFactorType.monitor;
+  static bool isSmallPhone(BuildContext context) => get(context) == FormFactorType.smallPhone;
+  static bool isLargePhone(BuildContext context) => get(context) == FormFactorType.largePhone;
 }

@@ -46,20 +46,16 @@ class _LineChartSample13State extends State<LineChartSample13> {
   }
 
   void _loadWeatherData() async {
-    final data =
-        await rootBundle.loadString('assets/data/amsterdam_2024_weather.csv');
+    final data = await rootBundle.loadString('assets/data/amsterdam_2024_weather.csv');
     final rows = CsvParser.parse(data);
     if (!mounted) {
       return;
     }
     setState(() {
-      final allWeatherData =
-          rows.skip(1).map((row) => _WeatherData.fromCsv(row)).toList();
+      final allWeatherData = rows.skip(1).map((row) => _WeatherData.fromCsv(row)).toList();
       monthlyWeatherData = List.generate(12, (index) {
         final month = index + 1;
-        return allWeatherData
-            .where((element) => element.datetime.month == month)
-            .toList();
+        return allWeatherData.where((element) => element.datetime.month == month).toList();
       });
       overallMinTemp = allWeatherData
           .map((e) => e.temp)
@@ -156,10 +152,7 @@ class _LineChartSample13State extends State<LineChartSample13> {
                       maxX: 31,
                       lineBarsData: [
                         LineChartBarData(
-                          spots: monthlyWeatherData![_currentMonthIndex]
-                              .asMap()
-                              .entries
-                              .map((e) {
+                          spots: monthlyWeatherData![_currentMonthIndex].asMap().entries.map((e) {
                             final index = e.key;
                             final item = e.value;
                             final value = item.temp;
@@ -283,9 +276,7 @@ class _LineChartSample13State extends State<LineChartSample13> {
   ) =>
       FlSimpleErrorPainter(
         lineWidth: 1.0,
-        lineColor: _interactedSpotIndex == input.spotIndex
-            ? Colors.white
-            : Colors.white38,
+        lineColor: _interactedSpotIndex == input.spotIndex ? Colors.white : Colors.white38,
         showErrorTexts: _interactedSpotIndex == input.spotIndex,
       );
 
@@ -314,9 +305,7 @@ class _LineChartSample13State extends State<LineChartSample13> {
       child: Text(
         day.toString(),
         style: TextStyle(
-          color: isDayHovered
-              ? AppColors.contentColorWhite
-              : AppColors.contentColorGreen,
+          color: isDayHovered ? AppColors.contentColorWhite : AppColors.contentColorGreen,
           fontSize: 12,
           fontWeight: FontWeight.bold,
         ),

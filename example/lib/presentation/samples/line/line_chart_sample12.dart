@@ -155,8 +155,7 @@ class _LineChartSample12State extends State<LineChartSample12> {
                   touchSpotThreshold: 5,
                   getTouchLineStart: (_, __) => -double.infinity,
                   getTouchLineEnd: (_, __) => double.infinity,
-                  getTouchedSpotIndicator:
-                      (LineChartBarData barData, List<int> spotIndexes) {
+                  getTouchedSpotIndicator: (LineChartBarData barData, List<int> spotIndexes) {
                     return spotIndexes.map((spotIndex) {
                       return TouchedSpotIndicatorData(
                         const FlLine(
@@ -182,8 +181,7 @@ class _LineChartSample12State extends State<LineChartSample12> {
                     getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
                       return touchedBarSpots.map((barSpot) {
                         final price = barSpot.y;
-                        final date =
-                            _bitcoinPriceHistory![barSpot.x.toInt()].$1;
+                        final date = _bitcoinPriceHistory![barSpot.x.toInt()].$1;
                         return LineTooltipItem(
                           '',
                           const TextStyle(
@@ -215,8 +213,7 @@ class _LineChartSample12State extends State<LineChartSample12> {
                         );
                       }).toList();
                     },
-                    getTooltipColor: (LineBarSpot barSpot) =>
-                        AppColors.contentColorBlack,
+                    getTooltipColor: (LineBarSpot barSpot) => AppColors.contentColorBlack,
                   ),
                 ),
                 titlesData: FlTitlesData(

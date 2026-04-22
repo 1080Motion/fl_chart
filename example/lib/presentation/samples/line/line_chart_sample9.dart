@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 class LineChartSample9 extends StatelessWidget {
   LineChartSample9({super.key});
 
-  final spots = List.generate(101, (i) => (i - 50) / 10)
-      .map((x) => FlSpot(x, cos(x)))
-      .toList();
+  final spots = List.generate(101, (i) => (i - 50) / 10).map((x) => FlSpot(x, cos(x))).toList();
 
   Widget bottomTitleWidgets(double value, TitleMeta meta, double chartWidth) {
     if (value % 1 != 0) {
@@ -63,8 +61,7 @@ class LineChartSample9 extends StatelessWidget {
                     getTooltipItems: (touchedSpots) {
                       return touchedSpots.map((LineBarSpot touchedSpot) {
                         final textStyle = TextStyle(
-                          color: touchedSpot.bar.gradient?.colors[0] ??
-                              touchedSpot.bar.color,
+                          color: touchedSpot.bar.gradient?.colors[0] ?? touchedSpot.bar.color,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                         );

@@ -27,8 +27,8 @@ abstract class BaseChartData with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        borderData,
-      ];
+    borderData,
+  ];
 }
 
 /// Holds data to drawing border around the chart.
@@ -38,8 +38,8 @@ class FlBorderData with EquatableMixin {
   FlBorderData({
     bool? show,
     Border? border,
-  })  : show = show ?? true,
-        border = border ?? Border.all();
+  }) : show = show ?? true,
+       border = border ?? Border.all();
   final bool show;
   final Border border;
 
@@ -47,29 +47,27 @@ class FlBorderData with EquatableMixin {
   bool isVisible() => show && border.isVisible();
 
   /// Lerps a [FlBorderData] based on [t] value, check [Tween.lerp].
-  static FlBorderData lerp(FlBorderData a, FlBorderData b, double t) =>
-      FlBorderData(
-        show: b.show,
-        border: Border.lerp(a.border, b.border, t),
-      );
+  static FlBorderData lerp(FlBorderData a, FlBorderData b, double t) => FlBorderData(
+    show: b.show,
+    border: Border.lerp(a.border, b.border, t),
+  );
 
   /// Copies current [FlBorderData] to a new [FlBorderData],
   /// and replaces provided values.
   FlBorderData copyWith({
     bool? show,
     Border? border,
-  }) =>
-      FlBorderData(
-        show: show ?? this.show,
-        border: border ?? this.border,
-      );
+  }) => FlBorderData(
+    show: show ?? this.show,
+    border: border ?? this.border,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        show,
-        border,
-      ];
+    show,
+    border,
+  ];
 }
 
 /// Holds data to handle touch events, and touch responses in abstract way.
@@ -106,11 +104,11 @@ abstract class FlTouchData<R extends BaseTouchResponse> with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        enabled,
-        touchCallback,
-        mouseCursorResolver,
-        longPressDuration,
-      ];
+    enabled,
+    touchCallback,
+    mouseCursorResolver,
+    longPressDuration,
+  ];
 }
 
 /// Holds data to clipping chart around its borders.
@@ -124,20 +122,16 @@ class FlClipData with EquatableMixin {
   });
 
   /// Creates data that clips all sides
-  const FlClipData.all()
-      : this(top: true, bottom: true, left: true, right: true);
+  const FlClipData.all() : this(top: true, bottom: true, left: true, right: true);
 
   /// Creates data that clips only top and bottom side
-  const FlClipData.vertical()
-      : this(top: true, bottom: true, left: false, right: false);
+  const FlClipData.vertical() : this(top: true, bottom: true, left: false, right: false);
 
   /// Creates data that clips only left and right side
-  const FlClipData.horizontal()
-      : this(top: false, bottom: false, left: true, right: true);
+  const FlClipData.horizontal() : this(top: false, bottom: false, left: true, right: true);
 
   /// Creates data that doesn't clip any side
-  const FlClipData.none()
-      : this(top: false, bottom: false, left: false, right: false);
+  const FlClipData.none() : this(top: false, bottom: false, left: false, right: false);
 
   final bool top;
   final bool bottom;
@@ -154,13 +148,12 @@ class FlClipData with EquatableMixin {
     bool? bottom,
     bool? left,
     bool? right,
-  }) =>
-      FlClipData(
-        top: top ?? this.top,
-        bottom: bottom ?? this.bottom,
-        left: left ?? this.left,
-        right: right ?? this.right,
-      );
+  }) => FlClipData(
+    top: top ?? this.top,
+    bottom: bottom ?? this.bottom,
+    left: left ?? this.left,
+    right: right ?? this.right,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
@@ -168,18 +161,20 @@ class FlClipData with EquatableMixin {
 }
 
 /// Chart's touch callback.
-typedef BaseTouchCallback<R extends BaseTouchResponse> = void Function(
-  FlTouchEvent,
-  R?,
-);
+typedef BaseTouchCallback<R extends BaseTouchResponse> =
+    void Function(
+      FlTouchEvent,
+      R?,
+    );
 
 /// It gives you the happened [FlTouchEvent] and existed [R] data at the event's location,
 /// then you should provide a [MouseCursor] to change the cursor at the event's location.
 /// For example you can pass the [SystemMouseCursors.click] to change the mouse cursor to click.
-typedef MouseCursorResolver<R extends BaseTouchResponse> = MouseCursor Function(
-  FlTouchEvent,
-  R?,
-);
+typedef MouseCursorResolver<R extends BaseTouchResponse> =
+    MouseCursor Function(
+      FlTouchEvent,
+      R?,
+    );
 
 /// This class holds the touch response details of charts.
 abstract class BaseTouchResponse {
@@ -218,12 +213,12 @@ class FlLabel with EquatableMixin {
 
   /// Lerps a [FlLabel] based on [t] value, check [Tween.lerp].
   static FlLabel lerp(FlLabel a, FlLabel b, double t) => FlLabel(
-        show: b.show,
-        text: b.text,
-        style: TextStyle.lerp(a.style, b.style, t),
-        angle: lerpDouble(a.angle, b.angle, t)!,
-        textDirection: b.textDirection,
-      );
+    show: b.show,
+    text: b.text,
+    style: TextStyle.lerp(a.style, b.style, t),
+    angle: lerpDouble(a.angle, b.angle, t)!,
+    textDirection: b.textDirection,
+  );
 
   /// Copies current [FlLabel] to a new [FlLabel],
   /// and replaces provided values.
@@ -233,14 +228,13 @@ class FlLabel with EquatableMixin {
     TextStyle? style,
     double? angle,
     TextDirection? textDirection,
-  }) =>
-      FlLabel(
-        show: show ?? this.show,
-        text: text ?? this.text,
-        style: style ?? this.style,
-        angle: angle ?? this.angle,
-        textDirection: textDirection ?? this.textDirection,
-      );
+  }) => FlLabel(
+    show: show ?? this.show,
+    text: text ?? this.text,
+    style: style ?? this.style,
+    angle: angle ?? this.angle,
+    textDirection: textDirection ?? this.textDirection,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override

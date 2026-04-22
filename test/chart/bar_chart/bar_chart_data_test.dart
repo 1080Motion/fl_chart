@@ -44,13 +44,11 @@ void main() {
         false,
       );
       expect(
-        barChartRodStackItem1 ==
-            barChartRodStackItem1Clone.copyWith(color: Colors.red),
+        barChartRodStackItem1 == barChartRodStackItem1Clone.copyWith(color: Colors.red),
         false,
       );
       expect(
-        barChartRodStackItem1 ==
-            barChartRodStackItem1Clone.copyWith(color: Colors.green),
+        barChartRodStackItem1 == barChartRodStackItem1Clone.copyWith(color: Colors.green),
         true,
       );
       expect(barChartRodStackItem1 == barChartRodStackItem2, false);

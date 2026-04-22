@@ -36,8 +36,7 @@ class PieChart2State extends State {
                           touchedIndex = -1;
                           return;
                         }
-                        touchedIndex = pieTouchResponse
-                            .touchedSection!.touchedSectionIndex;
+                        touchedIndex = pieTouchResponse.touchedSection!.touchedSectionIndex;
                       });
                     },
                   ),

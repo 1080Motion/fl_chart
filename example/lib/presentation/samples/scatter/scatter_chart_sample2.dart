@@ -119,8 +119,7 @@ class _ScatterChartSample2State extends State {
               scatterTouchData: ScatterTouchData(
                 enabled: true,
                 handleBuiltInTouches: false,
-                mouseCursorResolver:
-                    (FlTouchEvent touchEvent, ScatterTouchResponse? response) {
+                mouseCursorResolver: (FlTouchEvent touchEvent, ScatterTouchResponse? response) {
                   return response == null || response.touchedSpot == null
                       ? MouseCursor.defer
                       : SystemMouseCursors.click;
@@ -130,8 +129,7 @@ class _ScatterChartSample2State extends State {
                     return touchedBarSpot.dotPainter.mainColor;
                   },
                   getTooltipItems: (ScatterSpot touchedBarSpot) {
-                    final bool isBgDark =
-                        switch ((touchedBarSpot.x, touchedBarSpot.y)) {
+                    final bool isBgDark = switch ((touchedBarSpot.x, touchedBarSpot.y)) {
                       (4.0, 4.0) => false,
                       (2.0, 5.0) => false,
                       (4.0, 5.0) => true,
@@ -185,10 +183,8 @@ class _ScatterChartSample2State extends State {
                     );
                   },
                 ),
-                touchCallback:
-                    (FlTouchEvent event, ScatterTouchResponse? touchResponse) {
-                  if (touchResponse == null ||
-                      touchResponse.touchedSpot == null) {
+                touchCallback: (FlTouchEvent event, ScatterTouchResponse? touchResponse) {
+                  if (touchResponse == null || touchResponse.touchedSpot == null) {
                     return;
                   }
                   if (event is FlTapUpEvent) {

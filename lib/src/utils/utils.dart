@@ -29,9 +29,11 @@ class Utils {
   }
 
   Offset calculateRotationOffset(Size size, double degree) {
-    final rotatedHeight = (size.width * math.sin(radians(degree))).abs() +
+    final rotatedHeight =
+        (size.width * math.sin(radians(degree))).abs() +
         (size.height * math.cos(radians(degree))).abs();
-    final rotatedWidth = (size.width * math.cos(radians(degree))).abs() +
+    final rotatedWidth =
+        (size.width * math.cos(radians(degree))).abs() +
         (size.height * math.sin(radians(degree))).abs();
     return Offset(
       (size.width - rotatedWidth) / 2,
@@ -49,32 +51,28 @@ class Utils {
     }
 
     Radius topLeft;
-    if (borderRadius.topLeft.x > width / 2 ||
-        borderRadius.topLeft.y > width / 2) {
+    if (borderRadius.topLeft.x > width / 2 || borderRadius.topLeft.y > width / 2) {
       topLeft = Radius.circular(width / 2);
     } else {
       topLeft = borderRadius.topLeft;
     }
 
     Radius topRight;
-    if (borderRadius.topRight.x > width / 2 ||
-        borderRadius.topRight.y > width / 2) {
+    if (borderRadius.topRight.x > width / 2 || borderRadius.topRight.y > width / 2) {
       topRight = Radius.circular(width / 2);
     } else {
       topRight = borderRadius.topRight;
     }
 
     Radius bottomLeft;
-    if (borderRadius.bottomLeft.x > width / 2 ||
-        borderRadius.bottomLeft.y > width / 2) {
+    if (borderRadius.bottomLeft.x > width / 2 || borderRadius.bottomLeft.y > width / 2) {
       bottomLeft = Radius.circular(width / 2);
     } else {
       bottomLeft = borderRadius.bottomLeft;
     }
 
     Radius bottomRight;
-    if (borderRadius.bottomRight.x > width / 2 ||
-        borderRadius.bottomRight.y > width / 2) {
+    if (borderRadius.bottomRight.x > width / 2 || borderRadius.bottomRight.y > width / 2) {
       bottomRight = Radius.circular(width / 2);
     } else {
       bottomRight = borderRadius.bottomRight;
@@ -123,8 +121,7 @@ class Utils {
     if (diffInAxis == 0) {
       return 1;
     }
-    final accurateInterval =
-        diffInAxis == 0 ? axisViewSize : diffInAxis / allowedCount;
+    final accurateInterval = diffInAxis == 0 ? axisViewSize : diffInAxis / allowedCount;
     if (allowedCount <= 2) {
       return accurateInterval;
     }
@@ -281,8 +278,7 @@ class Utils {
       effectiveTextStyle = defaultTextStyle.style.merge(providedStyle);
     }
     if (MediaQuery.boldTextOf(context)) {
-      effectiveTextStyle = effectiveTextStyle!
-          .merge(const TextStyle(fontWeight: FontWeight.bold));
+      effectiveTextStyle = effectiveTextStyle!.merge(const TextStyle(fontWeight: FontWeight.bold));
     }
     return effectiveTextStyle!;
   }

@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 class BarChartSample8 extends StatefulWidget {
   BarChartSample8({super.key});
 
-  final Color barBackgroundColor =
-      AppColors.contentColorWhite.darken().withValues(alpha: 0.3);
+  final Color barBackgroundColor = AppColors.contentColorWhite.darken().withValues(alpha: 0.3);
   final Color barColor = AppColors.contentColorWhite;
 
   @override
@@ -138,12 +137,8 @@ class BarChartSample1State extends State<BarChartSample8> {
         7,
         (i) {
           final y = Random().nextInt(290).toDouble() + 10;
-          final lowerBy = y < 50
-              ? Random().nextDouble() * 10
-              : Random().nextDouble() * 30 + 5;
-          final upperBy = y > 290
-              ? Random().nextDouble() * 10
-              : Random().nextDouble() * 30 + 5;
+          final lowerBy = y < 50 ? Random().nextDouble() * 10 : Random().nextDouble() * 30 + 5;
+          final upperBy = y > 290 ? Random().nextDouble() * 10 : Random().nextDouble() * 30 + 5;
           return makeGroupData(
             i,
             y,

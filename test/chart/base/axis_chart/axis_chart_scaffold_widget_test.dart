@@ -123,8 +123,7 @@ void main() {
     ),
   );
 
-  final lineChartDataWithOnlyLeftTitlesWithoutAxisName =
-      lineChartDataBase.copyWith(
+  final lineChartDataWithOnlyLeftTitlesWithoutAxisName = lineChartDataBase.copyWith(
     borderData: FlBorderData(show: false),
     titlesData: FlTitlesData(
       leftTitles: AxisTitles(
@@ -144,8 +143,7 @@ void main() {
     ),
   );
 
-  final lineChartDataWithOnlyLeftAxisNameWithoutSideTitles =
-      lineChartDataBase.copyWith(
+  final lineChartDataWithOnlyLeftAxisNameWithoutSideTitles = lineChartDataBase.copyWith(
     borderData: FlBorderData(show: false),
     titlesData: FlTitlesData(
       leftTitles: AxisTitles(
@@ -478,8 +476,7 @@ void main() {
       },
     );
 
-    testWidgets('passes interaction parameters to interactive viewer',
-        (tester) async {
+    testWidgets('passes interaction parameters to interactive viewer', (tester) async {
       Future<void> pumpTestWidget(AxisChartScaffoldWidget widget) async {
         await tester.pumpWidget(
           MaterialApp(
@@ -571,8 +568,7 @@ void main() {
       );
     });
 
-    testWidgets('asserts maxScale is greater than or equal to minScale',
-        (tester) async {
+    testWidgets('asserts maxScale is greater than or equal to minScale', (tester) async {
       expect(
         () => AxisChartScaffoldWidget(
           data: lineChartDataWithAllTitles,
@@ -678,8 +674,7 @@ void main() {
           expect(chartVirtualRect!.top, isNegative);
         });
 
-        testWidgets('scales horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -732,8 +727,7 @@ void main() {
           expect(chartVirtualRect!.top, 0);
         });
 
-        testWidgets('scales vertically with FlScaleAxis.vertical',
-            (tester) async {
+        testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -816,8 +810,7 @@ void main() {
             );
 
             final pointer = TestPointer(1, PointerDeviceKind.trackpad);
-            final chartCenterOffset =
-                tester.getCenter(find.byKey(dummyChartKey));
+            final chartCenterOffset = tester.getCenter(find.byKey(dummyChartKey));
             const scrollAmount = Offset(0, -100);
 
             await tester.sendEventToBinding(pointer.hover(chartCenterOffset));
@@ -874,8 +867,7 @@ void main() {
           );
         }
 
-        testWidgets('scales horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('scales horizontally with FlScaleAxis.horizontal', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -922,8 +914,7 @@ void main() {
           expect(chartVirtualRect!.top, 0);
         });
 
-        testWidgets('scales vertically with FlScaleAxis.vertical',
-            (tester) async {
+        testWidgets('scales vertically with FlScaleAxis.vertical', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -1015,8 +1006,7 @@ void main() {
       });
 
       group('pans', () {
-        testWidgets('only horizontally with FlScaleAxis.horizontal',
-            (tester) async {
+        testWidgets('only horizontally with FlScaleAxis.horizontal', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -1076,8 +1066,7 @@ void main() {
           expect(chartVirtualRect!.top, 0);
         });
 
-        testWidgets('only vertically with FlScaleAxis.vertical',
-            (tester) async {
+        testWidgets('only vertically with FlScaleAxis.vertical', (tester) async {
           Rect? chartVirtualRect;
           await tester.pumpWidget(
             MaterialApp(
@@ -1333,8 +1322,7 @@ void main() {
           expect(chartVirtualRects, actualChartVirtualRects);
 
           final transformationController = getTransformationController(tester);
-          transformationController!.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController!.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
@@ -1343,8 +1331,7 @@ void main() {
 
           final transformationController2 = getTransformationController(tester);
           expect(transformationController2, transformationController);
-          transformationController2!.value = Matrix4.identity()
-            ..scaleByDouble(3, 3, 3, 1);
+          transformationController2!.value = Matrix4.identity()..scaleByDouble(3, 3, 3, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
         },
@@ -1359,8 +1346,7 @@ void main() {
           expect(chartVirtualRects, actualChartVirtualRects);
 
           final transformationController = getTransformationController(tester);
-          transformationController!.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController!.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
@@ -1376,8 +1362,7 @@ void main() {
             () => transformationController.addListener(() {}),
             throwsA(isA<FlutterError>()),
           );
-          transformationController2.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController2.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
         },
@@ -1395,8 +1380,7 @@ void main() {
           );
           expect(chartVirtualRects, actualChartVirtualRects);
 
-          transformationController.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
@@ -1409,8 +1393,7 @@ void main() {
           // ignore: invalid_use_of_protected_member
           expect(transformationController.hasListeners, false);
           transformationController.addListener(() {}); // throws if disposed
-          transformationController2!.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController2!.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
         },
@@ -1429,8 +1412,7 @@ void main() {
           );
           expect(chartVirtualRects, actualChartVirtualRects);
 
-          transformationController.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
@@ -1446,8 +1428,7 @@ void main() {
           // ignore: invalid_use_of_protected_member
           expect(transformationController.hasListeners, false);
           transformationController.addListener(() {}); // throws if disposed
-          transformationController2.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController2.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
         },
@@ -1466,8 +1447,7 @@ void main() {
           );
           expect(chartVirtualRects, actualChartVirtualRects);
 
-          transformationController.value = Matrix4.identity()
-            ..scaleByDouble(2, 2, 2, 1);
+          transformationController.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
@@ -1480,8 +1460,7 @@ void main() {
 
           final transformationController2 = getTransformationController(tester);
           expect(transformationController2, transformationController);
-          transformationController.value = Matrix4.identity()
-            ..scaleByDouble(3, 3, 3, 1);
+          transformationController.value = Matrix4.identity()..scaleByDouble(3, 3, 3, 1);
           await tester.pump();
           expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
         },
@@ -1511,13 +1490,11 @@ void main() {
         );
         expect(chartVirtualRects, actualChartVirtualRects);
 
-        transformationController.value = Matrix4.identity()
-          ..scaleByDouble(2, 2, 2, 1);
+        transformationController.value = Matrix4.identity()..scaleByDouble(2, 2, 2, 1);
         await tester.pump();
         expect(chartVirtualRects, actualChartVirtualRects..add(isScaled));
 
-        transformationController.value = Matrix4.identity()
-          ..scaleByDouble(1, 1, 1, 1);
+        transformationController.value = Matrix4.identity()..scaleByDouble(1, 1, 1, 1);
         await tester.pump();
         expect(chartVirtualRects, actualChartVirtualRects..add(isNotScaled));
       },

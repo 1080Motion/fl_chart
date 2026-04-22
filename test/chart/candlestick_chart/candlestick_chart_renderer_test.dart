@@ -76,8 +76,7 @@ void main() {
 
     test('test 3 check getResponseAtLocation function', () {
       final results = <Map<String, dynamic>>[];
-      when(mockPainter.handleTouch(captureAny, captureAny, captureAny))
-          .thenAnswer((inv) {
+      when(mockPainter.handleTouch(captureAny, captureAny, captureAny)).thenAnswer((inv) {
         results.add({
           'local_position': inv.positionalArguments[0] as Offset,
           'size': inv.positionalArguments[1] as Size,
@@ -86,11 +85,11 @@ void main() {
         return candlestickTouchedSpot1;
       });
 
-      when(mockPainter.getChartCoordinateFromPixel(any, any, any))
-          .thenAnswer((_) => const Offset(10, 10));
+      when(
+        mockPainter.getChartCoordinateFromPixel(any, any, any),
+      ).thenAnswer((_) => const Offset(10, 10));
 
-      final touchResponse =
-          renderCandlestickChart.getResponseAtLocation(MockData.offset1);
+      final touchResponse = renderCandlestickChart.getResponseAtLocation(MockData.offset1);
       expect(touchResponse.touchedSpot, candlestickTouchedSpot1);
       expect(touchResponse.touchChartCoordinate, const Offset(10, 10));
       expect(results[0]['local_position'] as Offset, MockData.offset1);

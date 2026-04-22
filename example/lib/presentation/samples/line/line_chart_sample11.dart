@@ -164,9 +164,7 @@ class _Chart extends StatelessWidget {
           ),
           topTitles: AxisTitles(
             sideTitles: SideTitles(
-                showTitles: true,
-                getTitlesWidget: getHorizontalTitles,
-                reservedSize: 32),
+                showTitles: true, getTitlesWidget: getHorizontalTitles, reservedSize: 32),
           ),
           rightTitles: AxisTitles(
             sideTitles: SideTitles(
@@ -177,9 +175,7 @@ class _Chart extends StatelessWidget {
           ),
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
-                showTitles: true,
-                getTitlesWidget: getHorizontalTitles,
-                reservedSize: 32),
+                showTitles: true, getTitlesWidget: getHorizontalTitles, reservedSize: 32),
           ),
         ),
         gridData: FlGridData(

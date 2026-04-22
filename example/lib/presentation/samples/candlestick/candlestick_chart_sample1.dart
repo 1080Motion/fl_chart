@@ -48,8 +48,7 @@ class CandlestickChartSample1State extends State<CandlestickChartSample1> {
   }
 
   void _loadData() async {
-    final data = await rootBundle
-        .loadString('assets/data/bitcoin_2023-01-01_2023-12-31.csv');
+    final data = await rootBundle.loadString('assets/data/bitcoin_2023-01-01_2023-12-31.csv');
     final rows = CsvParser.parse(data);
     if (!mounted) {
       return;
@@ -70,9 +69,7 @@ class CandlestickChartSample1State extends State<CandlestickChartSample1> {
 
       _btcMonthlyData = List.generate(12, (index) {
         final month = index + 1;
-        final monthData = allData
-            .where((element) => element.datetime.month == month)
-            .toList();
+        final monthData = allData.where((element) => element.datetime.month == month).toList();
         monthData.sort((a, b) => a.datetime.compareTo(b.datetime));
         return monthData;
       });
@@ -145,10 +142,8 @@ class CandlestickChartSample1State extends State<CandlestickChartSample1> {
                   ),
                   child: CandlestickChart(
                     CandlestickChartData(
-                      candlestickSpots: _btcMonthlyData![_currentMonthIndex]
-                          .asMap()
-                          .entries
-                          .map((entry) {
+                      candlestickSpots:
+                          _btcMonthlyData![_currentMonthIndex].asMap().entries.map((entry) {
                         final index = entry.key;
                         final data = entry.value;
                         return CandlestickSpot(
@@ -209,8 +204,7 @@ class CandlestickChartSample1State extends State<CandlestickChartSample1> {
                       touchedPointIndicator: AxisSpotIndicator(
                         painter: AxisLinesIndicatorPainter(
                           verticalLineProvider: (x) {
-                            final data =
-                                _btcMonthlyData![_currentMonthIndex][x.toInt()];
+                            final data = _btcMonthlyData![_currentMonthIndex][x.toInt()];
 
                             return VerticalLine(
                               x: x,
@@ -230,8 +224,7 @@ class CandlestickChartSample1State extends State<CandlestickChartSample1> {
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                 ),
-                                labelResolver: (hLine) =>
-                                    hLine.y.toInt().toString(),
+                                labelResolver: (hLine) => hLine.y.toInt().toString(),
                                 alignment: Alignment.topLeft),
                             color: AppColors.contentColorYellow.withValues(
                               alpha: 0.8,

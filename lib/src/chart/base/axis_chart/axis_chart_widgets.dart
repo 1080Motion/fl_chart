@@ -54,18 +54,18 @@ class SideTitleWidget extends StatefulWidget {
 
 class _SideTitleWidgetState extends State<SideTitleWidget> {
   Alignment _getAlignment() => switch (widget.meta.axisSide) {
-        AxisSide.left => Alignment.centerRight,
-        AxisSide.top => Alignment.bottomCenter,
-        AxisSide.right => Alignment.centerLeft,
-        AxisSide.bottom => Alignment.topCenter,
-      };
+    AxisSide.left => Alignment.centerRight,
+    AxisSide.top => Alignment.bottomCenter,
+    AxisSide.right => Alignment.centerLeft,
+    AxisSide.bottom => Alignment.topCenter,
+  };
 
   EdgeInsets _getMargin() => switch (widget.meta.axisSide) {
-        AxisSide.left => EdgeInsets.only(right: widget.space),
-        AxisSide.top => EdgeInsets.only(bottom: widget.space),
-        AxisSide.right => EdgeInsets.only(left: widget.space),
-        AxisSide.bottom => EdgeInsets.only(top: widget.space),
-      };
+    AxisSide.left => EdgeInsets.only(right: widget.space),
+    AxisSide.top => EdgeInsets.only(bottom: widget.space),
+    AxisSide.right => EdgeInsets.only(left: widget.space),
+    AxisSide.bottom => EdgeInsets.only(top: widget.space),
+  };
 
   /// Calculate child width/height
   final GlobalKey widgetKey = GlobalKey();

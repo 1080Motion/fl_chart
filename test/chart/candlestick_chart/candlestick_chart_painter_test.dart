@@ -37,10 +37,10 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
       final mockBuildContext = MockBuildContext();
       final mockCanvas = MockCanvas();
       final canvasWrapper = CanvasWrapper(mockCanvas, viewSize);
@@ -94,10 +94,10 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
       final mockBuildContext = MockBuildContext();
       final mockCanvas = MockCanvas();
       final canvasWrapper = CanvasWrapper(mockCanvas, viewSize);
@@ -170,10 +170,10 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
       final mockBuildContext = MockBuildContext();
       final mockCanvas = MockCanvas();
       final canvasWrapper = CanvasWrapper(mockCanvas, viewSize);
@@ -226,10 +226,10 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
       final mockBuildContext = MockBuildContext();
       final mockCanvasWrapper = MockCanvasWrapper();
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
@@ -270,8 +270,7 @@ void main() {
         ],
         candlestickPainter: DefaultCandlestickPainter(
           candlestickStyleProvider: (spot, index) {
-            final generalColor =
-                spot.isUp ? const Color(0xFF4CAF50) : const Color(0xFFEF5350);
+            final generalColor = spot.isUp ? const Color(0xFF4CAF50) : const Color(0xFFEF5350);
             return CandlestickStyle(
               lineColor: generalColor,
               lineWidth: (1 + index).toDouble(),
@@ -294,10 +293,10 @@ void main() {
 
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getEfficientInterval(any, any))
-          .thenAnswer((realInvocation) => 1.0);
-      when(mockUtils.getBestInitialIntervalValue(any, any, any))
-          .thenAnswer((realInvocation) => 1.0);
+      when(mockUtils.getEfficientInterval(any, any)).thenAnswer((realInvocation) => 1.0);
+      when(
+        mockUtils.getBestInitialIntervalValue(any, any, any),
+      ).thenAnswer((realInvocation) => 1.0);
       final mockBuildContext = MockBuildContext();
       final mockCanvas = MockCanvas();
       final canvasWrapper = CanvasWrapper(mockCanvas, viewSize);
@@ -360,56 +359,59 @@ void main() {
         3.0,
       ];
 
-      final expectedRRectCalls = <({
-        double width,
-        double height,
-        double radius,
-        Color color,
-        double strokeWidth,
-      })>[
-        (
-          width: 4,
-          height: 33.3,
-          radius: 0,
-          color: const Color(0xFF4CAF50),
-          strokeWidth: 1,
-        ),
-        (
-          width: 4,
-          height: 33.3,
-          radius: 0,
-          color: const Color(0xFF4CAF50),
-          strokeWidth: 1,
-        ),
-        (
-          width: 5,
-          height: 33.3,
-          radius: 1,
-          color: const Color(0xFFEF5350),
-          strokeWidth: 2,
-        ),
-        (
-          width: 5,
-          height: 33.3,
-          radius: 1,
-          color: const Color(0xFFEF5350),
-          strokeWidth: 2,
-        ),
-        (
-          width: 6,
-          height: 33.3,
-          radius: 2,
-          color: const Color(0xFF4CAF50),
-          strokeWidth: 3,
-        ),
-        (
-          width: 7,
-          height: 33.3,
-          radius: 2,
-          color: const Color(0xFF4CAF50),
-          strokeWidth: 3,
-        ),
-      ];
+      final expectedRRectCalls =
+          <
+            ({
+              double width,
+              double height,
+              double radius,
+              Color color,
+              double strokeWidth,
+            })
+          >[
+            (
+              width: 4,
+              height: 33.3,
+              radius: 0,
+              color: const Color(0xFF4CAF50),
+              strokeWidth: 1,
+            ),
+            (
+              width: 4,
+              height: 33.3,
+              radius: 0,
+              color: const Color(0xFF4CAF50),
+              strokeWidth: 1,
+            ),
+            (
+              width: 5,
+              height: 33.3,
+              radius: 1,
+              color: const Color(0xFFEF5350),
+              strokeWidth: 2,
+            ),
+            (
+              width: 5,
+              height: 33.3,
+              radius: 1,
+              color: const Color(0xFFEF5350),
+              strokeWidth: 2,
+            ),
+            (
+              width: 6,
+              height: 33.3,
+              radius: 2,
+              color: const Color(0xFF4CAF50),
+              strokeWidth: 3,
+            ),
+            (
+              width: 7,
+              height: 33.3,
+              radius: 2,
+              color: const Color(0xFF4CAF50),
+              strokeWidth: 3,
+            ),
+          ];
 
       for (var i = 0; i < lineDrawCalls.length; i += 2) {
         // bottom line
@@ -507,8 +509,9 @@ void main() {
       final mockBuildContext = MockBuildContext();
       final mockUtils = MockUtils();
       Utils.changeInstance(mockUtils);
-      when(mockUtils.getThemeAwareTextStyle(any, any))
-          .thenReturn(const TextStyle(color: Color(0x00ffffff)));
+      when(
+        mockUtils.getThemeAwareTextStyle(any, any),
+      ).thenReturn(const TextStyle(color: Color(0x00ffffff)));
       when(mockUtils.calculateRotationOffset(any, any)).thenReturn(Offset.zero);
       when(mockCanvasWrapper.size).thenReturn(viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
@@ -604,8 +607,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -709,8 +711,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -814,8 +815,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);
@@ -919,8 +919,7 @@ void main() {
         ),
       );
 
-      final passedDrawCallback =
-          verificationResult.captured.first as DrawCallback;
+      final passedDrawCallback = verificationResult.captured.first as DrawCallback;
       passedDrawCallback();
 
       verificationResult.called(1);

@@ -30,36 +30,28 @@ class PieChartSample1State extends State {
                 text: 'One',
                 isSquare: false,
                 size: touchedIndex == 0 ? 18 : 16,
-                textColor: touchedIndex == 0
-                    ? AppColors.mainTextColor1
-                    : AppColors.mainTextColor3,
+                textColor: touchedIndex == 0 ? AppColors.mainTextColor1 : AppColors.mainTextColor3,
               ),
               Indicator(
                 color: AppColors.contentColorYellow,
                 text: 'Two',
                 isSquare: false,
                 size: touchedIndex == 1 ? 18 : 16,
-                textColor: touchedIndex == 1
-                    ? AppColors.mainTextColor1
-                    : AppColors.mainTextColor3,
+                textColor: touchedIndex == 1 ? AppColors.mainTextColor1 : AppColors.mainTextColor3,
               ),
               Indicator(
                 color: AppColors.contentColorPink,
                 text: 'Three',
                 isSquare: false,
                 size: touchedIndex == 2 ? 18 : 16,
-                textColor: touchedIndex == 2
-                    ? AppColors.mainTextColor1
-                    : AppColors.mainTextColor3,
+                textColor: touchedIndex == 2 ? AppColors.mainTextColor1 : AppColors.mainTextColor3,
               ),
               Indicator(
                 color: AppColors.contentColorGreen,
                 text: 'Four',
                 isSquare: false,
                 size: touchedIndex == 3 ? 18 : 16,
-                textColor: touchedIndex == 3
-                    ? AppColors.mainTextColor1
-                    : AppColors.mainTextColor3,
+                textColor: touchedIndex == 3 ? AppColors.mainTextColor1 : AppColors.mainTextColor3,
               ),
             ],
           ),
@@ -80,8 +72,7 @@ class PieChartSample1State extends State {
                           touchedIndex = -1;
                           return;
                         }
-                        touchedIndex = pieTouchResponse
-                            .touchedSection!.touchedSectionIndex;
+                        touchedIndex = pieTouchResponse.touchedSection!.touchedSectionIndex;
                       });
                     },
                   ),
@@ -127,8 +118,7 @@ class PieChartSample1State extends State {
           titlePositionPercentageOffset: titlePositionPercentageOffsets[i],
           borderSide: isTouched
               ? const BorderSide(color: AppColors.contentColorWhite, width: 6)
-              : BorderSide(
-                  color: AppColors.contentColorWhite.withValues(alpha: 0)),
+              : BorderSide(color: AppColors.contentColorWhite.withValues(alpha: 0)),
         );
       },
     );

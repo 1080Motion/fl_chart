@@ -119,8 +119,7 @@ class _LineChartSample5State extends State<LineChartSample5> {
               lineTouchData: LineTouchData(
                 enabled: true,
                 handleBuiltInTouches: false,
-                touchCallback:
-                    (FlTouchEvent event, LineTouchResponse? response) {
+                touchCallback: (FlTouchEvent event, LineTouchResponse? response) {
                   if (response == null || response.lineBarSpots == null) {
                     return;
                   }
@@ -135,15 +134,13 @@ class _LineChartSample5State extends State<LineChartSample5> {
                     });
                   }
                 },
-                mouseCursorResolver:
-                    (FlTouchEvent event, LineTouchResponse? response) {
+                mouseCursorResolver: (FlTouchEvent event, LineTouchResponse? response) {
                   if (response == null || response.lineBarSpots == null) {
                     return SystemMouseCursors.basic;
                   }
                   return SystemMouseCursors.click;
                 },
-                getTouchedSpotIndicator:
-                    (LineChartBarData barData, List<int> spotIndexes) {
+                getTouchedSpotIndicator: (LineChartBarData barData, List<int> spotIndexes) {
                   return spotIndexes.map((index) {
                     return TouchedSpotIndicatorData(
                       const FlLine(
@@ -151,8 +148,7 @@ class _LineChartSample5State extends State<LineChartSample5> {
                       ),
                       FlDotData(
                         show: true,
-                        getDotPainter: (spot, percent, barData, index) =>
-                            FlDotCirclePainter(
+                        getDotPainter: (spot, percent, barData, index) => FlDotCirclePainter(
                           radius: 8,
                           color: lerpGradient(
                             barData.gradient!.colors,

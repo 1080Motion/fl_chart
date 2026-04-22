@@ -79,8 +79,7 @@ void main() {
     },
   );
 
-  testWidgets('LineChart with only left titles overlayed on chart area',
-      (tester) async {
+  testWidgets('LineChart with only left titles overlayed on chart area', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
@@ -127,8 +126,7 @@ void main() {
     expect(leftTitleRect.left >= chartRect.left, true);
   });
 
-  testWidgets('LineChart with only left titles overlayed on chart border',
-      (tester) async {
+  testWidgets('LineChart with only left titles overlayed on chart border', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(

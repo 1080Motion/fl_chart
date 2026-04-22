@@ -5,8 +5,7 @@ extension BarChartDataExtension on BarChartData {
     assert(barGroups.isNotEmpty);
     final groupsX = List<double>.filled(barGroups.length, 0);
 
-    var sumWidth =
-        barGroups.map((group) => group.width).reduce((a, b) => a + b);
+    var sumWidth = barGroups.map((group) => group.width).reduce((a, b) => a + b);
     final spaceAvailable = viewWidth - sumWidth;
 
     void spaceEvenly() {

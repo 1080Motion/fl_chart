@@ -195,8 +195,7 @@ class CandlestickChartPainter extends AxisChartPainter<CandlestickChartData> {
     if (tooltipData.showOnTopOfTheChartBoxArea) {
       tooltipTopPosition = 0 - tooltipHeight - tooltipItem.bottomMargin;
     } else {
-      tooltipTopPosition =
-          tooltipOriginPoint.dy - tooltipHeight - tooltipItem.bottomMargin;
+      tooltipTopPosition = tooltipOriginPoint.dy - tooltipHeight - tooltipItem.bottomMargin;
     }
 
     final tooltipLeftPosition = getTooltipLeft(
@@ -269,12 +268,16 @@ class CandlestickChartPainter extends AxisChartPainter<CandlestickChartData> {
     _bgTouchTooltipPaint.color = tooltipData.getTooltipColor(showOnSpot);
 
     final rotateAngle = tooltipData.rotateAngle;
-    final rectRotationOffset =
-        Offset(0, Utils().calculateRotationOffset(rect.size, rotateAngle).dy);
+    final rectRotationOffset = Offset(
+      0,
+      Utils().calculateRotationOffset(rect.size, rotateAngle).dy,
+    );
     final rectDrawOffset = Offset(roundedRect.left, roundedRect.top);
 
-    final textRotationOffset =
-        Utils().calculateRotationOffset(drawingTextPainter.size, rotateAngle);
+    final textRotationOffset = Utils().calculateRotationOffset(
+      drawingTextPainter.size,
+      rotateAngle,
+    );
 
     final drawOffset = Offset(
       rect.center.dx - (drawingTextPainter.width / 2),
@@ -342,8 +345,7 @@ class CandlestickChartPainter extends AxisChartPainter<CandlestickChartData> {
   ) {
     final data = holder.data;
 
-    final touchedSpots =
-        <({CandlestickSpot spot, int index, double distance})>[];
+    final touchedSpots = <({CandlestickSpot spot, int index, double distance})>[];
     for (var i = data.candlestickSpots.length - 1; i >= 0; i--) {
       // Reverse the loop to check the topmost spot first
       final spot = data.candlestickSpots[i];

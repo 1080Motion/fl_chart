@@ -19,10 +19,11 @@ import 'package:flutter/physics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vector_math/vector_math_64.dart' show Matrix4, Quad, Vector3;
 
-typedef CustomInteractiveViewerWidgetBuilder = Widget Function(
-  BuildContext context,
-  Quad viewport,
-);
+typedef CustomInteractiveViewerWidgetBuilder =
+    Widget Function(
+      BuildContext context,
+      Quad viewport,
+    );
 
 @immutable
 class CustomInteractiveViewer extends StatefulWidget {
@@ -45,21 +46,20 @@ class CustomInteractiveViewer extends StatefulWidget {
     this.alignment,
     this.trackpadScrollCausesScale = false,
     required this.child,
-  })  : assert(minScale > 0),
-        assert(interactionEndFrictionCoefficient > 0),
-        assert(minScale.isFinite),
-        assert(maxScale > 0),
-        assert(!maxScale.isNaN),
-        assert(maxScale >= minScale),
-        assert(
-          (boundaryMargin.horizontal.isInfinite &&
-                  boundaryMargin.vertical.isInfinite) ||
-              (boundaryMargin.top.isFinite &&
-                  boundaryMargin.right.isFinite &&
-                  boundaryMargin.bottom.isFinite &&
-                  boundaryMargin.left.isFinite),
-        ),
-        builder = null;
+  }) : assert(minScale > 0),
+       assert(interactionEndFrictionCoefficient > 0),
+       assert(minScale.isFinite),
+       assert(maxScale > 0),
+       assert(!maxScale.isNaN),
+       assert(maxScale >= minScale),
+       assert(
+         (boundaryMargin.horizontal.isInfinite && boundaryMargin.vertical.isInfinite) ||
+             (boundaryMargin.top.isFinite &&
+                 boundaryMargin.right.isFinite &&
+                 boundaryMargin.bottom.isFinite &&
+                 boundaryMargin.left.isFinite),
+       ),
+       builder = null;
 
   CustomInteractiveViewer.builder({
     super.key,
@@ -79,22 +79,21 @@ class CustomInteractiveViewer extends StatefulWidget {
     this.alignment,
     this.trackpadScrollCausesScale = false,
     required CustomInteractiveViewerWidgetBuilder this.builder,
-  })  : assert(minScale > 0),
-        assert(interactionEndFrictionCoefficient > 0),
-        assert(minScale.isFinite),
-        assert(maxScale > 0),
-        assert(!maxScale.isNaN),
-        assert(maxScale >= minScale),
-        assert(
-          (boundaryMargin.horizontal.isInfinite &&
-                  boundaryMargin.vertical.isInfinite) ||
-              (boundaryMargin.top.isFinite &&
-                  boundaryMargin.right.isFinite &&
-                  boundaryMargin.bottom.isFinite &&
-                  boundaryMargin.left.isFinite),
-        ),
-        constrained = false,
-        child = null;
+  }) : assert(minScale > 0),
+       assert(interactionEndFrictionCoefficient > 0),
+       assert(minScale.isFinite),
+       assert(maxScale > 0),
+       assert(!maxScale.isNaN),
+       assert(maxScale >= minScale),
+       assert(
+         (boundaryMargin.horizontal.isInfinite && boundaryMargin.vertical.isInfinite) ||
+             (boundaryMargin.top.isFinite &&
+                 boundaryMargin.right.isFinite &&
+                 boundaryMargin.bottom.isFinite &&
+                 boundaryMargin.left.isFinite),
+       ),
+       constrained = false,
+       child = null;
 
   final Alignment? alignment;
   final Clip clipBehavior;
@@ -136,8 +135,8 @@ class CustomInteractiveViewer extends StatefulWidget {
   /// Returns the closest point to the given point on the given line segment.
   @visibleForTesting
   static Vector3 getNearestPointOnLine(Vector3 point, Vector3 l1, Vector3 l2) {
-    final lengthSquared = math.pow(l2.x - l1.x, 2.0).toDouble() +
-        math.pow(l2.y - l1.y, 2.0).toDouble();
+    final lengthSquared =
+        math.pow(l2.x - l1.x, 2.0).toDouble() + math.pow(l2.y - l1.y, 2.0).toDouble();
 
     // In this case, l1 == l2.
     if (lengthSquared == 0) {
@@ -285,8 +284,7 @@ class CustomInteractiveViewer extends StatefulWidget {
     late Vector3 closestOverall;
     for (final closePoint in closestPoints) {
       final distance = math.sqrt(
-        math.pow(point.x - closePoint.x, 2) +
-            math.pow(point.y - closePoint.y, 2),
+        math.pow(point.x - closePoint.x, 2) + math.pow(point.y - closePoint.y, 2),
       );
       if (distance < minDistance) {
         minDistance = distance;
@@ -335,8 +333,7 @@ class CustomInteractiveViewer extends StatefulWidget {
   }
 
   @override
-  State<CustomInteractiveViewer> createState() =>
-      _CustomInteractiveViewerState();
+  State<CustomInteractiveViewer> createState() => _CustomInteractiveViewerState();
 }
 
 class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
@@ -353,8 +350,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
   Axis? _currentAxis; // Used with panAxis.
   Offset? _referenceFocalPoint; // Point where the current gesture began.
   double? _scaleStart; // Scale value at start of scaling gesture.
-  final double _currentRotation =
-      0; // Rotation of _transformationController.value.
+  final double _currentRotation = 0; // Rotation of _transformationController.value.
   _GestureType? _gestureType;
 
   // The _boundaryRect is calculated by adding the boundaryMargin to the size of
@@ -366,11 +362,9 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
     assert(!widget.boundaryMargin.top.isNaN);
     assert(!widget.boundaryMargin.bottom.isNaN);
 
-    final childRenderBox =
-        _childKey.currentContext!.findRenderObject()! as RenderBox;
+    final childRenderBox = _childKey.currentContext!.findRenderObject()! as RenderBox;
     final childSize = childRenderBox.size;
-    final boundaryRect =
-        widget.boundaryMargin.inflateRect(Offset.zero & childSize);
+    final boundaryRect = widget.boundaryMargin.inflateRect(Offset.zero & childSize);
     assert(
       !boundaryRect.isEmpty,
       "CustomInteractiveViewer's child must have nonzero dimensions.",
@@ -391,8 +385,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
   // The Rect representing the child's parent.
   Rect get _viewport {
     assert(_parentKey.currentContext != null);
-    final parentRenderBox =
-        _parentKey.currentContext!.findRenderObject()! as RenderBox;
+    final parentRenderBox = _parentKey.currentContext!.findRenderObject()! as RenderBox;
     return Offset.zero & parentRenderBox.size;
   }
 
@@ -475,8 +468,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
       correctedMatrix,
       _viewport,
     );
-    final offendingCorrectedDistance =
-        _exceedsBy(boundariesAabbQuad, correctedViewport);
+    final offendingCorrectedDistance = _exceedsBy(boundariesAabbQuad, correctedViewport);
     if (offendingCorrectedDistance == Offset.zero) {
       return correctedMatrix;
     }
@@ -484,8 +476,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
     // If the corrected translation doesn't fit in either direction, don't allow
     // any translation at all. This happens when the viewport is larger than the
     // entire boundary.
-    if (offendingCorrectedDistance.dx != 0.0 &&
-        offendingCorrectedDistance.dy != 0.0) {
+    if (offendingCorrectedDistance.dx != 0.0 && offendingCorrectedDistance.dy != 0.0) {
       return matrix.clone();
     }
 
@@ -495,14 +486,13 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
       offendingCorrectedDistance.dx == 0.0 ? correctedTotalTranslation.dx : 0.0,
       offendingCorrectedDistance.dy == 0.0 ? correctedTotalTranslation.dy : 0.0,
     );
-    return matrix.clone()
-      ..setTranslation(
-        Vector3(
-          unidirectionalCorrectedTotalTranslation.dx,
-          unidirectionalCorrectedTotalTranslation.dy,
-          0,
-        ),
-      );
+    return matrix.clone()..setTranslation(
+      Vector3(
+        unidirectionalCorrectedTotalTranslation.dx,
+        unidirectionalCorrectedTotalTranslation.dy,
+        0,
+      ),
+    );
   }
 
   // Return a new matrix representing the given matrix after applying the given
@@ -531,8 +521,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
       widget.maxScale,
     );
     final clampedScale = clampedTotalScale / currentScale;
-    return matrix.clone()
-      ..scaleByDouble(clampedScale, clampedScale, clampedScale, 1);
+    return matrix.clone()..scaleByDouble(clampedScale, clampedScale, clampedScale, 1);
   }
 
   // Returns true iff the given _GestureType is enabled.
@@ -691,8 +680,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
           _currentAxis = null;
           return;
         }
-        final translationVector =
-            _transformationController!.value.getTranslation();
+        final translationVector = _transformationController!.value.getTranslation();
         final translation = Offset(translationVector.x, translationVector.y);
         final frictionSimulationX = FrictionSimulation(
           widget.interactionEndFrictionCoefficient,
@@ -708,15 +696,16 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
           details.velocity.pixelsPerSecond.distance,
           widget.interactionEndFrictionCoefficient,
         );
-        _animation = Tween<Offset>(
-          begin: translation,
-          end: Offset(frictionSimulationX.finalX, frictionSimulationY.finalX),
-        ).animate(
-          CurvedAnimation(
-            parent: _controller,
-            curve: Curves.decelerate,
-          ),
-        );
+        _animation =
+            Tween<Offset>(
+              begin: translation,
+              end: Offset(frictionSimulationX.finalX, frictionSimulationY.finalX),
+            ).animate(
+              CurvedAnimation(
+                parent: _controller,
+                curve: Curves.decelerate,
+              ),
+            );
         _controller.duration = Duration(milliseconds: (tFinal * 1000).round());
         _animation!.addListener(_onAnimate);
         unawaited(_controller.forward());
@@ -736,16 +725,13 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
           widget.interactionEndFrictionCoefficient,
           effectivelyMotionless: 0.1,
         );
-        _scaleAnimation =
-            Tween<double>(begin: scale, end: frictionSimulation.x(tFinal))
-                .animate(
+        _scaleAnimation = Tween<double>(begin: scale, end: frictionSimulation.x(tFinal)).animate(
           CurvedAnimation(
             parent: _scaleController,
             curve: Curves.decelerate,
           ),
         );
-        _scaleController.duration =
-            Duration(milliseconds: (tFinal * 1000).round());
+        _scaleController.duration = Duration(milliseconds: (tFinal * 1000).round());
         _scaleAnimation!.addListener(_onScaleAnimate);
         unawaited(_scaleController.forward());
       case null:
@@ -757,8 +743,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
   void _receivedPointerSignal(PointerSignalEvent event) {
     final double scaleChange;
     if (event is PointerScrollEvent) {
-      if (event.kind == PointerDeviceKind.trackpad &&
-          !widget.trackpadScrollCausesScale) {
+      if (event.kind == PointerDeviceKind.trackpad && !widget.trackpadScrollCausesScale) {
         // Trackpad scroll, so treat it as a pan.
         widget.onInteractionStart?.call(
           ScaleStartDetails(
@@ -901,8 +886,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
       return;
     }
     final desiredScale = _scaleAnimation!.value;
-    final scaleChange =
-        desiredScale / _transformationController!.value.getMaxScaleOnAxis();
+    final scaleChange = desiredScale / _transformationController!.value.getMaxScaleOnAxis();
     final referenceFocalPoint = _transformationController!.toScene(
       _scaleAnimationFocalPoint,
     );
@@ -934,8 +918,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
   void initState() {
     super.initState();
 
-    _transformationController =
-        widget.transformationController ?? TransformationController();
+    _transformationController = widget.transformationController ?? TransformationController();
     _transformationController!.addListener(_onTransformationControllerChange);
     _controller = AnimationController(
       vsync: this,
@@ -950,27 +933,20 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
     // transformationControllers.
     if (oldWidget.transformationController == null) {
       if (widget.transformationController != null) {
-        _transformationController!
-            .removeListener(_onTransformationControllerChange);
+        _transformationController!.removeListener(_onTransformationControllerChange);
         _transformationController!.dispose();
         _transformationController = widget.transformationController;
-        _transformationController!
-            .addListener(_onTransformationControllerChange);
+        _transformationController!.addListener(_onTransformationControllerChange);
       }
     } else {
       if (widget.transformationController == null) {
-        _transformationController!
-            .removeListener(_onTransformationControllerChange);
+        _transformationController!.removeListener(_onTransformationControllerChange);
         _transformationController = TransformationController();
-        _transformationController!
-            .addListener(_onTransformationControllerChange);
-      } else if (widget.transformationController !=
-          oldWidget.transformationController) {
-        _transformationController!
-            .removeListener(_onTransformationControllerChange);
+        _transformationController!.addListener(_onTransformationControllerChange);
+      } else if (widget.transformationController != oldWidget.transformationController) {
+        _transformationController!.removeListener(_onTransformationControllerChange);
         _transformationController = widget.transformationController;
-        _transformationController!
-            .addListener(_onTransformationControllerChange);
+        _transformationController!.addListener(_onTransformationControllerChange);
       }
     }
   }
@@ -979,8 +955,7 @@ class _CustomInteractiveViewerState extends State<CustomInteractiveViewer>
   void dispose() {
     _controller.dispose();
     _scaleController.dispose();
-    _transformationController!
-        .removeListener(_onTransformationControllerChange);
+    _transformationController!.removeListener(_onTransformationControllerChange);
     if (widget.transformationController == null) {
       _transformationController!.dispose();
     }
@@ -1136,8 +1111,7 @@ Offset _exceedsBy(Quad boundary, Quad viewport) {
   ];
   var largestExcess = Offset.zero;
   for (final point in viewportPoints) {
-    final pointInside =
-        CustomInteractiveViewer.getNearestPointInside(point, boundary);
+    final pointInside = CustomInteractiveViewer.getNearestPointInside(point, boundary);
     final excess = Offset(
       pointInside.x - point.x,
       pointInside.y - point.y,

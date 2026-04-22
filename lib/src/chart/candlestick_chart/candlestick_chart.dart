@@ -14,16 +14,15 @@ class CandlestickChart extends ImplicitlyAnimatedWidget {
     this.data, {
     this.chartRendererKey,
     super.key,
-    @Deprecated('Please use [duration] instead')
-    Duration? swapAnimationDuration,
+    @Deprecated('Please use [duration] instead') Duration? swapAnimationDuration,
     Duration duration = const Duration(milliseconds: 150),
     @Deprecated('Please use [curve] instead') Curve? swapAnimationCurve,
     Curve curve = Curves.linear,
     this.transformationConfig = const FlTransformationConfig(),
   }) : super(
-          duration: swapAnimationDuration ?? duration,
-          curve: swapAnimationCurve ?? curve,
-        );
+         duration: swapAnimationDuration ?? duration,
+         curve: swapAnimationCurve ?? curve,
+       );
 
   /// Determines how the [CandlestickChart] should be look like.
   final CandlestickChartData data;
@@ -52,7 +51,8 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
   ({
     Offset axisCoordinate,
     int spotIndex,
-  })? touchedSpots;
+  })?
+  touchedSpots;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,8 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
     final spot = touchedSpots != null && touchedSpots!.spotIndex != -1
         ? candlestickChartData.candlestickSpots[touchedSpots!.spotIndex]
         : null;
-    final touchInsideChart = touchedSpots != null &&
+    final touchInsideChart =
+        touchedSpots != null &&
         touchedSpots!.axisCoordinate.dx >= candlestickChartData.minX &&
         touchedSpots!.axisCoordinate.dy >= candlestickChartData.minY &&
         touchedSpots!.axisCoordinate.dx <= candlestickChartData.maxX &&
@@ -94,27 +95,26 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
     final providedX = candlestickChartData.touchedPointIndicator?.x;
     final providedY = candlestickChartData.touchedPointIndicator?.y;
     return candlestickChartData.copyWith(
-      showingTooltipIndicators:
-          touchedSpots != null ? [touchedSpots!.spotIndex] : [],
+      showingTooltipIndicators: touchedSpots != null ? [touchedSpots!.spotIndex] : [],
       touchedPointIndicator: touchedSpots != null
           ? AxisSpotIndicator(
               x: providedX ?? spot?.x,
-              y: providedY ??
-                  (touchInsideChart ? touchedSpots!.axisCoordinate.dy : null),
-              painter: providedPainter ??
+              y: providedY ?? (touchInsideChart ? touchedSpots!.axisCoordinate.dy : null),
+              painter:
+                  providedPainter ??
                   AxisLinesIndicatorPainter(
                     horizontalLineProvider: (y) => HorizontalLine(
                       y: y,
                       color: Theme.of(context).colorScheme.outline.withValues(
-                            alpha: 0.5,
-                          ),
+                        alpha: 0.5,
+                      ),
                       strokeWidth: 1,
                     ),
                     verticalLineProvider: (x) => VerticalLine(
                       x: x,
                       color: Theme.of(context).colorScheme.outline.withValues(
-                            alpha: 0.5,
-                          ),
+                        alpha: 0.5,
+                      ),
                       strokeWidth: 1,
                     ),
                   ),
@@ -125,12 +125,12 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
 
   CandlestickChartData _getData() {
     final candlestickTouchData = widget.data.candlestickTouchData;
-    if (candlestickTouchData.enabled &&
-        candlestickTouchData.handleBuiltInTouches) {
+    if (candlestickTouchData.enabled && candlestickTouchData.handleBuiltInTouches) {
       _providedTouchCallback = candlestickTouchData.touchCallback;
       return widget.data.copyWith(
-        candlestickTouchData: widget.data.candlestickTouchData
-            .copyWith(touchCallback: _handleBuiltInTouch),
+        candlestickTouchData: widget.data.candlestickTouchData.copyWith(
+          touchCallback: _handleBuiltInTouch,
+        ),
       );
     }
     return widget.data;
@@ -147,9 +147,7 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
 
     final desiredTouch = event.isInterestedForInteractions;
 
-    if (!desiredTouch ||
-        touchResponse == null ||
-        touchResponse.touchedSpot == null) {
+    if (!desiredTouch || touchResponse == null || touchResponse.touchedSpot == null) {
       setState(() {
         if (desiredTouch) {
           touchedSpots = (
@@ -172,13 +170,15 @@ class _CandlestickChartState extends AnimatedWidgetBaseState<CandlestickChart> {
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _candlestickChartDataTween = visitor(
-      _candlestickChartDataTween,
-      _getData(),
-      (dynamic value) => CandlestickChartDataTween(
-        begin: value as CandlestickChartData,
-        end: widget.data,
-      ),
-    ) as CandlestickChartDataTween?;
+    _candlestickChartDataTween =
+        visitor(
+              _candlestickChartDataTween,
+              _getData(),
+              (dynamic value) => CandlestickChartDataTween(
+                begin: value as CandlestickChartData,
+                end: widget.data,
+              ),
+            )
+            as CandlestickChartDataTween?;
   }
 }

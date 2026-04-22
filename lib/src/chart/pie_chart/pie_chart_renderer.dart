@@ -23,11 +23,11 @@ class PieChartLeaf extends MultiChildRenderObjectWidget {
 
   @override
   RenderPieChart createRenderObject(BuildContext context) => RenderPieChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-      );
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+  );
 
   @override
   void updateRenderObject(BuildContext context, RenderPieChart renderObject) {
@@ -51,10 +51,10 @@ class RenderPieChart extends RenderBaseChart<PieTouchResponse>
     PieChartData data,
     PieChartData targetData,
     TextScaler textScaler,
-  )   : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        super(targetData.pieTouchData, context, canBeScaled: false);
+  ) : _data = data,
+      _targetData = targetData,
+      _textScaler = textScaler,
+      super(targetData.pieTouchData, context, canBeScaled: false);
 
   PieChartData get data => _data;
   PieChartData _data;
@@ -93,8 +93,7 @@ class RenderPieChart extends RenderBaseChart<PieTouchResponse>
   @visibleForTesting
   PieChartPainter painter = PieChartPainter();
 
-  PaintHolder<PieChartData> get paintHolder =>
-      PaintHolder(data, targetData, textScaler);
+  PaintHolder<PieChartData> get paintHolder => PaintHolder(data, targetData, textScaler);
 
   @override
   void setupParentData(RenderBox child) {

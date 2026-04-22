@@ -13,8 +13,7 @@ void main() {
         scatterSpot3,
         scatterSpot4,
       ];
-      final (minX, maxX, minY, maxY) =
-          ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
+      final (minX, maxX, minY, maxY) = ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
       expect(minX, -14);
       expect(maxX, 1);
       expect(minY, -8);
@@ -26,8 +25,7 @@ void main() {
         ScatterSpot(3, -1),
         ScatterSpot(-1, 3),
       ];
-      final (minX, maxX, minY, maxY) =
-          ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
+      final (minX, maxX, minY, maxY) = ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
       expect(minX, -1);
       expect(maxX, 3);
       expect(minY, -1);
@@ -36,8 +34,7 @@ void main() {
 
     test('Test validity 3', () {
       final scatterSpots = <ScatterSpot>[];
-      final (minX, maxX, minY, maxY) =
-          ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
+      final (minX, maxX, minY, maxY) = ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
       expect(minX, 0);
       expect(maxX, 0);
       expect(minY, 0);
@@ -52,8 +49,7 @@ void main() {
         scatterSpot3,
       ];
       final result1 = ScatterChartHelper.calculateMaxAxisValues(scatterSpots);
-      final result2 =
-          ScatterChartHelper.calculateMaxAxisValues(scatterSpotsClone);
+      final result2 = ScatterChartHelper.calculateMaxAxisValues(scatterSpotsClone);
       expect(result1, result2);
     });
   });

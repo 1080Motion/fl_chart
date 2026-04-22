@@ -13,8 +13,9 @@ void main() {
         candlestickSpot3,
         candlestickSpot4,
       ];
-      final (minX, maxX, minY, maxY) =
-          CandlestickChartHelper.calculateMaxAxisValues(candlestickSpots);
+      final (minX, maxX, minY, maxY) = CandlestickChartHelper.calculateMaxAxisValues(
+        candlestickSpots,
+      );
       expect(minX, 0);
       expect(maxX, 30);
       expect(minY, 0);
@@ -38,8 +39,7 @@ void main() {
           low: 40,
         ),
       ];
-      final (minX, maxX, minY, maxY) =
-          CandlestickChartHelper.calculateMaxAxisValues(scatterSpots);
+      final (minX, maxX, minY, maxY) = CandlestickChartHelper.calculateMaxAxisValues(scatterSpots);
       expect(minX, 0);
       expect(maxX, 1);
       expect(minY, 4);
@@ -48,8 +48,9 @@ void main() {
 
     test('Test validity 3', () {
       final candlestickSpots = <CandlestickSpot>[];
-      final (minX, maxX, minY, maxY) =
-          CandlestickChartHelper.calculateMaxAxisValues(candlestickSpots);
+      final (minX, maxX, minY, maxY) = CandlestickChartHelper.calculateMaxAxisValues(
+        candlestickSpots,
+      );
       expect(minX, 0);
       expect(maxX, 0);
       expect(minY, 0);
@@ -64,8 +65,9 @@ void main() {
         candlestickSpot4,
         candlestickSpot5,
       ];
-      final (minX, maxX, minY, maxY) =
-          CandlestickChartHelper.calculateMaxAxisValues(candlestickSpots);
+      final (minX, maxX, minY, maxY) = CandlestickChartHelper.calculateMaxAxisValues(
+        candlestickSpots,
+      );
       expect(minX, -50);
       expect(maxX, 30);
       expect(minY, -30);
@@ -83,10 +85,8 @@ void main() {
         candlestickSpot2Clone,
         candlestickSpot3,
       ];
-      final result1 =
-          CandlestickChartHelper.calculateMaxAxisValues(candlestickSpots);
-      final result2 =
-          CandlestickChartHelper.calculateMaxAxisValues(candlestickSpotsClone);
+      final result1 = CandlestickChartHelper.calculateMaxAxisValues(candlestickSpots);
+      final result2 = CandlestickChartHelper.calculateMaxAxisValues(candlestickSpotsClone);
       expect(result1, result2);
     });
   });

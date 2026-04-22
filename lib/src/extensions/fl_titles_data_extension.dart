@@ -4,23 +4,23 @@ import 'package:flutter/widgets.dart';
 
 extension FlTitlesDataExtension on FlTitlesData {
   EdgeInsets get allSidesPadding => EdgeInsets.only(
-        left: _getPadding(
-          leftTitles.sideTitleAlignment,
-          leftTitles.totalReservedSize,
-        ),
-        top: _getPadding(
-          topTitles.sideTitleAlignment,
-          topTitles.totalReservedSize,
-        ),
-        right: _getPadding(
-          rightTitles.sideTitleAlignment,
-          rightTitles.totalReservedSize,
-        ),
-        bottom: _getPadding(
-          bottomTitles.sideTitleAlignment,
-          bottomTitles.totalReservedSize,
-        ),
-      );
+    left: _getPadding(
+      leftTitles.sideTitleAlignment,
+      leftTitles.totalReservedSize,
+    ),
+    top: _getPadding(
+      topTitles.sideTitleAlignment,
+      topTitles.totalReservedSize,
+    ),
+    right: _getPadding(
+      rightTitles.sideTitleAlignment,
+      rightTitles.totalReservedSize,
+    ),
+    bottom: _getPadding(
+      bottomTitles.sideTitleAlignment,
+      bottomTitles.totalReservedSize,
+    ),
+  );
 
   double _getPadding(SideTitleAlignment alignment, double reservedSize) {
     if (!show || alignment == SideTitleAlignment.inside) {

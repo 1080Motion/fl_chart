@@ -50,31 +50,35 @@ class CandlestickChartData extends AxisChartData with EquatableMixin {
     super.backgroundColor,
     super.rotationQuarterTurns,
     this.touchedPointIndicator,
-  })  : candlestickSpots = candlestickSpots ?? const [],
-        candlestickPainter = candlestickPainter ?? DefaultCandlestickPainter(),
-        candlestickTouchData = candlestickTouchData ?? CandlestickTouchData(),
-        showingTooltipIndicators = showingTooltipIndicators ?? const [],
-        super(
-          gridData: gridData ?? const FlGridData(),
-          titlesData: titlesData ?? const FlTitlesData(),
-          clipData: clipData ?? const FlClipData.none(),
-          minX: minX ??
-              CandlestickChartHelper.calculateMaxAxisValues(
-                candlestickSpots ?? const [],
-              ).$1,
-          maxX: maxX ??
-              CandlestickChartHelper.calculateMaxAxisValues(
-                candlestickSpots ?? const [],
-              ).$2,
-          minY: minY ??
-              CandlestickChartHelper.calculateMaxAxisValues(
-                candlestickSpots ?? const [],
-              ).$3,
-          maxY: maxY ??
-              CandlestickChartHelper.calculateMaxAxisValues(
-                candlestickSpots ?? const [],
-              ).$4,
-        );
+  }) : candlestickSpots = candlestickSpots ?? const [],
+       candlestickPainter = candlestickPainter ?? DefaultCandlestickPainter(),
+       candlestickTouchData = candlestickTouchData ?? CandlestickTouchData(),
+       showingTooltipIndicators = showingTooltipIndicators ?? const [],
+       super(
+         gridData: gridData ?? const FlGridData(),
+         titlesData: titlesData ?? const FlTitlesData(),
+         clipData: clipData ?? const FlClipData.none(),
+         minX:
+             minX ??
+             CandlestickChartHelper.calculateMaxAxisValues(
+               candlestickSpots ?? const [],
+             ).$1,
+         maxX:
+             maxX ??
+             CandlestickChartHelper.calculateMaxAxisValues(
+               candlestickSpots ?? const [],
+             ).$2,
+         minY:
+             minY ??
+             CandlestickChartHelper.calculateMaxAxisValues(
+               candlestickSpots ?? const [],
+             ).$3,
+         maxY:
+             maxY ??
+             CandlestickChartHelper.calculateMaxAxisValues(
+               candlestickSpots ?? const [],
+             ).$4,
+       );
 
   /// Contains the data for the candlestick chart.
   ///
@@ -113,8 +117,7 @@ class CandlestickChartData extends AxisChartData with EquatableMixin {
   CandlestickChartData lerp(BaseChartData a, BaseChartData b, double t) {
     if (a is CandlestickChartData && b is CandlestickChartData) {
       return CandlestickChartData(
-        candlestickSpots:
-            lerpCandleSpotList(a.candlestickSpots, b.candlestickSpots, t),
+        candlestickSpots: lerpCandleSpotList(a.candlestickSpots, b.candlestickSpots, t),
         candlestickPainter: b.candlestickPainter.lerp(
           a.candlestickPainter,
           b.candlestickPainter,
@@ -171,52 +174,49 @@ class CandlestickChartData extends AxisChartData with EquatableMixin {
     Color? backgroundColor,
     int? rotationQuarterTurns,
     AxisSpotIndicator? touchedPointIndicator,
-  }) =>
-      CandlestickChartData(
-        candlestickSpots: candlestickSpots ?? this.candlestickSpots,
-        candlestickPainter: candlestickPainter ?? this.candlestickPainter,
-        titlesData: titlesData ?? this.titlesData,
-        candlestickTouchData: candlestickTouchData ?? this.candlestickTouchData,
-        showingTooltipIndicators:
-            showingTooltipIndicators ?? this.showingTooltipIndicators,
-        gridData: gridData ?? this.gridData,
-        borderData: borderData ?? this.borderData,
-        minX: minX ?? this.minX,
-        maxX: maxX ?? this.maxX,
-        baselineX: baselineX ?? this.baselineX,
-        minY: minY ?? this.minY,
-        maxY: maxY ?? this.maxY,
-        baselineY: baselineY ?? this.baselineY,
-        rangeAnnotations: rangeAnnotations ?? this.rangeAnnotations,
-        clipData: clipData ?? this.clipData,
-        backgroundColor: backgroundColor ?? this.backgroundColor,
-        rotationQuarterTurns: rotationQuarterTurns ?? this.rotationQuarterTurns,
-        touchedPointIndicator:
-            touchedPointIndicator ?? this.touchedPointIndicator,
-      );
+  }) => CandlestickChartData(
+    candlestickSpots: candlestickSpots ?? this.candlestickSpots,
+    candlestickPainter: candlestickPainter ?? this.candlestickPainter,
+    titlesData: titlesData ?? this.titlesData,
+    candlestickTouchData: candlestickTouchData ?? this.candlestickTouchData,
+    showingTooltipIndicators: showingTooltipIndicators ?? this.showingTooltipIndicators,
+    gridData: gridData ?? this.gridData,
+    borderData: borderData ?? this.borderData,
+    minX: minX ?? this.minX,
+    maxX: maxX ?? this.maxX,
+    baselineX: baselineX ?? this.baselineX,
+    minY: minY ?? this.minY,
+    maxY: maxY ?? this.maxY,
+    baselineY: baselineY ?? this.baselineY,
+    rangeAnnotations: rangeAnnotations ?? this.rangeAnnotations,
+    clipData: clipData ?? this.clipData,
+    backgroundColor: backgroundColor ?? this.backgroundColor,
+    rotationQuarterTurns: rotationQuarterTurns ?? this.rotationQuarterTurns,
+    touchedPointIndicator: touchedPointIndicator ?? this.touchedPointIndicator,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        candlestickSpots,
-        candlestickPainter,
-        candlestickTouchData,
-        showingTooltipIndicators,
-        gridData,
-        titlesData,
-        minX,
-        maxX,
-        baselineX,
-        minY,
-        maxY,
-        baselineY,
-        rangeAnnotations,
-        clipData,
-        backgroundColor,
-        borderData,
-        rotationQuarterTurns,
-        touchedPointIndicator,
-      ];
+    candlestickSpots,
+    candlestickPainter,
+    candlestickTouchData,
+    showingTooltipIndicators,
+    gridData,
+    titlesData,
+    minX,
+    maxX,
+    baselineX,
+    minY,
+    maxY,
+    baselineY,
+    rangeAnnotations,
+    clipData,
+    backgroundColor,
+    borderData,
+    rotationQuarterTurns,
+    touchedPointIndicator,
+  ];
 }
 
 /// Defines information about a spot in the [CandlestickChart]
@@ -238,8 +238,8 @@ class CandlestickSpot extends FlSpot with EquatableMixin {
     required this.low,
     required this.close,
     bool? show,
-  })  : show = show ?? true,
-        super(x, high);
+  }) : show = show ?? true,
+       super(x, high);
 
   /// The open value of a specific candlestick.
   final double open;
@@ -299,26 +299,25 @@ class CandlestickSpot extends FlSpot with EquatableMixin {
   }
 
   /// Lerps a [CandlestickSpot] based on [t] value, check [Tween.lerp].
-  static CandlestickSpot lerp(CandlestickSpot a, CandlestickSpot b, double t) =>
-      CandlestickSpot(
-        x: lerpDouble(a.x, b.x, t)!,
-        open: lerpDouble(a.open, b.open, t)!,
-        high: lerpDouble(a.high, b.high, t)!,
-        low: lerpDouble(a.low, b.low, t)!,
-        close: lerpDouble(a.close, b.close, t)!,
-        show: b.show,
-      );
+  static CandlestickSpot lerp(CandlestickSpot a, CandlestickSpot b, double t) => CandlestickSpot(
+    x: lerpDouble(a.x, b.x, t)!,
+    open: lerpDouble(a.open, b.open, t)!,
+    high: lerpDouble(a.high, b.high, t)!,
+    low: lerpDouble(a.low, b.low, t)!,
+    close: lerpDouble(a.close, b.close, t)!,
+    show: b.show,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        x,
-        open,
-        high,
-        low,
-        close,
-        show,
-      ];
+    x,
+    open,
+    high,
+    low,
+    close,
+    show,
+  ];
 }
 
 /// Holds data to handle touch events, and touch responses in the [CandlestickChart].
@@ -326,8 +325,7 @@ class CandlestickSpot extends FlSpot with EquatableMixin {
 /// There is a touch flow, explained [here](https://github.com/imaNNeo/fl_chart/blob/main/repo_files/documentations/handle_touches.md)
 /// in a simple way, each chart's renderer captures the touch events, and passes the pointerEvent
 /// to the painter, and gets touched spot, and wraps it into a concrete [CandlestickTouchResponse].
-class CandlestickTouchData extends FlTouchData<CandlestickTouchResponse>
-    with EquatableMixin {
+class CandlestickTouchData extends FlTouchData<CandlestickTouchResponse> with EquatableMixin {
   /// You can disable or enable the touch system using [enabled] flag,
   ///
   /// [touchCallback] notifies you about the happened touch/pointer events.
@@ -351,15 +349,15 @@ class CandlestickTouchData extends FlTouchData<CandlestickTouchResponse>
     CandlestickTouchTooltipData? touchTooltipData,
     bool? handleBuiltInTouches,
     double? touchSpotThreshold,
-  })  : touchTooltipData = touchTooltipData ?? CandlestickTouchTooltipData(),
-        handleBuiltInTouches = handleBuiltInTouches ?? true,
-        touchSpotThreshold = touchSpotThreshold ?? 4,
-        super(
-          enabled ?? true,
-          touchCallback,
-          mouseCursorResolver,
-          longPressDuration,
-        );
+  }) : touchTooltipData = touchTooltipData ?? CandlestickTouchTooltipData(),
+       handleBuiltInTouches = handleBuiltInTouches ?? true,
+       touchSpotThreshold = touchSpotThreshold ?? 4,
+       super(
+         enabled ?? true,
+         touchCallback,
+         mouseCursorResolver,
+         longPressDuration,
+       );
 
   /// show a tooltip on touched spots
   final CandlestickTouchTooltipData touchTooltipData;
@@ -381,28 +379,27 @@ class CandlestickTouchData extends FlTouchData<CandlestickTouchResponse>
     CandlestickTouchTooltipData? touchTooltipData,
     bool? handleBuiltInTouches,
     double? touchSpotThreshold,
-  }) =>
-      CandlestickTouchData(
-        enabled: enabled ?? this.enabled,
-        touchCallback: touchCallback ?? this.touchCallback,
-        mouseCursorResolver: mouseCursorResolver ?? this.mouseCursorResolver,
-        longPressDuration: longPressDuration ?? this.longPressDuration,
-        touchTooltipData: touchTooltipData ?? this.touchTooltipData,
-        handleBuiltInTouches: handleBuiltInTouches ?? this.handleBuiltInTouches,
-        touchSpotThreshold: touchSpotThreshold ?? this.touchSpotThreshold,
-      );
+  }) => CandlestickTouchData(
+    enabled: enabled ?? this.enabled,
+    touchCallback: touchCallback ?? this.touchCallback,
+    mouseCursorResolver: mouseCursorResolver ?? this.mouseCursorResolver,
+    longPressDuration: longPressDuration ?? this.longPressDuration,
+    touchTooltipData: touchTooltipData ?? this.touchTooltipData,
+    handleBuiltInTouches: handleBuiltInTouches ?? this.handleBuiltInTouches,
+    touchSpotThreshold: touchSpotThreshold ?? this.touchSpotThreshold,
+  );
 
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        enabled,
-        touchCallback,
-        mouseCursorResolver,
-        longPressDuration,
-        touchTooltipData,
-        handleBuiltInTouches,
-        touchSpotThreshold,
-      ];
+    enabled,
+    touchCallback,
+    mouseCursorResolver,
+    longPressDuration,
+    touchTooltipData,
+    handleBuiltInTouches,
+    touchSpotThreshold,
+  ];
 }
 
 /// [CandlestickChart]'s touch callback.
@@ -432,12 +429,11 @@ class CandlestickTouchResponse extends AxisBaseTouchResponse {
     Offset? touchLocation,
     Offset? touchChartCoordinate,
     CandlestickTouchedSpot? touchedSpot,
-  }) =>
-      CandlestickTouchResponse(
-        touchLocation: touchLocation ?? this.touchLocation,
-        touchChartCoordinate: touchChartCoordinate ?? this.touchChartCoordinate,
-        touchedSpot: touchedSpot ?? this.touchedSpot,
-      );
+  }) => CandlestickTouchResponse(
+    touchLocation: touchLocation ?? this.touchLocation,
+    touchChartCoordinate: touchChartCoordinate ?? this.touchChartCoordinate,
+    touchedSpot: touchedSpot ?? this.touchedSpot,
+  );
 }
 
 /// Holds the touched spot data
@@ -455,17 +451,16 @@ class CandlestickTouchedSpot with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        spot,
-        spotIndex,
-      ];
+    spot,
+    spotIndex,
+  ];
 
   /// Copies current [CandlestickTouchedSpot] to a new [CandlestickTouchedSpot],
   /// and replaces provided values.
   CandlestickTouchedSpot copyWith({
     CandlestickSpot? spot,
     int? spotIndex,
-  }) =>
-      CandlestickTouchedSpot(spot ?? this.spot, spotIndex ?? this.spotIndex);
+  }) => CandlestickTouchedSpot(spot ?? this.spot, spotIndex ?? this.spotIndex);
 }
 
 /// Holds representation data for showing tooltip popup on top of spots.
@@ -495,21 +490,19 @@ class CandlestickTouchTooltipData with EquatableMixin {
     double? rotateAngle,
     BorderSide? tooltipBorder,
     GetCandlestickTooltipColor? getTooltipColor,
-  })  : tooltipBorderRadius = tooltipBorderRadius ?? BorderRadius.circular(4),
-        tooltipPadding = tooltipPadding ??
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        tooltipHorizontalAlignment =
-            tooltipHorizontalAlignment ?? FLHorizontalAlignment.center,
-        tooltipHorizontalOffset = tooltipHorizontalOffset ?? 0,
-        maxContentWidth = maxContentWidth ?? 120,
-        getTooltipItems = getTooltipItems ?? defaultCandlestickTooltipItem,
-        fitInsideHorizontally = fitInsideHorizontally ?? false,
-        fitInsideVertically = fitInsideVertically ?? false,
-        showOnTopOfTheChartBoxArea = showOnTopOfTheChartBoxArea ?? false,
-        rotateAngle = rotateAngle ?? 0.0,
-        tooltipBorder = tooltipBorder ?? BorderSide.none,
-        getTooltipColor = getTooltipColor ?? defaultCandlestickTooltipColor,
-        super();
+  }) : tooltipBorderRadius = tooltipBorderRadius ?? BorderRadius.circular(4),
+       tooltipPadding = tooltipPadding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+       tooltipHorizontalAlignment = tooltipHorizontalAlignment ?? FLHorizontalAlignment.center,
+       tooltipHorizontalOffset = tooltipHorizontalOffset ?? 0,
+       maxContentWidth = maxContentWidth ?? 120,
+       getTooltipItems = getTooltipItems ?? defaultCandlestickTooltipItem,
+       fitInsideHorizontally = fitInsideHorizontally ?? false,
+       fitInsideVertically = fitInsideVertically ?? false,
+       showOnTopOfTheChartBoxArea = showOnTopOfTheChartBoxArea ?? false,
+       rotateAngle = rotateAngle ?? 0.0,
+       tooltipBorder = tooltipBorder ?? BorderSide.none,
+       getTooltipColor = getTooltipColor ?? defaultCandlestickTooltipColor,
+       super();
 
   /// Sets a border radius for the tooltip.
   final BorderRadius tooltipBorderRadius;
@@ -550,19 +543,19 @@ class CandlestickTouchTooltipData with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        tooltipBorderRadius,
-        tooltipPadding,
-        tooltipHorizontalAlignment,
-        tooltipHorizontalOffset,
-        maxContentWidth,
-        getTooltipItems,
-        fitInsideHorizontally,
-        fitInsideVertically,
-        showOnTopOfTheChartBoxArea,
-        rotateAngle,
-        tooltipBorder,
-        getTooltipColor,
-      ];
+    tooltipBorderRadius,
+    tooltipPadding,
+    tooltipHorizontalAlignment,
+    tooltipHorizontalOffset,
+    maxContentWidth,
+    getTooltipItems,
+    fitInsideHorizontally,
+    fitInsideVertically,
+    showOnTopOfTheChartBoxArea,
+    rotateAngle,
+    tooltipBorder,
+    getTooltipColor,
+  ];
 
   /// Copies current [CandlestickTouchTooltipData] to a new [CandlestickTouchTooltipData],
   /// and replaces provided values.
@@ -578,23 +571,19 @@ class CandlestickTouchTooltipData with EquatableMixin {
     double? rotateAngle,
     BorderSide? tooltipBorder,
     GetCandlestickTooltipColor? getTooltipColor,
-  }) =>
-      CandlestickTouchTooltipData(
-        tooltipBorderRadius: tooltipBorderRadius ?? this.tooltipBorderRadius,
-        tooltipPadding: tooltipPadding ?? this.tooltipPadding,
-        tooltipHorizontalAlignment:
-            tooltipHorizontalAlignment ?? this.tooltipHorizontalAlignment,
-        tooltipHorizontalOffset:
-            tooltipHorizontalOffset ?? this.tooltipHorizontalOffset,
-        maxContentWidth: maxContentWidth ?? this.maxContentWidth,
-        getTooltipItems: getTooltipItems ?? this.getTooltipItems,
-        fitInsideHorizontally:
-            fitInsideHorizontally ?? this.fitInsideHorizontally,
-        fitInsideVertically: fitInsideVertically ?? this.fitInsideVertically,
-        rotateAngle: rotateAngle ?? this.rotateAngle,
-        tooltipBorder: tooltipBorder ?? this.tooltipBorder,
-        getTooltipColor: getTooltipColor ?? this.getTooltipColor,
-      );
+  }) => CandlestickTouchTooltipData(
+    tooltipBorderRadius: tooltipBorderRadius ?? this.tooltipBorderRadius,
+    tooltipPadding: tooltipPadding ?? this.tooltipPadding,
+    tooltipHorizontalAlignment: tooltipHorizontalAlignment ?? this.tooltipHorizontalAlignment,
+    tooltipHorizontalOffset: tooltipHorizontalOffset ?? this.tooltipHorizontalOffset,
+    maxContentWidth: maxContentWidth ?? this.maxContentWidth,
+    getTooltipItems: getTooltipItems ?? this.getTooltipItems,
+    fitInsideHorizontally: fitInsideHorizontally ?? this.fitInsideHorizontally,
+    fitInsideVertically: fitInsideVertically ?? this.fitInsideVertically,
+    rotateAngle: rotateAngle ?? this.rotateAngle,
+    tooltipBorder: tooltipBorder ?? this.tooltipBorder,
+    getTooltipColor: getTooltipColor ?? this.getTooltipColor,
+  );
 }
 
 /// Provides a [CandlestickTooltipItem] for showing content inside the [CandlestickTouchTooltipData].
@@ -603,11 +592,12 @@ class CandlestickTouchTooltipData with EquatableMixin {
 /// [touchedSpot] that touch happened on,
 /// then you should and pass your custom [CandlestickTooltipItem]
 /// to show it inside the tooltip popup.
-typedef GetCandlestickTooltipItems = CandlestickTooltipItem? Function(
-  FlCandlestickPainter painter,
-  CandlestickSpot touchedSpot,
-  int spotIndex,
-);
+typedef GetCandlestickTooltipItems =
+    CandlestickTooltipItem? Function(
+      FlCandlestickPainter painter,
+      CandlestickSpot touchedSpot,
+      int spotIndex,
+    );
 
 /// Default implementation for [CandlestickTouchTooltipData.getTooltipItems].
 CandlestickTooltipItem? defaultCandlestickTooltipItem(
@@ -676,13 +666,13 @@ CandlestickTooltipItem? defaultCandlestickTooltipItem(
 /// [touchedSpot] that touch happened on,
 /// then you should and pass your custom [Color]
 /// to show it inside the tooltip popup.
-typedef GetCandlestickTooltipColor = Color Function(
-  CandlestickSpot touchedSpot,
-);
+typedef GetCandlestickTooltipColor =
+    Color Function(
+      CandlestickSpot touchedSpot,
+    );
 
 /// Default implementation for [CandlestickTouchTooltipData.getTooltipItems].
-Color defaultCandlestickTooltipColor(CandlestickSpot touchedSpot) =>
-    Colors.blueGrey.darken(80);
+Color defaultCandlestickTooltipColor(CandlestickSpot touchedSpot) => Colors.blueGrey.darken(80);
 
 /// Holds data of showing each item in the tooltip popup.
 class CandlestickTooltipItem with EquatableMixin {
@@ -695,9 +685,9 @@ class CandlestickTooltipItem with EquatableMixin {
     TextAlign? textAlign,
     TextDirection? textDirection,
     this.children,
-  })  : bottomMargin = bottomMargin ?? 8,
-        textAlign = textAlign ?? TextAlign.center,
-        textDirection = textDirection ?? TextDirection.ltr;
+  }) : bottomMargin = bottomMargin ?? 8,
+       textAlign = textAlign ?? TextAlign.center,
+       textDirection = textDirection ?? TextDirection.ltr;
 
   /// Showing text.
   final String text;
@@ -720,13 +710,13 @@ class CandlestickTooltipItem with EquatableMixin {
   /// Used for equality check, see [EquatableMixin].
   @override
   List<Object?> get props => [
-        text,
-        textStyle,
-        bottomMargin,
-        textAlign,
-        textDirection,
-        children,
-      ];
+    text,
+    textStyle,
+    bottomMargin,
+    textAlign,
+    textDirection,
+    children,
+  ];
 
   /// Copies current [CandlestickTooltipItem] to a new [CandlestickTooltipItem],
   /// and replaces provided values.
@@ -737,15 +727,14 @@ class CandlestickTooltipItem with EquatableMixin {
     TextAlign? textAlign,
     TextDirection? textDirection,
     List<TextSpan>? children,
-  }) =>
-      CandlestickTooltipItem(
-        text ?? this.text,
-        textStyle: textStyle ?? this.textStyle,
-        bottomMargin: bottomMargin ?? this.bottomMargin,
-        textAlign: textAlign ?? this.textAlign,
-        textDirection: textDirection ?? this.textDirection,
-        children: children ?? this.children,
-      );
+  }) => CandlestickTooltipItem(
+    text ?? this.text,
+    textStyle: textStyle ?? this.textStyle,
+    bottomMargin: bottomMargin ?? this.bottomMargin,
+    textAlign: textAlign ?? this.textAlign,
+    textDirection: textDirection ?? this.textDirection,
+    children: children ?? this.children,
+  );
 }
 
 /// This class contains the interface for drawing the candlestick shape.
@@ -789,24 +778,24 @@ abstract class FlCandlestickPainter with EquatableMixin {
 }
 
 /// [CandlestickChart]'s touch callback.
-typedef CandlestickStyleProvider = CandlestickStyle Function(
-  CandlestickSpot spot,
-  int index,
-);
+typedef CandlestickStyleProvider =
+    CandlestickStyle Function(
+      CandlestickSpot spot,
+      int index,
+    );
 
 CandlestickStyleProvider get _defaultStrokeColorProvider => (spot, _) {
-      final generalColor =
-          spot.isUp ? const Color(0xFF4CAF50) : const Color(0xFFEF5350);
-      return CandlestickStyle(
-        lineColor: generalColor,
-        lineWidth: 1.5,
-        bodyStrokeColor: generalColor,
-        bodyStrokeWidth: 0,
-        bodyFillColor: generalColor,
-        bodyWidth: 4,
-        bodyRadius: 0,
-      );
-    };
+  final generalColor = spot.isUp ? const Color(0xFF4CAF50) : const Color(0xFFEF5350);
+  return CandlestickStyle(
+    lineColor: generalColor,
+    lineWidth: 1.5,
+    bodyStrokeColor: generalColor,
+    bodyStrokeWidth: 0,
+    bodyFillColor: generalColor,
+    bodyWidth: 4,
+    bodyRadius: 0,
+  );
+};
 
 /// Default implementation of [FlCandlestickPainter].
 ///
@@ -818,8 +807,7 @@ CandlestickStyleProvider get _defaultStrokeColorProvider => (spot, _) {
 class DefaultCandlestickPainter extends FlCandlestickPainter {
   DefaultCandlestickPainter({
     CandlestickStyleProvider? candlestickStyleProvider,
-  }) : candlestickStyleProvider =
-            candlestickStyleProvider ?? _defaultStrokeColorProvider;
+  }) : candlestickStyleProvider = candlestickStyleProvider ?? _defaultStrokeColorProvider;
 
   final CandlestickStyleProvider candlestickStyleProvider;
 
@@ -916,13 +904,12 @@ class DefaultCandlestickPainter extends FlCandlestickPainter {
   Color getMainColor({
     required CandlestickSpot spot,
     required int spotIndex,
-  }) =>
-      candlestickStyleProvider(spot, spotIndex).lineColor;
+  }) => candlestickStyleProvider(spot, spotIndex).lineColor;
 
   @override
   List<Object?> get props => [
-        candlestickStyleProvider,
-      ];
+    candlestickStyleProvider,
+  ];
 }
 
 /// Holds data for drawing each candlestick shape.
@@ -963,27 +950,26 @@ class CandlestickStyle with EquatableMixin {
     CandlestickStyle a,
     CandlestickStyle b,
     double t,
-  ) =>
-      CandlestickStyle(
-        lineColor: Color.lerp(a.lineColor, b.lineColor, t)!,
-        lineWidth: lerpDouble(a.lineWidth, b.lineWidth, t)!,
-        bodyStrokeColor: Color.lerp(a.bodyStrokeColor, b.bodyStrokeColor, t)!,
-        bodyStrokeWidth: lerpDouble(a.bodyStrokeWidth, b.bodyStrokeWidth, t)!,
-        bodyFillColor: Color.lerp(a.bodyFillColor, b.bodyFillColor, t)!,
-        bodyWidth: lerpDouble(a.bodyWidth, b.bodyWidth, t)!,
-        bodyRadius: lerpDouble(a.bodyRadius, b.bodyRadius, t)!,
-      );
+  ) => CandlestickStyle(
+    lineColor: Color.lerp(a.lineColor, b.lineColor, t)!,
+    lineWidth: lerpDouble(a.lineWidth, b.lineWidth, t)!,
+    bodyStrokeColor: Color.lerp(a.bodyStrokeColor, b.bodyStrokeColor, t)!,
+    bodyStrokeWidth: lerpDouble(a.bodyStrokeWidth, b.bodyStrokeWidth, t)!,
+    bodyFillColor: Color.lerp(a.bodyFillColor, b.bodyFillColor, t)!,
+    bodyWidth: lerpDouble(a.bodyWidth, b.bodyWidth, t)!,
+    bodyRadius: lerpDouble(a.bodyRadius, b.bodyRadius, t)!,
+  );
 
   @override
   List<Object?> get props => [
-        lineColor,
-        lineWidth,
-        bodyStrokeColor,
-        bodyStrokeWidth,
-        bodyFillColor,
-        bodyWidth,
-        bodyRadius,
-      ];
+    lineColor,
+    lineWidth,
+    bodyStrokeColor,
+    bodyStrokeWidth,
+    bodyFillColor,
+    bodyWidth,
+    bodyRadius,
+  ];
 }
 
 /// It lerps a [CandlestickChartData] to another [CandlestickChartData] (handles animation for updating values)

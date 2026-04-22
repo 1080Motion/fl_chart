@@ -9,7 +9,8 @@ class CandlestickChartHelper {
     double maxX,
     double minY,
     double maxY,
-  ) calculateMaxAxisValues(
+  )
+  calculateMaxAxisValues(
     List<CandlestickSpot> candleSpots,
   ) {
     if (candleSpots.isEmpty) {

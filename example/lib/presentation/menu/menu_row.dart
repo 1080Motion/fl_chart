@@ -49,8 +49,7 @@ class _MenuRowState extends State<MenuRow> {
                 widget.svgPath,
                 width: AppDimens.menuIconSize,
                 height: AppDimens.menuIconSize,
-                colorFilter:
-                    const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
+                colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
               ),
               const SizedBox(
                 width: 18,

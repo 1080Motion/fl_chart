@@ -9,8 +9,7 @@ void main() {
     test('CandlestickChartData equality test', () {
       expect(candleStickChartData1 == candleStickChartData1Clone, true);
       expect(
-        candleStickChartData1 ==
-            candleStickChartData1Clone.copyWith(showingTooltipIndicators: []),
+        candleStickChartData1 == candleStickChartData1Clone.copyWith(showingTooltipIndicators: []),
         false,
       );
       expect(
@@ -254,15 +253,13 @@ void main() {
       );
 
       expect(
-        candleStickChartData1 ==
-            candleStickChartData1Clone.copyWith(showingTooltipIndicators: []),
+        candleStickChartData1 == candleStickChartData1Clone.copyWith(showingTooltipIndicators: []),
         false,
       );
 
       expect(
         candleStickChartData1 ==
-            candleStickChartData1Clone
-                .copyWith(showingTooltipIndicators: [2, 1, 0]),
+            candleStickChartData1Clone.copyWith(showingTooltipIndicators: [2, 1, 0]),
         false,
       );
 

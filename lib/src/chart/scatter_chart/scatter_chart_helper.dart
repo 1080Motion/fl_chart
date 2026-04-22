@@ -9,7 +9,8 @@ class ScatterChartHelper {
     double maxX,
     double minY,
     double maxY,
-  ) calculateMaxAxisValues(
+  )
+  calculateMaxAxisValues(
     List<ScatterSpot> scatterSpots,
   ) {
     if (scatterSpots.isEmpty) {

@@ -10,10 +10,9 @@ class SideTitlesFlex extends MultiChildRenderObjectWidget {
     super.key,
     required this.direction,
     required this.axisSideMetaData,
-    List<AxisSideTitleWidgetHolder> widgetHolders =
-        const <AxisSideTitleWidgetHolder>[],
-  })  : axisSideTitlesMetaData = widgetHolders.map((e) => e.metaData).toList(),
-        super(children: widgetHolders.map((e) => e.widget).toList());
+    List<AxisSideTitleWidgetHolder> widgetHolders = const <AxisSideTitleWidgetHolder>[],
+  }) : axisSideTitlesMetaData = widgetHolders.map((e) => e.metaData).toList(),
+       super(children: widgetHolders.map((e) => e.widget).toList());
 
   final Axis direction;
   final AxisSideMetaData axisSideMetaData;
@@ -55,9 +54,9 @@ class AxisSideTitlesRenderFlex extends RenderBox
     Axis direction = Axis.horizontal,
     required AxisSideMetaData axisSideMetaData,
     required List<AxisSideTitleMetaData> axisSideTitlesMetaData,
-  })  : _direction = direction,
-        _axisSideMetaData = axisSideMetaData,
-        _axisSideTitlesMetaData = axisSideTitlesMetaData;
+  }) : _direction = direction,
+       _axisSideMetaData = axisSideMetaData,
+       _axisSideTitlesMetaData = axisSideTitlesMetaData;
 
   Axis get direction => _direction;
   Axis _direction;
@@ -79,8 +78,7 @@ class AxisSideTitlesRenderFlex extends RenderBox
     }
   }
 
-  List<AxisSideTitleMetaData> get axisSideTitlesMetaData =>
-      _axisSideTitlesMetaData;
+  List<AxisSideTitleMetaData> get axisSideTitlesMetaData => _axisSideTitlesMetaData;
   List<AxisSideTitleMetaData> _axisSideTitlesMetaData;
 
   set axisSideTitlesMetaData(List<AxisSideTitleMetaData> value) {
@@ -160,11 +158,11 @@ class AxisSideTitlesRenderFlex extends RenderBox
       // Stretch
       final innerConstraints = switch (_direction) {
         Axis.horizontal => BoxConstraints.tightFor(
-            height: constraints.maxHeight,
-          ),
+          height: constraints.maxHeight,
+        ),
         Axis.vertical => BoxConstraints.tightFor(
-            width: constraints.maxWidth,
-          ),
+          width: constraints.maxWidth,
+        ),
       };
 
       final childSize = layoutChild(child, innerConstraints);
@@ -215,8 +213,7 @@ class AxisSideTitlesRenderFlex extends RenderBox
 
       // Stretch
       childCrossPosition = 0.0;
-      final childMainPosition =
-          metaData.axisPixelLocation - (_getMainSize(child.size) / 2);
+      final childMainPosition = metaData.axisPixelLocation - (_getMainSize(child.size) / 2);
       childParentData.offset = switch (_direction) {
         Axis.horizontal => Offset(childMainPosition, childCrossPosition),
         Axis.vertical => Offset(childCrossPosition, childMainPosition),
@@ -242,8 +239,7 @@ class AxisSideTitlesRenderFlex extends RenderBox
     defaultPaint(context, offset);
   }
 
-  final LayerHandle<ClipRectLayer> _clipRectLayer =
-      LayerHandle<ClipRectLayer>();
+  final LayerHandle<ClipRectLayer> _clipRectLayer = LayerHandle<ClipRectLayer>();
 
   @override
   void dispose() {
@@ -286,9 +282,9 @@ class AxisSideTitleMetaData with EquatableMixin {
 
   @override
   List<Object?> get props => [
-        axisValue,
-        axisPixelLocation,
-      ];
+    axisValue,
+    axisPixelLocation,
+  ];
 }
 
 class AxisSideTitleWidgetHolder {

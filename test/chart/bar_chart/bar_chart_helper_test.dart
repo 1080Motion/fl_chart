@@ -102,14 +102,10 @@ void main() {
       final barChartHelper = BarChartHelper();
       final barGroups = [
         barChartGroupData1.copyWith(
-          barRods: barChartGroupData1.barRods
-              .map((rod) => rod.copyWith(fromY: -5))
-              .toList(),
+          barRods: barChartGroupData1.barRods.map((rod) => rod.copyWith(fromY: -5)).toList(),
         ),
         barChartGroupData2.copyWith(
-          barRods: barChartGroupData2.barRods
-              .map((rod) => rod.copyWith(fromY: -8))
-              .toList(),
+          barRods: barChartGroupData2.barRods.map((rod) => rod.copyWith(fromY: -8)).toList(),
         ),
       ];
       final (minY, _) = barChartHelper.calculateMaxAxisValues(barGroups);

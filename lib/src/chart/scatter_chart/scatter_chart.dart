@@ -14,16 +14,15 @@ class ScatterChart extends ImplicitlyAnimatedWidget {
     this.data, {
     this.chartRendererKey,
     super.key,
-    @Deprecated('Please use [duration] instead')
-    Duration? swapAnimationDuration,
+    @Deprecated('Please use [duration] instead') Duration? swapAnimationDuration,
     Duration duration = const Duration(milliseconds: 150),
     @Deprecated('Please use [curve] instead') Curve? swapAnimationCurve,
     Curve curve = Curves.linear,
     this.transformationConfig = const FlTransformationConfig(),
   }) : super(
-          duration: swapAnimationDuration ?? duration,
-          curve: swapAnimationCurve ?? curve,
-        );
+         duration: swapAnimationDuration ?? duration,
+         curve: swapAnimationCurve ?? curve,
+       );
 
   /// Determines how the [ScatterChart] should be look like.
   final ScatterChartData data;
@@ -59,8 +58,7 @@ class _ScatterChartState extends AnimatedWidgetBaseState<ScatterChart> {
       data: showingData,
       transformationConfig: widget.transformationConfig,
       chartBuilder: (context, chartVirtualRect) => ScatterChartLeaf(
-        data:
-            _withTouchedIndicators(_scatterChartDataTween!.evaluate(animation)),
+        data: _withTouchedIndicators(_scatterChartDataTween!.evaluate(animation)),
         targetData: _withTouchedIndicators(showingData),
         key: widget.chartRendererKey,
         chartVirtualRect: chartVirtualRect,
@@ -85,8 +83,7 @@ class _ScatterChartState extends AnimatedWidgetBaseState<ScatterChart> {
     if (scatterTouchData.enabled && scatterTouchData.handleBuiltInTouches) {
       _providedTouchCallback = scatterTouchData.touchCallback;
       return widget.data.copyWith(
-        scatterTouchData: widget.data.scatterTouchData
-            .copyWith(touchCallback: _handleBuiltInTouch),
+        scatterTouchData: widget.data.scatterTouchData.copyWith(touchCallback: _handleBuiltInTouch),
       );
     }
     return widget.data;
@@ -103,9 +100,7 @@ class _ScatterChartState extends AnimatedWidgetBaseState<ScatterChart> {
 
     final desiredTouch = event.isInterestedForInteractions;
 
-    if (!desiredTouch ||
-        touchResponse == null ||
-        touchResponse.touchedSpot == null) {
+    if (!desiredTouch || touchResponse == null || touchResponse.touchedSpot == null) {
       setState(() {
         touchedSpots = [];
       });
@@ -118,13 +113,15 @@ class _ScatterChartState extends AnimatedWidgetBaseState<ScatterChart> {
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _scatterChartDataTween = visitor(
-      _scatterChartDataTween,
-      _getData(),
-      (dynamic value) => ScatterChartDataTween(
-        begin: value as ScatterChartData,
-        end: widget.data,
-      ),
-    ) as ScatterChartDataTween?;
+    _scatterChartDataTween =
+        visitor(
+              _scatterChartDataTween,
+              _getData(),
+              (dynamic value) => ScatterChartDataTween(
+                begin: value as ScatterChartData,
+                end: widget.data,
+              ),
+            )
+            as ScatterChartDataTween?;
   }
 }

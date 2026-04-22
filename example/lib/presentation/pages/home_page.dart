@@ -43,8 +43,8 @@ class HomePage extends StatelessWidget {
     final selectedMenuIndex = _menuItemsIndices[showingChartType]!;
     return LayoutBuilder(
       builder: (context, constraints) {
-        final needsDrawer = constraints.maxWidth <=
-            AppDimens.menuMaxNeededWidth + AppDimens.chartBoxMinWidth;
+        final needsDrawer =
+            constraints.maxWidth <= AppDimens.menuMaxNeededWidth + AppDimens.chartBoxMinWidth;
         final appMenuWidget = AppMenu(
           menuItems: _menuItems,
           currentSelectedIndex: selectedMenuIndex,
@@ -57,8 +57,7 @@ class HomePage extends StatelessWidget {
           },
           onBannerClicked: () => AppUtils().tryToLaunchUrl(Urls.flChartUrl),
         );
-        final samplesSectionWidget =
-            ChartSamplesPage(chartType: showingChartType);
+        final samplesSectionWidget = ChartSamplesPage(chartType: showingChartType);
         final body = needsDrawer
             ? samplesSectionWidget
             : Row(
@@ -85,11 +84,8 @@ class HomePage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 24.0),
                         child: DownloadNativeAppButton(
-                          onClose: () => context
-                              .read<AppCubit>()
-                              .hideDownloadNativeAppButton(),
-                          onDownload: () =>
-                              AppUtils().tryToLaunchUrl(Urls.downloadUrl),
+                          onClose: () => context.read<AppCubit>().hideDownloadNativeAppButton(),
+                          onDownload: () => AppUtils().tryToLaunchUrl(Urls.downloadUrl),
                         ),
                       ),
                     ),

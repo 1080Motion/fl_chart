@@ -9,8 +9,7 @@ void main() {
     test('ScatterChartData equality test', () {
       expect(scatterChartData1 == scatterChartData1Clone, true);
       expect(
-        scatterChartData1 ==
-            scatterChartData1Clone.copyWith(showingTooltipIndicators: []),
+        scatterChartData1 == scatterChartData1Clone.copyWith(showingTooltipIndicators: []),
         false,
       );
       expect(
@@ -113,8 +112,7 @@ void main() {
         false,
       );
       expect(
-        scatterChartData1 ==
-            scatterChartData1Clone.copyWith(clipData: const FlClipData.all()),
+        scatterChartData1 == scatterChartData1Clone.copyWith(clipData: const FlClipData.all()),
         false,
       );
       expect(
@@ -300,15 +298,12 @@ void main() {
       );
 
       expect(
-        scatterChartData1 ==
-            scatterChartData1Clone.copyWith(showingTooltipIndicators: []),
+        scatterChartData1 == scatterChartData1Clone.copyWith(showingTooltipIndicators: []),
         false,
       );
 
       expect(
-        scatterChartData1 ==
-            scatterChartData1Clone
-                .copyWith(showingTooltipIndicators: [2, 1, 0]),
+        scatterChartData1 == scatterChartData1Clone.copyWith(showingTooltipIndicators: [2, 1, 0]),
         false,
       );
 
@@ -317,8 +312,7 @@ void main() {
             scatterChartData1Clone.copyWith(
               scatterLabelSettings: ScatterLabelSettings(
                 showLabel: true,
-                getLabelTextStyleFunction: (index, spot) =>
-                    const TextStyle(color: Colors.green),
+                getLabelTextStyleFunction: (index, spot) => const TextStyle(color: Colors.green),
               ),
             ),
         false,
@@ -329,8 +323,7 @@ void main() {
             scatterChartData1Clone.copyWith(
               scatterLabelSettings: ScatterLabelSettings(
                 showLabel: false,
-                getLabelTextStyleFunction: (index, spot) =>
-                    const TextStyle(color: Colors.red),
+                getLabelTextStyleFunction: (index, spot) => const TextStyle(color: Colors.red),
                 getLabelFunction: (index, spot) => 'Label - $index',
               ),
             ),
@@ -342,8 +335,7 @@ void main() {
             scatterChartData1Clone.copyWith(
               scatterLabelSettings: ScatterLabelSettings(
                 showLabel: true,
-                getLabelTextStyleFunction: (index, spot) =>
-                    const TextStyle(color: Colors.red),
+                getLabelTextStyleFunction: (index, spot) => const TextStyle(color: Colors.red),
                 getLabelFunction: (index, spot) => 'Different Label - $index',
               ),
             ),

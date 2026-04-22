@@ -48,9 +48,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
               'avg',
               style: TextStyle(
                 fontSize: 12,
-                color: showAvg
-                    ? Colors.white.withValues(alpha: 0.5)
-                    : Colors.white,
+                color: showAvg ? Colors.white.withValues(alpha: 0.5) : Colors.white,
               ),
             ),
           ),
@@ -167,9 +165,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
           belowBarData: BarAreaData(
             show: true,
             gradient: LinearGradient(
-              colors: gradientColors
-                  .map((color) => color.withValues(alpha: 0.3))
-                  .toList(),
+              colors: gradientColors.map((color) => color.withValues(alpha: 0.3)).toList(),
             ),
           ),
         ),
@@ -245,10 +241,8 @@ class _LineChartSample2State extends State<LineChartSample2> {
           isCurved: true,
           gradient: LinearGradient(
             colors: [
-              ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                  .lerp(0.2)!,
-              ColorTween(begin: gradientColors[0], end: gradientColors[1])
-                  .lerp(0.2)!,
+              ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!,
+              ColorTween(begin: gradientColors[0], end: gradientColors[1]).lerp(0.2)!,
             ],
           ),
           barWidth: 5,

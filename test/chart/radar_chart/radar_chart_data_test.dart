@@ -11,14 +11,12 @@ void main() {
       expect(radarChartData1 == radarChartData1Clone, true);
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(dataSets: [radarDataSet2]),
+        radarChartData1 == radarChartData1Clone.copyWith(dataSets: [radarDataSet2]),
         false,
       );
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(radarBackgroundColor: Colors.black),
+        radarChartData1 == radarChartData1Clone.copyWith(radarBackgroundColor: Colors.black),
         false,
       );
 
@@ -64,8 +62,7 @@ void main() {
       );
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(radarTouchData: radarTouchData2),
+        radarChartData1 == radarChartData1Clone.copyWith(radarTouchData: radarTouchData2),
         false,
       );
 
@@ -86,8 +83,7 @@ void main() {
       );
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(ticksTextStyle: const TextStyle()),
+        radarChartData1 == radarChartData1Clone.copyWith(ticksTextStyle: const TextStyle()),
         false,
       );
 
@@ -108,23 +104,20 @@ void main() {
       );
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(titlePositionPercentageOffset: 0.2),
+        radarChartData1 == radarChartData1Clone.copyWith(titlePositionPercentageOffset: 0.2),
         true,
       );
 
       expect(
         radarChartData1 ==
             radarChartData1Clone.copyWith(
-              titlePositionPercentageOffset:
-                  radarChartData2.titlePositionPercentageOffset,
+              titlePositionPercentageOffset: radarChartData2.titlePositionPercentageOffset,
             ),
         false,
       );
 
       expect(
-        radarChartData1 ==
-            radarChartData1Clone.copyWith(titleTextStyle: const TextStyle()),
+        radarChartData1 == radarChartData1Clone.copyWith(titleTextStyle: const TextStyle()),
         false,
       );
 

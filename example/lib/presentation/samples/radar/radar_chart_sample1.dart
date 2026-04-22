@@ -96,9 +96,7 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
                         margin: const EdgeInsets.symmetric(vertical: 2),
                         height: 26,
                         decoration: BoxDecoration(
-                          color: isSelected
-                              ? AppColors.pageBackground
-                              : Colors.transparent,
+                          color: isSelected ? AppColors.pageBackground : Colors.transparent,
                           borderRadius: BorderRadius.circular(46),
                         ),
                         padding: const EdgeInsets.symmetric(
@@ -122,8 +120,7 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
                               duration: const Duration(milliseconds: 300),
                               curve: Curves.easeInToLinear,
                               style: TextStyle(
-                                color:
-                                    isSelected ? value.color : widget.gridColor,
+                                color: isSelected ? value.color : widget.gridColor,
                               ),
                               child: Text(value.title),
                             ),
@@ -149,8 +146,7 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
                       return;
                     }
                     setState(() {
-                      selectedDataSetIndex =
-                          response?.touchedSpot?.touchedDataSetIndex ?? -1;
+                      selectedDataSetIndex = response?.touchedSpot?.touchedDataSetIndex ?? -1;
                     });
                   },
                 ),
@@ -159,11 +155,9 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
                 borderData: FlBorderData(show: false),
                 radarBorderData: const BorderSide(color: Colors.transparent),
                 titlePositionPercentageOffset: 0.2,
-                titleTextStyle:
-                    TextStyle(color: widget.titleColor, fontSize: 14),
+                titleTextStyle: TextStyle(color: widget.titleColor, fontSize: 14),
                 getTitle: (index, angle) {
-                  final usedAngle =
-                      relativeAngleMode ? angle + angleValue : angleValue;
+                  final usedAngle = relativeAngleMode ? angle + angleValue : angleValue;
                   return switch (index) {
                     0 => RadarChartTitle(
                         text: 'Mobile or Tablet',
@@ -178,8 +172,7 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
                   };
                 },
                 tickCount: 1,
-                ticksTextStyle:
-                    const TextStyle(color: Colors.transparent, fontSize: 10),
+                ticksTextStyle: const TextStyle(color: Colors.transparent, fontSize: 10),
                 tickBorderData: const BorderSide(color: Colors.transparent),
                 gridBorderData: BorderSide(color: widget.gridColor, width: 2),
               ),
@@ -206,12 +199,9 @@ class _RadarChartSample1State extends State<RadarChartSample1> {
         fillColor: isSelected
             ? rawDataSet.color.withValues(alpha: 0.2)
             : rawDataSet.color.withValues(alpha: 0.05),
-        borderColor: isSelected
-            ? rawDataSet.color
-            : rawDataSet.color.withValues(alpha: 0.25),
+        borderColor: isSelected ? rawDataSet.color : rawDataSet.color.withValues(alpha: 0.25),
         entryRadius: isSelected ? 3 : 2,
-        dataEntries:
-            rawDataSet.values.map((e) => RadarEntry(value: e)).toList(),
+        dataEntries: rawDataSet.values.map((e) => RadarEntry(value: e)).toList(),
         borderWidth: isSelected ? 2.3 : 2,
       );
     }).toList();

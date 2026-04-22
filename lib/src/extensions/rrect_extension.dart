@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 extension RRectExtension on RRect {
   /// Return [Rect] from [RRect]
   Rect getRect() => Rect.fromLTRB(
-        left,
-        top,
-        right,
-        bottom,
-      );
+    left,
+    top,
+    right,
+    bottom,
+  );
 }

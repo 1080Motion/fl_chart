@@ -183,8 +183,7 @@ void main() {
       false,
     );
     expect(
-      renderFlex
-          .computeDryLayout(BoxConstraints.tight(const Size(viewSize, 40))),
+      renderFlex.computeDryLayout(BoxConstraints.tight(const Size(viewSize, 40))),
       const Size(viewSize, 40),
     );
     expect(
@@ -207,8 +206,7 @@ void main() {
       axisSideTitlesMetaData: sideTitlesMetaData,
     );
     expect(
-      renderFlex
-          .computeDryLayout(BoxConstraints.tight(const Size(viewSize, 40))),
+      renderFlex.computeDryLayout(BoxConstraints.tight(const Size(viewSize, 40))),
       const Size(viewSize, 40),
     );
     expect(

@@ -23,15 +23,14 @@ class ScatterChartLeaf extends LeafRenderObjectWidget {
   final bool canBeScaled;
 
   @override
-  RenderScatterChart createRenderObject(BuildContext context) =>
-      RenderScatterChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-        chartVirtualRect,
-        canBeScaled: canBeScaled,
-      );
+  RenderScatterChart createRenderObject(BuildContext context) => RenderScatterChart(
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+    chartVirtualRect,
+    canBeScaled: canBeScaled,
+  );
 
   @override
   void updateRenderObject(
@@ -58,11 +57,11 @@ class RenderScatterChart extends RenderBaseChart<ScatterTouchResponse> {
     TextScaler textScaler,
     Rect? chartVirtualRect, {
     required bool canBeScaled,
-  })  : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        _chartVirtualRect = chartVirtualRect,
-        super(targetData.scatterTouchData, context, canBeScaled: canBeScaled);
+  }) : _data = data,
+       _targetData = targetData,
+       _textScaler = textScaler,
+       _chartVirtualRect = chartVirtualRect,
+       super(targetData.scatterTouchData, context, canBeScaled: canBeScaled);
 
   ScatterChartData get data => _data;
   ScatterChartData _data;

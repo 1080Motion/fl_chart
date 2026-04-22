@@ -18,6 +18,5 @@ class Urls {
     return 'https://github.com/imaNNeo/fl_chart/blob/main/repo_files/documentations/${chartDir}_chart.md';
   }
 
-  static String getVersionReleaseUrl(String version) =>
-      '$flChartGithubUrl/releases/tag/$version';
+  static String getVersionReleaseUrl(String version) => '$flChartGithubUrl/releases/tag/$version';
 }

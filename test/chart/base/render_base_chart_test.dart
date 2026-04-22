@@ -67,14 +67,12 @@ void main() {
 
         scalableChart.handleEvent(pointerDownEvent, hitTestEntry);
         verifyNever(panGestureRecognizer.addPointer(pointerDownEvent));
-        verify(longPressGestureRecognizer.addPointer(pointerDownEvent))
-            .called(1);
+        verify(longPressGestureRecognizer.addPointer(pointerDownEvent)).called(1);
         verify(tapGestureRecognizer.addPointer(pointerDownEvent)).called(1);
 
         nonScalableChart.handleEvent(pointerDownEvent, hitTestEntry);
         verify(panGestureRecognizer.addPointer(pointerDownEvent)).called(1);
-        verify(longPressGestureRecognizer.addPointer(pointerDownEvent))
-            .called(1);
+        verify(longPressGestureRecognizer.addPointer(pointerDownEvent)).called(1);
         verify(tapGestureRecognizer.addPointer(pointerDownEvent)).called(1);
       });
 

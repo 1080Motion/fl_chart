@@ -75,8 +75,7 @@ class _LineChartState extends AnimatedWidgetBaseState<LineChart> {
   }
 
   LineChartData _withTouchedIndicators(LineChartData lineChartData) {
-    if (!lineChartData.lineTouchData.enabled ||
-        !lineChartData.lineTouchData.handleBuiltInTouches) {
+    if (!lineChartData.lineTouchData.enabled || !lineChartData.lineTouchData.handleBuiltInTouches) {
       return lineChartData;
     }
 
@@ -96,10 +95,7 @@ class _LineChartState extends AnimatedWidgetBaseState<LineChart> {
 
     /// Calculate minX, maxX, minY, maxY for [LineChartData] if they are null,
     /// it is necessary to render the chart correctly.
-    if (newData.minX.isNaN ||
-        newData.maxX.isNaN ||
-        newData.minY.isNaN ||
-        newData.maxY.isNaN) {
+    if (newData.minX.isNaN || newData.maxX.isNaN || newData.minY.isNaN || newData.maxY.isNaN) {
       final (minX, maxX, minY, maxY) = _lineChartHelper.calculateMaxAxisValues(
         newData.lineBarsData,
       );
@@ -115,8 +111,7 @@ class _LineChartState extends AnimatedWidgetBaseState<LineChart> {
     if (lineTouchData.enabled && lineTouchData.handleBuiltInTouches) {
       _providedTouchCallback = lineTouchData.touchCallback;
       newData = newData.copyWith(
-        lineTouchData:
-            newData.lineTouchData.copyWith(touchCallback: _handleBuiltInTouch),
+        lineTouchData: newData.lineTouchData.copyWith(touchCallback: _handleBuiltInTouch),
       );
     }
 
@@ -161,11 +156,13 @@ class _LineChartState extends AnimatedWidgetBaseState<LineChart> {
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _lineChartDataTween = visitor(
-      _lineChartDataTween,
-      _getData(),
-      (dynamic value) =>
-          LineChartDataTween(begin: value as LineChartData, end: widget.data),
-    ) as LineChartDataTween?;
+    _lineChartDataTween =
+        visitor(
+              _lineChartDataTween,
+              _getData(),
+              (dynamic value) =>
+                  LineChartDataTween(begin: value as LineChartData, end: widget.data),
+            )
+            as LineChartDataTween?;
   }
 }

@@ -16,20 +16,16 @@ class LineChartSample3 extends StatefulWidget {
     Color? tooltipBgColor,
     Color? tooltipTextColor,
   })  : lineColor = lineColor ?? AppColors.contentColorRed,
-        indicatorLineColor = indicatorLineColor ??
-            AppColors.contentColorYellow.withValues(alpha: 0.2),
-        indicatorTouchedLineColor =
-            indicatorTouchedLineColor ?? AppColors.contentColorYellow,
-        indicatorSpotStrokeColor = indicatorSpotStrokeColor ??
-            AppColors.contentColorYellow.withValues(alpha: 0.5),
+        indicatorLineColor =
+            indicatorLineColor ?? AppColors.contentColorYellow.withValues(alpha: 0.2),
+        indicatorTouchedLineColor = indicatorTouchedLineColor ?? AppColors.contentColorYellow,
+        indicatorSpotStrokeColor =
+            indicatorSpotStrokeColor ?? AppColors.contentColorYellow.withValues(alpha: 0.5),
         indicatorTouchedSpotStrokeColor =
             indicatorTouchedSpotStrokeColor ?? AppColors.contentColorYellow,
-        bottomTextColor = bottomTextColor ??
-            AppColors.contentColorYellow.withValues(alpha: 0.2),
-        bottomTouchedTextColor =
-            bottomTouchedTextColor ?? AppColors.contentColorYellow,
-        averageLineColor = averageLineColor ??
-            AppColors.contentColorGreen.withValues(alpha: 0.8),
+        bottomTextColor = bottomTextColor ?? AppColors.contentColorYellow.withValues(alpha: 0.2),
+        bottomTouchedTextColor = bottomTouchedTextColor ?? AppColors.contentColorYellow,
+        averageLineColor = averageLineColor ?? AppColors.contentColorGreen.withValues(alpha: 0.8),
         tooltipBgColor = tooltipBgColor ?? AppColors.contentColorGreen,
         tooltipTextColor = tooltipTextColor ?? Colors.black;
 
@@ -44,8 +40,7 @@ class LineChartSample3 extends StatefulWidget {
   final Color tooltipBgColor;
   final Color tooltipTextColor;
 
-  List<String> get weekDays =>
-      const ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  List<String> get weekDays => const ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
   List<double> get yValues => const [1.3, 1, 1.8, 1.5, 2.2, 1.8, 3];
 
@@ -159,8 +154,7 @@ class _LineChartSample3State extends State<LineChartSample3> {
             child: LineChart(
               LineChartData(
                 lineTouchData: LineTouchData(
-                  getTouchedSpotIndicator:
-                      (LineChartBarData barData, List<int> spotIndexes) {
+                  getTouchedSpotIndicator: (LineChartBarData barData, List<int> spotIndexes) {
                     return spotIndexes.map((spotIndex) {
                       final spot = barData.spots[spotIndex];
                       if (spot.x == 0 || spot.x == 6) {
@@ -178,16 +172,14 @@ class _LineChartSample3State extends State<LineChartSample3> {
                                 radius: 8,
                                 color: Colors.white,
                                 strokeWidth: 5,
-                                strokeColor:
-                                    widget.indicatorTouchedSpotStrokeColor,
+                                strokeColor: widget.indicatorTouchedSpotStrokeColor,
                               );
                             } else {
                               return FlDotSquarePainter(
                                 size: 16,
                                 color: Colors.white,
                                 strokeWidth: 5,
-                                strokeColor:
-                                    widget.indicatorTouchedSpotStrokeColor,
+                                strokeColor: widget.indicatorTouchedSpotStrokeColor,
                               );
                             }
                           },
@@ -243,8 +235,7 @@ class _LineChartSample3State extends State<LineChartSample3> {
                       }).toList();
                     },
                   ),
-                  touchCallback:
-                      (FlTouchEvent event, LineTouchResponse? lineTouch) {
+                  touchCallback: (FlTouchEvent event, LineTouchResponse? lineTouch) {
                     if (!event.isInterestedForInteractions ||
                         lineTouch == null ||
                         lineTouch.lineBarSpots == null) {

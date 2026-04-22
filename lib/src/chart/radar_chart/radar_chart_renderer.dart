@@ -20,11 +20,11 @@ class RadarChartLeaf extends LeafRenderObjectWidget {
 
   @override
   RenderRadarChart createRenderObject(BuildContext context) => RenderRadarChart(
-        context,
-        data,
-        targetData,
-        MediaQuery.of(context).textScaler,
-      );
+    context,
+    data,
+    targetData,
+    MediaQuery.of(context).textScaler,
+  );
 
   @override
   void updateRenderObject(BuildContext context, RenderRadarChart renderObject) {
@@ -44,10 +44,10 @@ class RenderRadarChart extends RenderBaseChart<RadarTouchResponse> {
     RadarChartData data,
     RadarChartData targetData,
     TextScaler textScaler,
-  )   : _data = data,
-        _targetData = targetData,
-        _textScaler = textScaler,
-        super(targetData.radarTouchData, context, canBeScaled: false);
+  ) : _data = data,
+      _targetData = targetData,
+      _textScaler = textScaler,
+      super(targetData.radarTouchData, context, canBeScaled: false);
 
   RadarChartData get data => _data;
   RadarChartData _data;
@@ -84,8 +84,7 @@ class RenderRadarChart extends RenderBaseChart<RadarTouchResponse> {
   @visibleForTesting
   RadarChartPainter painter = RadarChartPainter();
 
-  PaintHolder<RadarChartData> get paintHolder =>
-      PaintHolder(data, targetData, textScaler);
+  PaintHolder<RadarChartData> get paintHolder => PaintHolder(data, targetData, textScaler);
 
   @override
   void paint(PaintingContext context, Offset offset) {
